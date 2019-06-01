@@ -3,5 +3,5 @@ Authors:
 Vika Shonia,
 Zviki Nozadze,
 Giorgi Jikia,
-Beqa Alishbaia,
+Beqa Alshbaia,
 Vaxtang Vashakidze
