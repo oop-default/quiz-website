@@ -1,7 +1,7 @@
 # quiz-website
-Authors:
-Vika Shonia,
-Zviki Nozadze,
-Giorgi Jikia,
-Beqa Alshbaia,
-Vaxtang Vashakidze
+###Authors:
+####Vika Shonia,
+####Giorgi Jikia,
+####Beqa Alshbaia,
+####Vaxtang Vashakidze,
+####Zviki Nozadze

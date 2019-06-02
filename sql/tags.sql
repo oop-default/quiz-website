@@ -1,0 +1,10 @@
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE tags (
+    id INTEGER NOT NULL PRIMARY KEY,
+    tag VARCHAR (255),
+
+    UNIQUE KEY (tag)
+);

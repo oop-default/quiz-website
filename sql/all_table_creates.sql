@@ -1,0 +1,190 @@
+/*THIS FILE IS ONLY USED TO EXECUTE ALL CREATES AT SAME TIME */
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS accounts;
+
+CREATE TABLE accounts (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR (255) NOT NULL,
+    first_name VARCHAR (255) NOT NULL, 
+    last_name VARCHAR (255) NOT NULL,
+    mail VARCHAR (255) NOT NULL,
+    gender VARCHAR(50) NOT NULL, /* 'Male', 'Female' or 'Other' */
+    password VARCHAR (255) NOT NULL,
+    Image LONGBLOB,
+    date_created DATE NOT NULL,
+    is_deleted BOOLEAN,
+    is_banned BOOLEAN,
+    num_points INTEGER,
+    is_admin BOOLEAN,
+
+    UNIQUE KEY (mail, password)
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS achievements;
+
+CREATE TABLE achievements (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (255) NOT NULL,
+    points INTEGER NOT NULL, /* needed to get it */
+    description TEXT,
+
+    UNIQUE KEY (name)
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS achievings;
+
+CREATE TABLE achievings (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    achievment_id INTEGER NOT NULL,
+    account_id INTEGER NOT NULL,
+    date_achieved DATE NOT NULL
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS answers;
+
+CREATE TABLE answers (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    answer TEXT NOT NULL,
+    is_correct BOOLEAN NOT NULL,
+    question_id INTEGER NOT NULL
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE categories (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    category VARCHAR (255) NOT NULL,
+
+    UNIQUE KEY (category)
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS challenges;
+
+CREATE TABLE challenges (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    quiz_id INTEGER NOT NULL,
+    notification_id INTEGER NOT NULL
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS friend_requests;
+
+CREATE TABLE friend_requests (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    status VARCHAR (255) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
+    notification_id INTEGER NOT NULL
+);
+
+
+/*
+    IT MAY CHANGE 
+    status coud be done with another table of statuses
+    or ENUM('Accepted', 'Pending', 'Denied') i think using 
+    enum would be harder to accociate numbers with statuses 
+    and then insert or get data from tables 
+*/
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS friend_requests;
+
+/* History of past taken quizzes. */
+
+CREATE TABLE history (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    account_id INTEGER NOT NULL,
+    quiz_id INTEGER NOT NULL,
+    score DOUBLE,
+    time_spent TIME
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS notes;
+
+CREATE TABLE notes (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    note VARCHAR (255) NOT NULL,
+    notification_id INTEGER NOT NULL
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS notifications;
+
+CREATE TABLE notifications (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    sender_id INTEGER NOT NULL,
+    reciever_id INTEGER NOT NULL,
+    date_sent DATE NOT NULL,
+    is_seen BOOLEAN
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS questions;
+
+CREATE TABLE questions (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(255) NOT NULL, /* type may be multiple choice, etc. */
+    question TEXT NOT NULL,
+    quiz_id INTEGER NOT NULL
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS quizzes;
+
+CREATE TABLE quizzes (
+    id INTEGER NOT NULL PRIMARY KEY,
+    tittle VARCHAR(255) NOT NULL,
+    author_id INTEGER NOT NULL,
+    description TEXT,
+    create_date DATE NOT NULL,
+    category_id INTEGER NOT NULL,
+    num_points INTEGER  
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS taggings;
+
+CREATE TABLE taggings (
+    id INTEGER NOT NULL PRIMARY KEY,
+    tag_id INTEGER,
+    quiz_id INTEGER
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE tags (
+    id INTEGER NOT NULL PRIMARY KEY,
+    tag VARCHAR (255),
+
+    UNIQUE KEY (tag)
+);
+
+
+
+
+
+
+
+
+
+

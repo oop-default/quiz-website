@@ -1,0 +1,9 @@
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS taggings;
+
+CREATE TABLE taggings (
+    id INTEGER NOT NULL PRIMARY KEY,
+    tag_id INTEGER,
+    quiz_id INTEGER
+);
