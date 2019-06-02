@@ -1,0 +1,10 @@
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE categories (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    category VARCHAR (255) NOT NULL,
+
+    UNIQUE KEY (category)
+);
