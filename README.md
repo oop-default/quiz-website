@@ -11,7 +11,9 @@ MySql workbench ში რომ ააწყოთ და გაამზად
 2. გაუშვით add_foreign_keys.sql-ის კოდი foreign_key-ების დასამატებლად 
 3. გაუშვით inserts_and_tests.sql-ის კოდი თეიბლების შესავსებად და ცოტა ტესტებისთვის
 
-დიაგრამის სანახავად mysql workbench ში (https://dataedo.com/kb/tools/mysql-workbench/create-database-diagram) 
+(მ ფაილდებში ყველაფერი აზრობრივად ერთად მოვათავსე რო მარტივი გასატესტი და გასაშვები ყოფილიყო დანარჩენი ფაილები მამენტ დაიკიდეთ)
+
+ამის დიაგრამის სანახავად mysql workbench ში (https://dataedo.com/kb/tools/mysql-workbench/create-database-diagram) 
 ეს გააკეთეთ ორი წამის საქმეა და აქ უკეთაა, თუ რაიმეს შეცვლას ფიქრობთ ან შენიშვნა გაქვთ გამოუშვიიით.
 
 (ზვიკი)
