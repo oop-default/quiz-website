@@ -18,7 +18,7 @@ CREATE TABLE accounts (
     num_points DOUBLE,
     is_admin BOOLEAN,
 
-    UNIQUE KEY (mail, password)
+    UNIQUE KEY (mail)
 );
 
 USE QUIZ_DB;
@@ -141,7 +141,9 @@ CREATE TABLE questions (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     type VARCHAR(55) NOT NULL, /* type may be multiple choice, etc. */
     question TEXT NOT NULL,
-    quiz_id INTEGER NOT NULL
+    quiz_id INTEGER NOT NULL,
+    num_points DOUBLE NOT NULL,
+    image LONGBLOB
 );
 
 USE QUIZ_DB;
@@ -149,13 +151,15 @@ USE QUIZ_DB;
 DROP TABLE IF EXISTS quizzes;
 
 CREATE TABLE quizzes (
-    id INTEGER NOT NULL PRIMARY KEY,
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     tittle VARCHAR(255) NOT NULL,
     author_id INTEGER NOT NULL,
     description TEXT,
-    create_date DATETIME NOT NULL,
+    date_created DATETIME NOT NULL,
     category_id INTEGER NOT NULL,
-    num_points DOUBLE  
+    num_points DOUBLE,
+    
+    UNIQUE KEY (tittle)
 );
 
 USE QUIZ_DB;
@@ -163,9 +167,11 @@ USE QUIZ_DB;
 DROP TABLE IF EXISTS taggings;
 
 CREATE TABLE taggings (
-    id INTEGER NOT NULL PRIMARY KEY,
-    tag_id INTEGER,
-    quiz_id INTEGER
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    tag_id INTEGER NOT NULL,
+    quiz_id INTEGER NOT NULL,
+
+    UNIQUE KEY (tag_id, quiz_id)
 );
 
 USE QUIZ_DB;
@@ -173,7 +179,7 @@ USE QUIZ_DB;
 DROP TABLE IF EXISTS tags;
 
 CREATE TABLE tags (
-    id INTEGER NOT NULL PRIMARY KEY,
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     tag VARCHAR (55),
 
     UNIQUE KEY (tag)

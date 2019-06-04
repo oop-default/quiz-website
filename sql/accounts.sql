@@ -17,5 +17,5 @@ CREATE TABLE accounts (
     num_points DOUBLE,
     is_admin BOOLEAN,
 
-    UNIQUE KEY (mail, password)
+    UNIQUE KEY (mail)
 );
