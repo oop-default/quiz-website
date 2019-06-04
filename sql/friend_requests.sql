@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS friend_requests;
 
 CREATE TABLE friend_requests (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    status VARCHAR (255) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
+    status VARCHAR (55) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
     notification_id INTEGER NOT NULL
 );
 

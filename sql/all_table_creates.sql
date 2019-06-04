@@ -1,5 +1,4 @@
 /*THIS FILE IS ONLY USED TO EXECUTE ALL CREATES AT SAME TIME */
-
 USE QUIZ_DB;
 
 DROP TABLE IF EXISTS accounts;
@@ -12,11 +11,11 @@ CREATE TABLE accounts (
     mail VARCHAR (255) NOT NULL,
     gender VARCHAR(50) NOT NULL, /* 'Male', 'Female' or 'Other' */
     password VARCHAR (255) NOT NULL,
-    Image LONGBLOB,
-    date_created DATE NOT NULL,
+    image LONGBLOB,
+    date_created DATETIME NOT NULL,
     is_deleted BOOLEAN,
     is_banned BOOLEAN,
-    num_points INTEGER,
+    num_points DOUBLE,
     is_admin BOOLEAN,
 
     UNIQUE KEY (mail, password)
@@ -29,7 +28,7 @@ DROP TABLE IF EXISTS achievements;
 CREATE TABLE achievements (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR (255) NOT NULL,
-    points INTEGER NOT NULL, /* needed to get it */
+    num_points DOUBLE NOT NULL, /* needed to get it */
     description TEXT,
 
     UNIQUE KEY (name)
@@ -43,7 +42,7 @@ CREATE TABLE achievings (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     achievment_id INTEGER NOT NULL,
     account_id INTEGER NOT NULL,
-    date_achieved DATE NOT NULL
+    date_achieved DATETIME NOT NULL
 );
 
 USE QUIZ_DB;
@@ -84,7 +83,7 @@ DROP TABLE IF EXISTS friend_requests;
 
 CREATE TABLE friend_requests (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    status VARCHAR (255) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
+    status VARCHAR (55) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
     notification_id INTEGER NOT NULL
 );
 
@@ -99,7 +98,7 @@ CREATE TABLE friend_requests (
 
 USE QUIZ_DB;
 
-DROP TABLE IF EXISTS friend_requests;
+DROP TABLE IF EXISTS history;
 
 /* History of past taken quizzes. */
 
@@ -107,8 +106,9 @@ CREATE TABLE history (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     account_id INTEGER NOT NULL,
     quiz_id INTEGER NOT NULL,
-    score DOUBLE,
-    time_spent TIME
+    num_points DOUBLE,
+    time_spent BIGINT,
+    date_taken DATETIME 
 );
 
 USE QUIZ_DB;
@@ -117,7 +117,7 @@ DROP TABLE IF EXISTS notes;
 
 CREATE TABLE notes (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    note VARCHAR (255) NOT NULL,
+    note TEXT NOT NULL,
     notification_id INTEGER NOT NULL
 );
 
@@ -129,7 +129,7 @@ CREATE TABLE notifications (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     sender_id INTEGER NOT NULL,
     reciever_id INTEGER NOT NULL,
-    date_sent DATE NOT NULL,
+    date_sent DATETIME NOT NULL,
     is_seen BOOLEAN
 );
 
@@ -139,7 +139,7 @@ DROP TABLE IF EXISTS questions;
 
 CREATE TABLE questions (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    type VARCHAR(255) NOT NULL, /* type may be multiple choice, etc. */
+    type VARCHAR(55) NOT NULL, /* type may be multiple choice, etc. */
     question TEXT NOT NULL,
     quiz_id INTEGER NOT NULL
 );
@@ -153,9 +153,9 @@ CREATE TABLE quizzes (
     tittle VARCHAR(255) NOT NULL,
     author_id INTEGER NOT NULL,
     description TEXT,
-    create_date DATE NOT NULL,
+    create_date DATETIME NOT NULL,
     category_id INTEGER NOT NULL,
-    num_points INTEGER  
+    num_points DOUBLE  
 );
 
 USE QUIZ_DB;
@@ -174,17 +174,7 @@ DROP TABLE IF EXISTS tags;
 
 CREATE TABLE tags (
     id INTEGER NOT NULL PRIMARY KEY,
-    tag VARCHAR (255),
+    tag VARCHAR (55),
 
     UNIQUE KEY (tag)
 );
-
-
-
-
-
-
-
-
-
-

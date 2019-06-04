@@ -7,7 +7,7 @@ CREATE TABLE quizzes (
     tittle VARCHAR(255) NOT NULL,
     author_id INTEGER NOT NULL,
     description TEXT,
-    create_date DATE NOT NULL,
+    create_date DATETIME NOT NULL,
     category_id INTEGER NOT NULL,
-    num_points INTEGER  
+    num_points DOUBLE  
 );
