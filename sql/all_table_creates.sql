@@ -18,7 +18,8 @@ CREATE TABLE accounts (
     num_points DOUBLE,
     is_admin BOOLEAN,
 
-    UNIQUE KEY (mail)
+    UNIQUE KEY (mail),
+    UNIQUE KEY (username)
 );
 
 USE QUIZ_DB;
@@ -42,7 +43,9 @@ CREATE TABLE achievings (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     achievment_id INTEGER NOT NULL,
     account_id INTEGER NOT NULL,
-    date_achieved DATETIME NOT NULL
+    date_achieved DATETIME NOT NULL,
+
+    UNIQUE KEY (account_id, achievment_id)
 );
 
 USE QUIZ_DB;
@@ -74,7 +77,9 @@ DROP TABLE IF EXISTS challenges;
 CREATE TABLE challenges (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     quiz_id INTEGER NOT NULL,
-    notification_id INTEGER NOT NULL
+    notification_id INTEGER NOT NULL,
+
+    UNIQUE KEY (quiz_id, notification_id)
 );
 
 USE QUIZ_DB;

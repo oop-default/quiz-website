@@ -11,4 +11,4 @@ CREATE TABLE history (
     num_points DOUBLE,
     time_spent BIGINT,
     date_taken DATETIME 
-)
+);
