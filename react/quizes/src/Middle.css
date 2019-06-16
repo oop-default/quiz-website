@@ -1,0 +1,6 @@
+.middle{
+    margin-top: 60px;
+    background-color: #fbfcfa;
+    height: -webkit-calc(100vh - 60px);
+    display: flex;
+  }
