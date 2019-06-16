@@ -1,0 +1,10 @@
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS news;
+
+CREATE TABLE news (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    author_id INTEGER NOT NULL,
+    tittle VARCHAR(255) NOT NULL,
+    description TEXT
+);

@@ -8,28 +8,28 @@ USE QUIZ_DB;
 
 Insert into accounts 
 (username, first_name, last_name, mail, gender, 
-password, image,date_created, is_deleted, is_banned, num_points, is_admin)
+password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
 ('vika_shonia', 'vika', 'shonia', 'vshon17@freeuni.edu.ge', 'Female',
-'pass', null, sysdate(), false, false, 100, true);
+'pass', null, 100, sysdate(), false, false, true, false);
 
 USE QUIZ_DB;
 
 Insert into accounts 
 (username, first_name, last_name, mail, gender, 
-password, image,date_created, is_deleted, is_banned, num_points, is_admin)
+password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
 ('ziki', 'zviad', 'nozadze', 'znoza17@freeuni.edu.ge', 'Male',
-'passcode', null, sysdate(), false, true, 5.53, true);
+'passcode', null, 5.53, sysdate(), false, true, true, false);
 
 USE QUIZ_DB;
 
 Insert into accounts 
 (username, first_name, last_name, mail, gender, 
-password, image,date_created, is_deleted, is_banned, num_points, is_admin)
+password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
-('jikksi', 'gio', 'jikia', 'gjiki17@freeuni.edu.ge', 'Male',
-'password', null, sysdate(), false, false, 500, true);
+('gioJikia', 'gio', 'jikia', 'gjiki17@freeuni.edu.ge', 'Male',
+'password', null, 500, sysdate(), false, false, true, true);
 
 /* insert ACCOUNTS END*/
 
@@ -397,103 +397,42 @@ values
 
 /*----------------------------------------------------------------------------------------*/
 
-/* insert notifications START */
-
-USE QUIZ_DB;
-
-/*id : vika 1 , zviki 2, gio 3*/
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 2, sysdate(), true);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(2, 1, sysdate(), true);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 2, sysdate(), false);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 3, sysdate(), true);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(2, 3, sysdate(), true);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(3, 2, sysdate(), true);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 2, sysdate(), false);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 3, sysdate(), false);
-
-insert into notifications
-(sender_id, reciever_id, date_sent, is_seen)
-values
-(1, 2, sysdate(), true);
-
-/* insert notifications END */
-
-/*----------------------------------------------------------------------------------------*/
-
 /* insert  notes START */
 
 /*id : vika 1 , zviki 2, gio 3*/
+USE QUIZ_DB;
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('Wazzzzuuuppp?', 1);
+('Wazzzzuuuppp?', 1, 2, sysdate(), true);
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('nthng U?', 2);
+('nthng U?', 2, 1, sysdate(), true);
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('me 2', 3);
+('me 2', 1, 3, sysdate(), true);
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('are u codeing?', 4);
+('are u codeing?', 2, 3, sysdate(), true);
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('how r u', 5);
+('how r u', 3, 2, sysdate(), true);
 
 insert into notes
-(note, notification_id)
+(note, sender_id, reciever_id, date_sent, is_seen)
 values
-('u? :)', 6);
+('u? :)', 3, 1, sysdate(), true);
 
 /*
- >>> query for vika - zviki chat by sent time <<<<
-
-select n.note, noti.sender_id, noti.reciever_id, noti.date_sent
-from notes n, notifications noti 
-where ((noti.sender_id = 1 and noti.reciever_id = 2) or 
-(noti.sender_id = 2 and noti.reciever_id = 1)) and noti.id = n.notification_id
-order bu noti.date_sent;
 
 */
 
@@ -504,36 +443,69 @@ order bu noti.date_sent;
 /* insert friend_requests START */
 
 insert into friend_requests
-(notification_id)
+(sender_id, reciever_id, date_sent, is_seen)
 values
-(7);
+(1, 2, sysdate(), true);
+
+insert into friend_requests
+(sender_id, reciever_id, date_sent, is_seen)
+values
+(2, 3, sysdate(), true);
 
 /* insert friend_requests END */
+
+/*----------------------------------------------------------------------------------------*/
+
+/* insert friends START */
+
+insert into friends
+(first_id, second_id)
+values
+(1, 2);
+
+insert into friends
+(first_id, second_id)
+values
+(2, 3);
+
+/* insert friends END */
 
 /*----------------------------------------------------------------------------------------*/
 
 /* insert challenges START */
 
 insert into challenges
-(quiz_id, notification_id)
+(quiz_id, status, sender_id, reciever_id, date_sent, is_seen)
 values
-(1, 8);
+(2, 'accepted', 2, 3, sysdate(), true);
 
 insert into challenges
-(quiz_id, notification_id)
+(quiz_id, status, sender_id, reciever_id, date_sent, is_seen)
 values
-(2, 9);
-
-/*
- >>> query for all vikas sent valid challenges with scores tiitles sender and reciever names <<<<
-
-select a.first_name, a.last_name, (select aa.first_name from accounts aa where n.reciever_id = aa.id), q.tittle, h.num_points, n.is_seen
-from quizzes q, challenges c, notifications n, accounts a, history h
-where q.id = c.quiz_id and n.id = c.notification_id and n.sender_id = a.id and h.account_id = a.id and h.quiz_id = q.id;
-
-*/
+(1, 'accepted', 1, 2, sysdate(), true);
 
 /* insert challenges END */
+
+/* ---------------------------------------------------------------------------------------*/
+
+/* insert news START */
+
+insert into news
+(author_id, tittle, description)
+values
+(1, 'coca cola open cup', 'here is description of coca cola cup, winner will get bunch of coca colas.');
+
+insert into news
+(author_id, tittle, description)
+values
+(2, 'fanta open cup', 'here is description of fanta cup, winner will get bunch of fantas.');
+
+insert into news
+(author_id, tittle, description)
+values
+(3, 'sprite open cup', 'here is description of sprite cup, winner will get bunch of sprites.');
+
+/* insert news END */
 
 /*----------------------------------------------------------------------------------------*/
 

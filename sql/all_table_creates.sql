@@ -1,7 +1,17 @@
 /*THIS FILE IS ONLY USED TO EXECUTE ALL CREATES AT SAME TIME */
-USE QUIZ_DB;
+/*
+Posts by admins table
+status is active online user?
+---SERVLETS---
+    NOTE
+    CHALLENGE
+    FRIEND_REQUEST
+---        ---
+*/
 
 CREATE SCHEMA `QUIZ_DB` ;
+
+USE QUIZ_DB;
 
 DROP TABLE IF EXISTS accounts;
 
@@ -14,11 +24,12 @@ CREATE TABLE accounts (
     gender VARCHAR(50) NOT NULL, /* 'Male', 'Female' or 'Other' */
     password VARCHAR (255) NOT NULL,
     image LONGBLOB,
+    num_points DOUBLE,
     date_created DATETIME NOT NULL,
     is_deleted BOOLEAN,
     is_banned BOOLEAN,
-    num_points DOUBLE,
     is_admin BOOLEAN,
+    is_active BOOLEAN,
 
     UNIQUE KEY (mail),
     UNIQUE KEY (username)
@@ -79,19 +90,11 @@ DROP TABLE IF EXISTS challenges;
 CREATE TABLE challenges (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     quiz_id INTEGER NOT NULL,
-    status VARCHAR (55) NOT NULL, /*acepted, denied or smth*/
-    notification_id INTEGER NOT NULL,
-
-    UNIQUE KEY (quiz_id, notification_id)
-);
-
-USE QUIZ_DB;
-
-DROP TABLE IF EXISTS friend_requests;
-
-CREATE TABLE friend_requests (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    notification_id INTEGER NOT NULL
+    status VARCHAR (55) NOT NULL,
+    sender_id INTEGER NOT NULL,
+    reciever_id INTEGER NOT NULL,
+    date_sent DATETIME NOT NULL,
+    is_seen BOOLEAN
 );
 
 USE QUIZ_DB;
@@ -101,9 +104,21 @@ DROP TABLE IF EXISTS friends;
 CREATE TABLE friends (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     first_id INTEGER NOT NULL,
-    second_id INTEGER NOT NULL,
-
+    second_id INTEGER NOT NULL, 
+    
     UNIQUE KEY (first_id, second_id)
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS friend_requests;
+
+CREATE TABLE friend_requests (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    sender_id INTEGER NOT NULL,
+    reciever_id INTEGER NOT NULL,
+    date_sent DATETIME NOT NULL,
+    is_seen BOOLEAN
 );
 
 /*
@@ -136,15 +151,6 @@ DROP TABLE IF EXISTS notes;
 CREATE TABLE notes (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     note TEXT NOT NULL,
-    notification_id INTEGER NOT NULL
-);
-
-USE QUIZ_DB;
-
-DROP TABLE IF EXISTS notifications;
-
-CREATE TABLE notifications (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     sender_id INTEGER NOT NULL,
     reciever_id INTEGER NOT NULL,
     date_sent DATETIME NOT NULL,
@@ -201,4 +207,15 @@ CREATE TABLE tags (
     tag VARCHAR (55),
 
     UNIQUE KEY (tag)
+);
+
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS news;
+
+CREATE TABLE news (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    author_id INTEGER NOT NULL,
+    tittle VARCHAR(255) NOT NULL,
+    description TEXT
 );

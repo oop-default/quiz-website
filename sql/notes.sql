@@ -5,5 +5,8 @@ DROP TABLE IF EXISTS notes;
 CREATE TABLE notes (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     note TEXT NOT NULL,
-    notification_id INTEGER NOT NULL
+    sender_id INTEGER NOT NULL,
+    reciever_id INTEGER NOT NULL,
+    date_sent DATETIME NOT NULL,
+    is_seen BOOLEAN
 );

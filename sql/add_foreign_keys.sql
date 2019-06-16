@@ -28,16 +28,6 @@ ADD FOREIGN KEY (quiz_id)
     REFERENCES quizzes (id)
     ON DELETE CASCADE;
 
-ALTER TABLE challenges
-ADD FOREIGN KEY (notification_id) 
-    REFERENCES notifications (id)
-    ON DELETE CASCADE;
-
-ALTER TABLE friend_requests
-ADD FOREIGN KEY (notification_id) 
-    REFERENCES notifications (id)
-    ON DELETE CASCADE;
-
 ALTER TABLE history
 ADD FOREIGN KEY (account_id) 
     REFERENCES accounts (id)
@@ -46,16 +36,6 @@ ADD FOREIGN KEY (account_id)
 ALTER TABLE history
 ADD FOREIGN KEY (quiz_id) 
     REFERENCES quizzes (id)
-    ON DELETE CASCADE;
-
-ALTER TABLE notes
-ADD FOREIGN KEY (notification_id) 
-    REFERENCES notifications (id)
-    ON DELETE CASCADE;
-
-ALTER TABLE notifications
-ADD FOREIGN KEY (sender_id) 
-    REFERENCES accounts (id)
     ON DELETE CASCADE;
 
 ALTER TABLE questions
@@ -79,7 +59,41 @@ ADD FOREIGN KEY (first_id)
     ON DELETE CASCADE;
 
 ALTER TABLE friends
-ADD FOREIGN KEY (second) 
+ADD FOREIGN KEY (second_id) 
     REFERENCES accounts (id)
     ON DELETE CASCADE;
 
+ALTER TABLE news
+ADD FOREIGN KEY (author_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE notes
+ADD FOREIGN KEY (sender_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE notes
+ADD FOREIGN KEY (reciever_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE challenges
+ADD FOREIGN KEY (sender_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE challenges
+ADD FOREIGN KEY (reciever_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE friend_requests
+ADD FOREIGN KEY (sender_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE friend_requests
+ADD FOREIGN KEY (reciever_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;

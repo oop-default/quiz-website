@@ -5,7 +5,9 @@ DROP TABLE IF EXISTS challenges;
 CREATE TABLE challenges (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     quiz_id INTEGER NOT NULL,
-    notification_id INTEGER NOT NULL,
-
-    UNIQUE KEY (quiz_id, notification_id)
+    status VARCHAR (55) NOT NULL,
+    sender_id INTEGER NOT NULL,
+    reciever_id INTEGER NOT NULL,
+    date_sent DATETIME NOT NULL,
+    is_seen BOOLEAN
 );
