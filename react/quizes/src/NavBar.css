@@ -1,0 +1,30 @@
+.navBar{
+  position: fixed;
+  height:60px;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  background: rgb(7, 121, 7);
+}
+
+.logo{
+  font-size: 40px;
+  margin-right: 10%;
+  margin-left: 10vw;
+}
+
+.search{
+  width: 25vw;
+  height: 30px;
+  display: flex;
+  margin-right: 10vw;
+  margin-top: 15px;
+}
+
+.logOut{
+  cursor: pointer;
+  height:30px;
+  margin-left: 10px;
+  color: red;
+  margin-top: 15px;
+}
