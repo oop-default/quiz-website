@@ -72,3 +72,14 @@ ALTER TABLE taggings
 ADD FOREIGN KEY (quiz_id) 
     REFERENCES quizzes (id)
     ON DELETE CASCADE;
+
+ALTER TABLE friends
+ADD FOREIGN KEY (first_id) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE friends
+ADD FOREIGN KEY (second) 
+    REFERENCES accounts (id)
+    ON DELETE CASCADE;
+

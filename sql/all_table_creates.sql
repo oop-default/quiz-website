@@ -1,6 +1,8 @@
 /*THIS FILE IS ONLY USED TO EXECUTE ALL CREATES AT SAME TIME */
 USE QUIZ_DB;
 
+CREATE SCHEMA `QUIZ_DB` ;
+
 DROP TABLE IF EXISTS accounts;
 
 CREATE TABLE accounts (
@@ -77,6 +79,7 @@ DROP TABLE IF EXISTS challenges;
 CREATE TABLE challenges (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     quiz_id INTEGER NOT NULL,
+    status VARCHAR (55) NOT NULL, /*acepted, denied or smth*/
     notification_id INTEGER NOT NULL,
 
     UNIQUE KEY (quiz_id, notification_id)
@@ -88,10 +91,20 @@ DROP TABLE IF EXISTS friend_requests;
 
 CREATE TABLE friend_requests (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    status VARCHAR (55) NOT NULL, /* 'Accepted', 'Pending', 'Denied' not anything else */
     notification_id INTEGER NOT NULL
 );
 
+USE QUIZ_DB;
+
+DROP TABLE IF EXISTS friends;
+
+CREATE TABLE friends (
+    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_id INTEGER NOT NULL,
+    second_id INTEGER NOT NULL,
+
+    UNIQUE KEY (first_id, second_id)
+);
 
 /*
     IT MAY CHANGE 

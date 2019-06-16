@@ -504,9 +504,9 @@ order bu noti.date_sent;
 /* insert friend_requests START */
 
 insert into friend_requests
-(status, notification_id)
+(notification_id)
 values
-('Pending', 7);
+(7);
 
 /* insert friend_requests END */
 
