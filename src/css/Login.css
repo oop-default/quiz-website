@@ -1,0 +1,25 @@
+#passwordLabel {
+    font-size: 15px;
+    color: whitesmoke;
+}
+
+#usernameLabel {
+    font-size: 15px;
+    color: whitesmoke;
+}
+
+#errorMessage {
+    color: rgb(255, 0, 17);
+    font-size: 15px;
+}
+
+#passwordInput, #usernameInput {
+    padding: 8px;
+}
+
+#submitInput {
+    margin-left: 2px;
+    padding: 10%;
+    background-color: green;
+    color: floralwhite;
+}

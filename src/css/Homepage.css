@@ -1,0 +1,31 @@
+li {
+    float: left;
+}
+
+#LoginTable {
+    float: right;
+    margin-right: 5%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: forestgreen;
+}
+
+#siteName {
+    font-size: 60px;
+    color: whitesmoke;
+    margin-left: 10%;
+}
+
+#register {
+    clear: both;
+    float: right;
+    width: 40%;
+}
+
+body {
+}
