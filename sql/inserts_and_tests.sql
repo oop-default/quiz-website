@@ -443,14 +443,14 @@ values
 /* insert friend_requests START */
 
 insert into friend_requests
-(sender_id, reciever_id, date_sent, is_seen)
+(status, sender_id, reciever_id, date_sent, is_seen)
 values
-(1, 2, sysdate(), true);
+('Pending', 1, 2, sysdate(), true);
 
 insert into friend_requests
-(sender_id, reciever_id, date_sent, is_seen)
+(status, sender_id, reciever_id, date_sent, is_seen)
 values
-(2, 3, sysdate(), true);
+('Pending', 2, 3, sysdate(), true);
 
 /* insert friend_requests END */
 
