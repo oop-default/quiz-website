@@ -3,7 +3,7 @@ package database;
 
 import com.mysql.jdbc.ResultSetMetaData;
 import models.Account;
-
+import java.sql.*;
 import java.sql.*;
 
 public class DatabaseManager {
