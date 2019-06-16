@@ -18,4 +18,4 @@ MySql workbench ში რომ ააწყოთ და გაამზად
 ეს გააკეთეთ ორი წამის საქმეა და აქ უკეთაა, თუ რაიმეს შეცვლას ფიქრობთ ან შენიშვნა გაქვთ გამოუშვიიით.
 
 (ზვიკი)
-![db_schema_visualise](https://user-images.githubusercontent.com/48380620/59568245-383dbc00-9089-11e9-8e52-a6f7542d727a.png)
+![db_diagram_image](https://user-images.githubusercontent.com/48380620/59568541-02023b80-908d-11e9-983a-0f0047796f9f.png)
