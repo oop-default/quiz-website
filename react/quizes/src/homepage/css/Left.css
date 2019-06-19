@@ -1,5 +1,5 @@
 .left{
-    background-color: #f8f7f7;
+    background-color: whitesmoke;
     width: 280px;
     height: -webkit-calc(100vh - 60px);
     position: fixed;
@@ -19,18 +19,21 @@
     height: 50px;
     border-radius: 50%
   }
-  
-  .quizesTable {
+
+.quizesTable {
     border-collapse: collapse;
     width: 80%;
     margin-top: 10vh;
     margin-left: 10%;
-    background-color: hsl(61, 100%, 50%);
-  }
+    background-color: rgb(231, 247, 4);
+    background-color: rgb(249, 220, 3);
+    color: forestgreen;
+}
   
   .quizesTable td, .quizesTable th {
-    border: 1px solid #c41010;
+    border: 1px solid forestgreen;
     padding: 8px;
+    padding-bottom:30px;
   }
   
   i {
@@ -52,3 +55,6 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
+.quizesTable a{
+    color:green;
+}

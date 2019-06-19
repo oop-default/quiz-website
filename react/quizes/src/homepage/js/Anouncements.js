@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
-import './Anouncements.css';
+import React, { Component } from 'react';
 
+import '../css/Anouncements.css'
 const anouncements = [
     {statement: "nothing for now"},
     {statement: "same here"},

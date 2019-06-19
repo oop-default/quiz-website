@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './Middle.css'
+import '../css/Middle.css'
 import Left from './Left'
 import Anouncements from './Anouncements'
 import Friends from './Friends'

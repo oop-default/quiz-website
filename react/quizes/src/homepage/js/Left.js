@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './Left.css';
+import '../css/Left.css';
 
 
 const popQuizes = [
@@ -45,7 +45,7 @@ class Left extends Component {
                             <tr>
                                 <th className="head" colSpan="3">
                                     <i onClick = {()=>this.changeTable()} className="leftArrow"></i>
-                                    {this.state.table === "pop" ? "popular quizes" : " recent quizes "}
+                                    {this.state.table === "pop" ? "Popular quizes" : " Recent quizes "}
                                     <i onClick = {()=>this.changeTable()}  className="rightArrow"></i>
                                 </th>
                             </tr>

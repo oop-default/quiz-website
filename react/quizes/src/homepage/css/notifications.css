@@ -2,9 +2,9 @@
     margin-top:5px
 }
 
-.notsTable th{
+.notsTable th {
     border: none;
-    border-right: solid 5px rgb(5, 107, 5);
+    border-right: solid 5px forestgreen;
     padding: 8px;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .notification {
-    background-color: rgb(56, 105, 168);
+    background-color: forestgreen;
     color: white;
     text-decoration: none;
     padding: 7px 10px;
@@ -23,7 +23,8 @@
 }
 
 .notification:hover {
-    background: rgb(29, 19, 158);
+    background-color:yellow;
+    color:forestgreen;
 }
 
 .notification .badge {
@@ -32,7 +33,7 @@
     right: -7px;
     padding: 1px 5px;
     border-radius: 50%;
-    background: red;
+    background-color:red;
 }
 
 .notsBody::-webkit-scrollbar{

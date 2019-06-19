@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './Friends.css';
+import '../css/Friends.css';
 
 const friends = [
     {nick: "vigaca", isActive: true},

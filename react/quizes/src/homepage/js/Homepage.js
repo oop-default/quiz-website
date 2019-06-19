@@ -2,8 +2,8 @@ import React,{Component} from 'react';
 import NavBar from './NavBar'
 import Middle from './Middle'
 
-
-
+import Loginpage from '../../loginpage/js/Loginpage';
+ 
 class Homepage extends Component {
 
   constructor() {
@@ -13,11 +13,11 @@ class Homepage extends Component {
 
 
   render() {
-    return(
-      <div onClick={(e)=>this.hideAllNots(e)}>
-        <Middle></Middle>
-        <NavBar></NavBar>
-      </div>
+      return (
+          <div onClick={(e) => this.hideAllNots(e)}>
+              <Middle></Middle>
+              <NavBar></NavBar>
+          </div>
     );
   }
   

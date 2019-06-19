@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './notifications.css';
+import '../css/notifications.css';
 import AcceptOrDenie from './acceptOrDenie';
 
 const requests = [
