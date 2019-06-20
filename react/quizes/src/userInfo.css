@@ -1,0 +1,32 @@
+#addFriend {
+  padding-left: 2%;
+}
+
+#avatar {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.profPic {
+  padding-top: 30%;
+  padding-left: 18%;
+}
+
+.nameLastname {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.username {
+  color: grey;
+  text-decoration: underline;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.username, .nameLastname {
+  padding-left: 18%;
+}

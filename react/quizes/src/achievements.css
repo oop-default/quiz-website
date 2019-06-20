@@ -1,0 +1,27 @@
+#achievementsTable td {
+  text-align: center;
+  padding-right: 10%;
+  padding-top: 8%;
+  height: 40px;
+}
+
+.achievementsSection {
+  margin-top: 50%;
+  padding-left: 10%;
+  max-height: 40%;
+  overflow-y: auto;
+}
+
+#achievementsTable {
+  width: 90%;
+}
+
+#achievementsLabel {
+  border-radius: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  position: -webkit-sticky;
+  height: 30px;
+  font-size: 20px;
+}
