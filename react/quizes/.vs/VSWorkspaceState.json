@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\profilepage\\css",
-    "\\src\\profilepage\\js"
+    "\\src"
   ],
   "SelectedNode": "\\src\\App.test.js",
   "PreviewInSolutionExplorer": false
