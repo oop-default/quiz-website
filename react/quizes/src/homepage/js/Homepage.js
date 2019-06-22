@@ -1,16 +1,23 @@
 import React,{Component} from 'react';
 import NavBar from './NavBar'
 import Middle from './Middle'
-
-import Loginpage from '../../loginpage/js/Loginpage';
+import { withRouter } from 'react-router-dom'
+import { getJWT } from '../../Jwt';
  
 class Homepage extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+      super(props);
+      console.log("homepage");
   }
 
-
+    componentDidMount() {
+       const jwt = getJWT();
+       if (!jwt) {
+            this.props.history.push("/login");
+       }
+        //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
+    }
 
   render() {
       return (
@@ -35,4 +42,4 @@ hideAllNots(e) {
 
 }
 
-export default Homepage;
+export default withRouter(Homepage);

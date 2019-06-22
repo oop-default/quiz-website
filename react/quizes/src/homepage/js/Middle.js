@@ -6,10 +6,7 @@ import Friends from './Friends'
 
 
 class Middle extends Component {
-    constructor() {
-      super();
-    }
-  
+
     render() {
         return (
             <div className ="middle">

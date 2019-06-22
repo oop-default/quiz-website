@@ -4,12 +4,6 @@ import Notifications from './notifications';
 
 
 class NavBar extends Component{
-
-    constructor() {
-        super();
-    }
-
-
     render() {
         return(
             <nav className = "navBar">

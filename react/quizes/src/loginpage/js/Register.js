@@ -1,11 +1,65 @@
 import React, { Component } from 'react';
-import Login from './Login';
-import ReactDOM from 'react-dom';
 import '../css/Register.css'
 class Register extends Component {
     constructor() {
         super();
-        console.log();
+        this.state = {
+            username:"",
+            firstname: "",
+            secondname:"",
+            email: "",
+            gender:"Male",
+            password: ""
+        }
+        this.change = this.change.bind(this);
+        this.submit = this.submit.bind(this);
+    }
+    change(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+    submit(e) {
+        e.preventDefault();
+        var error = document.getElementById("ErrorMessageRegister");
+        var data = {
+            "username": this.state.username,
+            "password": this.state.password,
+            "firstname": this.state.firstname,
+            "secondname": this.state.secondname,
+            "email": this.state.email,
+            "gender": this.state.gender
+        }
+        if (!checkInputValidation(data.username, data.password, data.firstname, data.secondname, data.email)) {
+            error.innerHTML = "Incorrect input!";
+        } else {
+            this.postData(data);
+        }
+       
+    }
+    postData(data) {
+        var url = 'http://localhost:8080/ServletRegister';
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+            .then(response => this.processResponse(response))
+            .catch(error => console.error('Error:', error));
+    }
+    processResponse(data) {
+        var error = document.getElementById("ErrorMessageRegister")
+        if (data.status === 200) {
+            var jwtToken = data.jwsToken;
+            localStorage.setItem("cool-jwt", jwtToken)
+            this.props.history.push("/");
+        } else if (data.status == 406) {
+            error.innerHTML = data.message;
+        } else {
+            error.innerHTML = data.message;
+        }
     }
     render() {
         return (
@@ -16,100 +70,68 @@ class Register extends Component {
                     <br></br>
 
                     <div>
-                        <input id="firstnameInput" type="text" placeholder="First name" onClick={(event) => defaultConditions(event.target)} />
-                        <input id="secondnameInput" type="text" placeholder="Second name" onClick={(event) => defaultConditions(event.target)} />
+                        <input id="firstnameInput" type="text" placeholder="First name" onClick={(event) => defaultConditions(event.target)}
+                            onChange={e => this.change(e)} value={this.state.firstname} name="firstname" />
+                        <input id="secondnameInput" type="text" placeholder="Second name" onClick={(event) => defaultConditions(event.target)}
+                            onChange={e => this.change(e)} name="secondname" />
                     </div>
                     <label id="genderLabel">Gender</label>
                     <span className="genderBox">
                         <span>
-                            <input type="radio" name="sex" value="1" id="g1" defaultChecked />
+                            <input type="radio" name="gender" value="Male" id="g1" defaultChecked onClick={e => this.change(e)} />
                             <label htmlFor="g1">Male</label>
                         </span>
-                        <input type="radio" name="sex" value="2" id="g2" />
+                        <input type="radio" name="gender" value="Female" id="g2" onClick={e => this.change(e)} />
                         <label htmlFor="g2">Female</label>
                         <span>
-                            <input type="radio" name="sex" value="3" id="g3" />
+                            <input type="radio" name="gender" value="Other" id="g3" onClick={e => this.change(e)} />
                             <label htmlFor="g3">Other</label>
                         </span>
                     </span>
 
-                    <input id="emailInput" type="text" placeholder="Email" onClick={(event) => defaultConditions(event.target)} />
+                    <input id="emailInput" type="text" placeholder="Email" onClick={(event) => defaultConditions(event.target)}
+                        onChange={e => this.change(e)} name="email" value={this.state.email} />
 
-                    <input id="registerUsernameInput" type="text" placeholder="Username" onClick={(event) => defaultConditions(event.target)} />
+                    <input id="registerUsernameInput" type="text" placeholder="Username" onClick={(event) => defaultConditions(event.target)}
+                        onChange={e => this.change(e)} name="username" value={this.state.username} />
 
-                    <input id="registerPasswordInput" type="password" placeholder="Password" onClick={(event) => defaultConditions(event.target)} />
+                    <input id="registerPasswordInput" type="password" placeholder="Password" onClick={(event) => defaultConditions(event.target)}
+                        onChange={e => this.change(e)} name="password" value={this.state.password} />
 
-                    <input id="registerSubmitInput" type="submit" value="Sign Up" onClick={checkRegistration} />
+                    <input id="registerSubmitInput" type="submit" value="Sign Up" onClick={e => this.submit(e)} />
 
                 </div>
             </div>
         );
     }
 }
-function loginApp() {
-    ReactDOM.render(<Login />, document.getElementById('root'));
-    console.log("in register");
-}
 function defaultConditions(input) {
     input.style.borderColor = "darkgrey";
     var error = document.getElementById("ErrorMessageRegister");
     error.innerHTML = "";
 }
-function isNotValid(inputValue) {
-    if (inputValue.value === "") {
-        inputValue.style.borderColor = "red";
-        return true;
-    }
-    return false;
-}
 function checkInputValidation(username, password, firstname, secondname, email) {
     var valid = true;
-    if (isNotValid(username)) valid = false;
-    if (isNotValid(password)) valid = false;
-    if (isNotValid(firstname)) valid = false;
-    if (isNotValid(secondname)) valid = false;
-    if (isNotValid(email)) valid = false;
-    return valid;
-}
-function checkRegistration() {
-    var username = document.getElementById("registerUsernameInput");
-    var password = document.getElementById("registerPasswordInput");
-    var firstname = document.getElementById("firstnameInput");
-    var secondname = document.getElementById("secondnameInput");
-    var email = document.getElementById("emailInput");
-    var error = document.getElementById("ErrorMessageRegister");
-    var maleCheckBox = document.getElementById("g1");
-    var femaleCheckBox = document.getElementById("g2");
-    var gender = "Other"
-    if (maleCheckBox.checked) gender = "Male";
-    if (femaleCheckBox.checked) gender = "Female";
-    if (!checkInputValidation(username, password, firstname, secondname, email)) {
-        error.innerHTML = "Incorrect input!";
-    } else {
-        console.log(username.value);
-        console.log(password.value);
-        console.log(firstname.value);
-        console.log(secondname.value);
-        console.log(email.value);
-        console.log(gender);
-        var data = {
-            "username": username.value,
-            "password": password.value,
-            "firstname": firstname.value,
-            "secondname": secondname.value,
-            "email": email.value,
-            "gender": gender
-        }
-        var url = 'http://localhost:8080/ProjectApi_war_exploded/ServletRegister';
-        fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-            .then(response => console.log('Success:', JSON.stringify(response)))
-            .catch(error => console.error('Error:', error));
+    if (username === "") {
+        document.getElementById("registerUsernameInput").style.borderColor = "red";
+        valid = false;
     }
+    if (password === "") {
+        document.getElementById("registerPasswordInput").style.borderColor = "red";
+        valid = false;
+    }
+    if (firstname === "") {
+        document.getElementById("firstnameInput").style.borderColor = "red";
+        valid = false;
+    }
+    if (secondname === "") {
+        document.getElementById("secondnameInput").style.borderColor = "red";
+        valid = false;
+    }
+    if (email === "") {
+        document.getElementById("emailInput").style.borderColor = "red";
+        valid = false;
+    }
+    return valid;
 }
 export default Register;
