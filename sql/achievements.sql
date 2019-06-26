@@ -7,6 +7,7 @@ CREATE TABLE achievements (
     name VARCHAR (255) NOT NULL,
     num_points DOUBLE NOT NULL, /* needed to get it */
     description TEXT,
-
+    image LONGBLOB
+    
     UNIQUE KEY (name)
 );

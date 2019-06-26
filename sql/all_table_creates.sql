@@ -44,7 +44,8 @@ CREATE TABLE achievements (
     name VARCHAR (255) NOT NULL,
     num_points DOUBLE NOT NULL, /* needed to get it */
     description TEXT,
-
+    image LONGBLOB
+    
     UNIQUE KEY (name)
 );
 
@@ -92,7 +93,7 @@ CREATE TABLE challenges (
     quiz_id INTEGER NOT NULL,
     status VARCHAR (55) NOT NULL,
     sender_id INTEGER NOT NULL,
-    reciever_id INTEGER NOT NULL,
+    receiver_id INTEGER NOT NULL,
     date_sent DATETIME NOT NULL,
     is_seen BOOLEAN
 );
@@ -117,7 +118,7 @@ CREATE TABLE friend_requests (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     status VARCHAR (55) NOT NULL,
     sender_id INTEGER NOT NULL,
-    reciever_id INTEGER NOT NULL,
+    receiver_id INTEGER NOT NULL,
     date_sent DATETIME NOT NULL,
     is_seen BOOLEAN
 );
@@ -153,7 +154,7 @@ CREATE TABLE notes (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     note TEXT NOT NULL,
     sender_id INTEGER NOT NULL,
-    reciever_id INTEGER NOT NULL,
+    receiver_id INTEGER NOT NULL,
     date_sent DATETIME NOT NULL,
     is_seen BOOLEAN
 );

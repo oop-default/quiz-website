@@ -40,30 +40,30 @@ values
 USE QUIZ_DB;
 
 Insert into achievements 
-(name, num_points, description)
+(name, num_points, description, image)
 values 
-('Newbie', 50, 'user who just started quizzes');
+('Newbie', 50, 'user who just started quizzes', null);
 
 USE QUIZ_DB;
 
 Insert into achievements 
-(name, num_points, description)
+(name, num_points, description, image)
 values 
-('Specialsit', 250, 'user who is pretty good at quizzes');
+('Specialsit', 250, 'user who is pretty good at quizzes', null);
 
 USE QUIZ_DB;
 
 Insert into achievements 
-(name, num_points, description)
+(name, num_points, description, image)
 values 
-('Master', 1000, 'user who is really great quizzes');
+('Master', 1000, 'user who is really great quizzes', null);
 
 USE QUIZ_DB;
 
 Insert into achievements 
-(name, num_points, description)
+(name, num_points, description, image)
 values 
-('Quizaholic', 5000, 'user who is in love with quizzes');
+('Quizaholic', 5000, 'user who is in love with quizzes', null);
 
 /* insert achievements END*/
 
@@ -403,32 +403,32 @@ values
 USE QUIZ_DB;
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('Wazzzzuuuppp?', 1, 2, sysdate(), true);
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('nthng U?', 2, 1, sysdate(), true);
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('me 2', 1, 3, sysdate(), true);
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('are u codeing?', 2, 3, sysdate(), true);
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('how r u', 3, 2, sysdate(), true);
 
 insert into notes
-(note, sender_id, reciever_id, date_sent, is_seen)
+(note, sender_id, receiver_id, date_sent, is_seen)
 values
 ('u? :)', 3, 1, sysdate(), true);
 
@@ -443,12 +443,12 @@ values
 /* insert friend_requests START */
 
 insert into friend_requests
-(status, sender_id, reciever_id, date_sent, is_seen)
+(status, sender_id, receiver_id, date_sent, is_seen)
 values
 ('Pending', 1, 2, sysdate(), true);
 
 insert into friend_requests
-(status, sender_id, reciever_id, date_sent, is_seen)
+(status, sender_id, receiver_id, date_sent, is_seen)
 values
 ('Pending', 2, 3, sysdate(), true);
 
@@ -475,12 +475,12 @@ values
 /* insert challenges START */
 
 insert into challenges
-(quiz_id, status, sender_id, reciever_id, date_sent, is_seen)
+(quiz_id, status, sender_id, receiver_id, date_sent, is_seen)
 values
 (2, 'accepted', 2, 3, sysdate(), true);
 
 insert into challenges
-(quiz_id, status, sender_id, reciever_id, date_sent, is_seen)
+(quiz_id, status, sender_id, receiver_id, date_sent, is_seen)
 values
 (1, 'accepted', 1, 2, sysdate(), true);
 
