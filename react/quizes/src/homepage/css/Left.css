@@ -1,0 +1,60 @@
+.left{
+    background-color: whitesmoke;
+    width: 280px;
+    height: -webkit-calc(100vh - 60px);
+    position: fixed;
+  }
+  
+  .profile{
+    margin-top: 10vh;
+    margin-left: 12vw;
+  }
+  
+  .profTable{
+    width: 280px;
+  }
+  
+  .picture{
+    width: 60px;
+    height: 50px;
+    border-radius: 50%
+  }
+
+.quizesTable {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 10vh;
+    margin-left: 10%;
+    background-color: rgb(231, 247, 4);
+    background-color: rgb(249, 220, 3);
+    color: forestgreen;
+}
+  
+  .quizesTable td, .quizesTable th {
+    border: 1px solid forestgreen;
+    padding: 8px;
+    padding-bottom:30px;
+  }
+  
+  i {
+    border: solid rgb(233, 9, 9);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .rightArrow {
+    float: right;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .leftArrow {
+    float: left;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+.quizesTable a{
+    color:green;
+}

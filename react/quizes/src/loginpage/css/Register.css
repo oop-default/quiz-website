@@ -1,0 +1,68 @@
+h1 {
+    color: darkslategray;
+    font-size: 40px;
+}
+
+#registerPasswordInput, #registerUsernameInput, #registerSubmitInput, #emailInput {
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: darkslategray;
+    font-size: large;
+    font-family: sans-serif;
+    background-color: ghostwhite;
+    border-color: darkgrey;
+    display: block;
+    padding: 5px;
+}
+
+#registerSubmitInput {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+}
+
+#ErrorMessageRegister {
+    text-align: left;
+    color: red;
+    width: 50%;
+}
+
+#registerPersonInfo {
+    background-color: red;
+    display: block;
+    width: 50%;
+}
+
+#firstnameInput, #secondnameInput {
+    height: 30px;
+    border-radius: 5px;
+    color: darkslategray;
+    display: inline;
+    font-size: large;
+    background-color: ghostwhite;
+    font-family: sans-serif;
+    border-color: darkgrey;
+    padding: 5px;
+    width: 35%;
+}
+
+#secondnameInput {
+    margin-left: 20px;
+}
+
+#registerSubmitInput {
+    color: black;
+}
+
+.genderBox {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#genderLabel {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: darkslategray;
+}

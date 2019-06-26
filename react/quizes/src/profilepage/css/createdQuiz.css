@@ -1,0 +1,17 @@
+#createdQuizSection {
+  height: 700px;
+  overflow-y: auto;
+}
+
+#createdQuiz {
+  width: 100%;
+}
+
+#createdQuizLabel {
+  border-radius: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  position: -webkit-sticky;
+  height: 30px;
+}
