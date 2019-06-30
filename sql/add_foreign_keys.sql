@@ -74,7 +74,7 @@ ADD FOREIGN KEY (sender_id)
     ON DELETE CASCADE;
 
 ALTER TABLE notes
-ADD FOREIGN KEY (reciever_id) 
+ADD FOREIGN KEY (receiver_id) 
     REFERENCES accounts (id)
     ON DELETE CASCADE;
 
@@ -84,7 +84,7 @@ ADD FOREIGN KEY (sender_id)
     ON DELETE CASCADE;
 
 ALTER TABLE challenges
-ADD FOREIGN KEY (reciever_id) 
+ADD FOREIGN KEY (receiver_id) 
     REFERENCES accounts (id)
     ON DELETE CASCADE;
 
@@ -94,6 +94,6 @@ ADD FOREIGN KEY (sender_id)
     ON DELETE CASCADE;
 
 ALTER TABLE friend_requests
-ADD FOREIGN KEY (reciever_id) 
+ADD FOREIGN KEY (receiver_id) 
     REFERENCES accounts (id)
     ON DELETE CASCADE;
