@@ -1,18 +1,17 @@
 .anouncements{
-    margin-left: 280px;
-    margin-right: 15vw;
-    width: 70%;
-  }
-  
-  .anoncTable{
-    margin-bottom: 5%;
-    margin-top: 5%;
-    width: 90%;
-  }
-  
-  .anoncTable td{
-    height: 50px;
-    border: ridge; 
-    text-align: center;
-  }
+  margin-left: 300px;
+  width: 40vw;
+}
+
+.anoncTable{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  width: 90%;
+}
+
+.anoncTable td{
+  height: 50px;
+  border: ridge; 
+  text-align: center;
+}
   

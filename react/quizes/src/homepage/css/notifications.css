@@ -23,8 +23,7 @@
 }
 
 .notification:hover {
-    background-color:yellow;
-    color:forestgreen;
+    background-color:rgb(8, 119, 13);
 }
 
 .notification .badge {

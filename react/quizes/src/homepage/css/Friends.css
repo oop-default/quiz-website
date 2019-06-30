@@ -5,7 +5,7 @@
     top:60px;
     border-left: solid 1px black;
     height: calc(100vh - 60px);
-    width:15vw;
+    width:10vw;
     overflow: scroll;
     min-width: 100px;
   }

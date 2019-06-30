@@ -1,11 +1,15 @@
 import React,{Component} from 'react';
 import '../css/Left.css';
+import '../css/Arrows.css';
+import {changeTable} from './functions';
 
 
 const popQuizes = [
     {id: 1, quizName: "pirveli", creator: "me"},
     {id: 2, quizName: "meore", creator: "me"},
-    {id: 3, quizName: "mesame", creator: "me"}
+    {id: 3, quizName: "mesame", creator: "me"},
+    {id: 4, quizName: "pirveli", creator: "me"},
+    {id: 5, quizName: "meore", creator: "me"}
   ];
   
   const recQuizes = [
@@ -22,7 +26,7 @@ class Left extends Component {
         this.state = {
           popQuizes: popQuizes,
           recQuizes: recQuizes,
-          table: "pop"
+          nOfTable: 0
           
         }
     }
@@ -43,10 +47,10 @@ class Left extends Component {
                     <table className="quizesTable">
                         <thead>
                             <tr>
-                                <th className="head" colSpan="3">
-                                    <i onClick = {()=>this.changeTable()} className="leftArrow"></i>
-                                    {this.state.table === "pop" ? "Popular quizes" : " Recent quizes "}
-                                    <i onClick = {()=>this.changeTable()}  className="rightArrow"></i>
+                                <th colSpan="3">
+                                    <i onClick = {()=>changeTable(this, this.state.nOfTable)} className="leftArrow"></i>
+                                    {this.state.nOfTable === 0 ? "Popular quizes" : " Recent quizes "}
+                                    <i onClick = {()=>changeTable(this, this.state.nOfTable)}  className="rightArrow"></i>
                                 </th>
                             </tr>
                         </thead>
@@ -59,7 +63,7 @@ class Left extends Component {
                         </thead>
                         <tbody>
                             {
-                            this.state.table === "pop" ? 
+                            this.state.nOfTable === 0 ? 
                                 (this.state.popQuizes.map((quiz) => {
                                     return <tr>
                                         <td><a href="https://www.facebook.com">{quiz.id}</a></td>
@@ -82,18 +86,6 @@ class Left extends Component {
             </div>
         );
     }
-
-    changeTable() {
-        if(this.state.table === "pop") {
-          this.setState({
-            table:"rec"
-          });
-        } else {
-          this.setState({
-            table:"pop"
-          });
-        }
-      }
 }
 
 

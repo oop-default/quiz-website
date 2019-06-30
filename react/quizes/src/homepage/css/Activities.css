@@ -1,0 +1,11 @@
+.activities{
+    position: fixed;
+    right: 12.5vw;
+    top:60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+}
+
+.activities::-webkit-scrollbar{
+    display: none;
+}

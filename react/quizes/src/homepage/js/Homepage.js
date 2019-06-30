@@ -12,10 +12,10 @@ class Homepage extends Component {
   }
 
     componentDidMount() {
-       const jwt = getJWT();
-       if (!jwt) {
-            this.props.history.push("/login");
-       }
+      //  const jwt = getJWT();
+      //  if (!jwt) {
+      //       this.props.history.push("/login");
+      //  }
         //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
     }
 
@@ -36,7 +36,7 @@ hideAllNots(e) {
   var ele = document.getElementsByClassName("notsBody");
   for (let index = 0; index < ele.length; index++) {
       ele[index].style.display = "none";
-      document.getElementsByClassName("heads")[index].style = "background-color: rgb(7, 121, 7)";
+      document.getElementsByClassName("heads")[index].style = "background-color: forestgreen";
   }
 }
 
