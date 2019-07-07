@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import '../css/notifications.css';
-import AcceptOrDenie from './acceptOrDenie';
+import '../css/Notifications.css';
+import AcceptOrDenie from './AcceptOrDenie';
 
 const requests = [
     {from: "vigaca"},
@@ -31,7 +31,7 @@ const Challenges = [
     {from: "vigaca", quiz_id: 1}
 ];
 
-class notifications extends Component{
+class Notifications extends Component{
 
     constructor() {
         super();
@@ -132,14 +132,14 @@ class notifications extends Component{
         for (let index = 0; index < 3; index++) {
             if(index != nOfElement) {
                 document.getElementsByClassName("notsBody")[index].style.display = "none";
-                document.getElementsByClassName("heads")[index].style = "background-color: rgb(7, 121, 7)";
+                document.getElementsByClassName("heads")[index].style = "background-color: forestgreen";
             }
         }
         if(getComputedStyle(ele, null).display === "none") {
             document.getElementsByClassName("heads")[nOfElement].style = "background-color: #1dc407";
             ele.style.display = "block";
         } else {
-            document.getElementsByClassName("heads")[nOfElement].style = "background-color: rgb(7, 121, 7)";
+            document.getElementsByClassName("heads")[nOfElement].style = "background-color: forestgreen";
             ele.style.display = "none";
         }
     }
@@ -148,4 +148,4 @@ class notifications extends Component{
 
 
 
-export default notifications;
+export default Notifications;

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import '../css/acceptOrDenie.css';
+import '../css/AcceptOrDenie.css';
 
-class acceptOrDenie extends Component{
+class AcceptOrDenie extends Component{
 
 
 
@@ -22,7 +22,7 @@ class acceptOrDenie extends Component{
 
 }
 
-export default acceptOrDenie;
+export default AcceptOrDenie;
 
 
 

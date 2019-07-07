@@ -1,0 +1,13 @@
+.achievements {
+    border-collapse: collapse;
+    width: 20vw;
+    margin-top: 5vh;
+    background-color: rgb(231, 247, 4);
+    color: forestgreen;
+}
+
+.achievements td, .achievements th {
+    text-align: center;
+    border: 1px solid forestgreen;
+    padding: 5px;
+}

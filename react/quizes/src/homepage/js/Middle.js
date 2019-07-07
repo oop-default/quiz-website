@@ -3,6 +3,7 @@ import '../css/Middle.css'
 import Left from './Left'
 import Anouncements from './Anouncements'
 import Friends from './Friends'
+import Activities from './Activities'
 
 
 class Middle extends Component {
@@ -12,6 +13,7 @@ class Middle extends Component {
             <div className ="middle">
                 <Left></Left>
                 <Anouncements></Anouncements>
+                <Activities></Activities>
                 <Friends></Friends>
             </div>
         );
