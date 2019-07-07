@@ -21,7 +21,6 @@ const routing = (
             <Route path="/search/:searchQuery" exact component={searchPage}/>
             <Route component={notfound} />
         </Switch>
-        
     </Router>
     );
 
