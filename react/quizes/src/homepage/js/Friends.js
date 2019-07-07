@@ -41,7 +41,7 @@ class Friends extends Component{
                         {
                         this.state.friends.map((friend) => {
                             return <tr key={friend.id}>
-                                <td><a style={{textDecoration:"none"}} href={'http://localhost:3000/profile?id=' + friend.id}>{friend.nick}</a></td>
+                                <td><a style={{textDecoration:"none"}} href={'http://localhost:3000/profile/:userId'}>{friend.nick}</a></td>
                                 <td>{friend.isActive ? (<span className="greenDot"></span>) :  <span className="redDot"></span>}</td>
                             
                             </tr>

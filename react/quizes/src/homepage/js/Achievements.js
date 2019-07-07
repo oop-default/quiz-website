@@ -80,7 +80,7 @@ class Achievements extends Component{
                         :
                             (this.state.friendsAchieves.map((achievement) => {
                                 return <tr key={achievement.id}>
-                                    <td><a href={"/profile?id=" + achievement.friendId}>{achievement.friend}</a></td>
+                                    <td><a href={"/profile/:userId"}>{achievement.friend}</a></td>
                                     <td>{achievement.achievement}</td>
                                 </tr>
                             }))

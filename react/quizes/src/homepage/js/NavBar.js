@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React,{Component} from 'react';
 import '../css/NavBar.css';
 import Notifications from './Notifications';
@@ -28,5 +27,3 @@ class NavBar extends Component{
 
 
 export default NavBar;
-=======
->>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728

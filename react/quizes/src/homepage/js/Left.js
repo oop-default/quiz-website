@@ -51,7 +51,7 @@ class Left extends Component {
         return (
             <div className = "left">
                 <div className = "profile">
-                    <a href = {"/profile?id=" + 1} style = {{textDecoration:"none"}}>
+                    <a href = {"profile/:userId"} style = {{textDecoration:"none"}}>
                         <table className="profTable">
                             <tbody>
                                 <tr>
@@ -87,17 +87,17 @@ class Left extends Component {
                             this.state.nOfTable === 0 ? 
                                 (this.state.popQuizes.map((quiz) => {
                                     return <tr key={quiz.id}>
-                                        <td><a href={"/quizzes?id=" + quiz.id}>{quiz.id}</a></td>
-                                        <td><a href={"/quizzes?id=" + quiz.id}>{quiz.quizName}</a></td>
-                                        <td><a href={"/profile?id=" + quiz.creatorId}>{quiz.creator}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.id}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.quizName}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.creator}</a></td>
                                     </tr>
                                 }))
                             :
                                 (this.state.recQuizes.map((quiz) => {
                                     return <tr key={quiz.id}>
-                                        <td><a href={"/quizzes?id=" + quiz.id}>{quiz.id}</a></td>
-                                        <td><a href={"/quizzes?id=" + quiz.id}>{quiz.quizName}</a></td>
-                                        <td><a href={"/profile?id=" + quiz.creatorId}>{quiz.creator}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.id}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.quizName}</a></td>
+                                        <td><a href={"/quiz/:quizId"}>{quiz.creator}</a></td>
                                     </tr>
                                 }))
                             }

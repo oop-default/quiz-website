@@ -77,7 +77,7 @@ class Notifications extends Component{
                         this.state.messages.map((notification) => {
                             return <tr key={notification.fromId}>
                                 <td id = "notHide" colSpan="3" style={{wordBreak:"break-word"}}>
-                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}><h6 className="from">{notification.from}:</h6></a>
+                                    <a href={"http://localhost:3000/profile/:userId"}><h6 className="from">{notification.from}:</h6></a>
                                     <div id = "notHide" style={{overflow:"auto"}}>{notification.note}</div>
                                     <input className="sendingMessage" id = "notHide" style={{width:"250px"}}></input>
                                     <button id = "notHide" onClick={()=>this.reply()} style={{float:"right"}}>reply</button>
@@ -91,7 +91,7 @@ class Notifications extends Component{
                         this.state.Challenges.map((notification) => {
                             return <tr key={notification.fromId}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}>
+                                    <a href={"http://localhost:3000/profile/:userId"}>
                                         {notification.from}{notification.quiz_id}
                                     </a> challenged you to take quiz number 
                                     <AcceptOrDenie></AcceptOrDenie>
@@ -105,7 +105,7 @@ class Notifications extends Component{
                         this.state.requests.map((notification) => {
                             return <tr key={notification.fromId}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}>{notification.from}</a> sent you a friend request
+                                    <a href={"http://localhost:3000/profile/:userId"}>{notification.from}</a> sent you a friend request
                                     <AcceptOrDenie></AcceptOrDenie>
                                 </td>
                             </tr>

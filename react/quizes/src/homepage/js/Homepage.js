@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React,{Component} from 'react';
 import NavBar from './NavBar'
 import Middle from './Middle'
@@ -43,5 +42,3 @@ hideAllNots(e) {
 }
 
 export default withRouter(Homepage);
-=======
->>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728
