@@ -11,11 +11,11 @@ const myCreatedQuizes = [
 ];
 
 const friendsCreatedQuizes = [
-    {id: 1, friend: "vigaca", quizName: "pirveli"},
-    {id: 2, friend: "vigacam", quizName: "meore"},
-    {id: 3, friend: "vigacas", quizName: "mesame"},
-    {id: 4, friend: "vigacis", quizName: "meotxe"},
-    {id: 5, friend: "vigacit", quizName: "mexute"},
+    {id: 1, frinedId:1, friend: "vigaca", quizName: "pirveli"},
+    {id: 2, frinedId:2, friend: "vigacam", quizName: "meore"},
+    {id: 3, frinedId:3, friend: "vigacas", quizName: "mesame"},
+    {id: 4, frinedId:4, friend: "vigacis", quizName: "meotxe"},
+    {id: 5, frinedId:5, friend: "vigacit", quizName: "mexute"},
 ];
 
 class CreatedQuizes extends Component{
@@ -59,17 +59,17 @@ class CreatedQuizes extends Component{
                         {
                         this.state.nOfTable === 0 ? 
                             (this.state.myCreatedQuizes.map((quiz) => {
-                                return <tr>
-                                    <td><a href="https://www.facebook.com">{quiz.id}</a></td>
-                                    <td><a href="https://www.facebook.com">{quiz.quizName}</a></td>
+                                return <tr key={quiz.id}>
+                                    <td><a href={"/quizzes?id=" + quiz.id}>{quiz.id}</a></td>
+                                    <td><a href={"/quizzes?id=" + quiz.id}>{quiz.quizName}</a></td>
                                 </tr>
                             }))
                         :
                             (this.state.friendsCreatedQuizes.map((quiz) => {
-                                return <tr>
-                                    <td>{quiz.id}</td>
-                                    <td><a href="https://www.facebook.com">{quiz.friend}</a></td>
-                                    <td><a href="https://www.facebook.com">{quiz.quizName}</a></td>
+                                return <tr key={quiz.id}>
+                                    <td><a href={"/quizzes?id=" + quiz.id}>{quiz.id}</a></td>
+                                    <td><a href={"/profile?id=" + quiz.frinedId}>{quiz.friend}</a></td>
+                                    <td><a href={"/quizzes?id=" + quiz.id}>{quiz.quizName}</a></td>
                                 </tr>
                             }))
                         }

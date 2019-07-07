@@ -3,32 +3,32 @@ import '../css/Notifications.css';
 import AcceptOrDenie from './AcceptOrDenie';
 
 const requests = [
-    {from: "vigaca"},
-    {from: "vigaca"},
-    {from: "vigaca"},
-    {from: "vigaca"},
-    {from: "vigaca"},
-    {from: "vigaca"},
-    {from: "vigaca"}
+    {fromId: 1, from: "vigaca"},
+    {fromId: 2, from: "vigaca"},
+    {fromId: 3, from: "vigaca"},
+    {fromId: 4, from: "vigaca"},
+    {fromId: 5, from: "vigaca"},
+    {fromId: 6, from: "vigaca"},
+    {fromId: 7, from: "vigaca"}
 ];
 
 const messages = [
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragaca"},
-    {from: "vigaca", note: "ragacniefnasbdaiubsduiasndniuasdniuasnduiadsa"}
+    {fromId: 1, from: "vigaca", note: "ragaca"},
+    {fromId: 2, from: "vigaca", note: "ragaca"},
+    {fromId: 3, from: "vigaca", note: "ragaca"},
+    {fromId: 4, from: "vigaca", note: "ragaca"},
+    {fromId: 5, from: "vigaca", note: "ragaca"},
+    {fromId: 6, from: "vigaca", note: "ragaca"},
+    {fromId: 7, from: "vigaca", note: "ragaca"},
+    {fromId: 8, from: "vigaca", note: "ragaca"},
+    {fromId: 9, from: "vigaca", note: "ragaca"},
+    {fromId: 0, from: "vigaca", note: "ragaca"},
+    {fromId: 11, from: "vigaca", note: "ragaca"},
+    {fromId: 13, from: "vigaca", note: "ragacniefnasbdaiubsduiasndniuasdniuasnduiadsa"}
 ];
 
 const Challenges = [
-    {from: "vigaca", quiz_id: 1}
+    {fromId: 1, from: "vigaca", quiz_id: 1}
 ];
 
 class Notifications extends Component{
@@ -66,11 +66,18 @@ class Notifications extends Component{
                     </tr>
                 </thead>
                 <tbody className="notsBody">
+                    <tr>
+                        <td id = "notHide">
+                            <input id = "notHide" style={{width:"100px"}} placeholder="Enter receiver"></input>
+                            <input id = "notHide" style={{width:"250px"}} placeholder="Enter message"></input>
+                            <button id = "notHide" onClick={()=>this.reply()} style={{float:"right"}}>send</button>
+                        </td>
+                    </tr>
                     {
                         this.state.messages.map((notification) => {
-                            return <tr>
+                            return <tr key={notification.fromId}>
                                 <td id = "notHide" colSpan="3" style={{wordBreak:"break-word"}}>
-                                    <a href="https://www.facebook.com"><h6 className="from">{notification.from}:</h6></a>
+                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}><h6 className="from">{notification.from}:</h6></a>
                                     <div id = "notHide" style={{overflow:"auto"}}>{notification.note}</div>
                                     <input className="sendingMessage" id = "notHide" style={{width:"250px"}}></input>
                                     <button id = "notHide" onClick={()=>this.reply()} style={{float:"right"}}>reply</button>
@@ -82,11 +89,11 @@ class Notifications extends Component{
                 <tbody className="notsBody">
                     {
                         this.state.Challenges.map((notification) => {
-                            return <tr>
+                            return <tr key={notification.fromId}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href="https://www.facebook.com">
-                                        {notification.from} challenged you to take quiz number {notification.quiz_id}
-                                    </a>
+                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}>
+                                        {notification.from}{notification.quiz_id}
+                                    </a> challenged you to take quiz number 
                                     <AcceptOrDenie></AcceptOrDenie>
                                 </td>
                             </tr>
@@ -96,9 +103,9 @@ class Notifications extends Component{
                 <tbody className="notsBody">
                     {
                         this.state.requests.map((notification) => {
-                            return <tr>
+                            return <tr key={notification.fromId}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href="https://www.facebook.com">{notification.from} sent you a friend request</a>
+                                    <a href={"http://localhost:3000/profile?id=" + notification.fromId}>{notification.from}</a> sent you a friend request
                                     <AcceptOrDenie></AcceptOrDenie>
                                 </td>
                             </tr>
@@ -130,13 +137,13 @@ class Notifications extends Component{
         }
 
         for (let index = 0; index < 3; index++) {
-            if(index != nOfElement) {
+            if(index !== nOfElement) {
                 document.getElementsByClassName("notsBody")[index].style.display = "none";
                 document.getElementsByClassName("heads")[index].style = "background-color: forestgreen";
             }
         }
         if(getComputedStyle(ele, null).display === "none") {
-            document.getElementsByClassName("heads")[nOfElement].style = "background-color: #1dc407";
+            document.getElementsByClassName("heads")[nOfElement].style = "background-color: #1dc407; border-radius: 5px";
             ele.style.display = "block";
         } else {
             document.getElementsByClassName("heads")[nOfElement].style = "background-color: forestgreen";

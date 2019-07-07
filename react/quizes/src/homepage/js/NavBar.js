@@ -8,7 +8,7 @@ class NavBar extends Component{
         return(
             <nav className = "navBar">
                 <div className = "logo">
-                    <a href = "https://www.facebook.com" style = {{textDecoration:"none", color:"white"}}>Quizify</a>
+                    <a href = "" style = {{textDecoration:"none", color:"white"}}>Quizify</a>
                 </div>
                 <div className = "search">
                     <input type = "text" name = "userName" placeholder = "Search for someone"

@@ -11,24 +11,23 @@ class Homepage extends Component {
       console.log("homepage");
   }
 
-    componentDidMount() {
-      //  const jwt = getJWT();
-      //  if (!jwt) {
-      //       this.props.history.push("/login");
-      //  }
-        //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
-    }
+  componentDidMount() {
+    //  const jwt = getJWT();
+    //  if (!jwt) {
+    //       this.props.history.push("/login");
+    //  }
+      //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
+  }
 
   render() {
       return (
           <div onClick={(e) => this.hideAllNots(e)}>
-              <Middle></Middle>
-              <NavBar></NavBar>
+            <Middle></Middle>
+            <NavBar></NavBar>
           </div>
     );
   }
-  
-  
+
 hideAllNots(e) {
   if(e.target.id === "notHide") {
     return;
