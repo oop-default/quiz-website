@@ -80,11 +80,14 @@ class SideBar extends Component{
       <div>
         <div className = "rankingHeader">{scoreType}</div>
     <table style = {{borderCollapse: "separate",borderSpacing: "20px 0"}}>
+    <thead>
       <tr>
         <th className = "rankingTh">&#x2116;</th>
         <th className = "rankingTh">User</th>
         <th className = "rankingTh">Score</th>
       </tr>
+      </thead>
+      <tbody>
       {
        this.state.topScores.map((info) => {
         return <tr>
@@ -94,6 +97,7 @@ class SideBar extends Component{
         </tr>
       })
     }
+    </tbody>
     </table>
     </div>
     );
@@ -103,10 +107,13 @@ class SideBar extends Component{
     <div>
       <div className = "rankingHeader">Personal' top scores</div>
     <table style = {{borderCollapse: "separate",borderSpacing: "20px 0"}}>
+    <thead>
       <tr>
         <th className = "rankingPos">&#x2116;</th>
         <th className = "rankingTh">Score</th>
       </tr>
+      </thead>
+      <tbody>
       {
       this.state.topScores.map((info) => {
         return <tr>
@@ -115,9 +122,11 @@ class SideBar extends Component{
         </tr>
       })
     }
+    </tbody>
     </table>
     </div>
     );
   }
+//----------------------------------------------------------
 }
 export default SideBar

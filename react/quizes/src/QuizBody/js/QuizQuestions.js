@@ -14,7 +14,7 @@ function QuestionResponseAnswer(pos,data){
     var answer = document.getElementById(pos+"input").value;
     var realAnswer = data.correct;
     return(
-       answer == realAnswer
+       answer === realAnswer
     );
 }
 function MultipleChoiceAnswer(pos,data){
@@ -23,9 +23,9 @@ function MultipleChoiceAnswer(pos,data){
 
     for (let index = 0; index <= answerSize; index++) {
         button = document.getElementById(pos+"input"+index);
-        if(button == null)continue;
+        if(button === null)continue;
         if(button.checked){
-            return(button.value == data.correct);
+            return(button.value === data.correct);
         }
     }
     return(false);
@@ -34,14 +34,14 @@ function PictureResponseQuestionsAnswer(pos,data){
     var answer = document.getElementById(pos+"input").value;
     var realAnswer = data.correct;
     return(
-       answer == realAnswer
+       answer === realAnswer
     );
 }
 function FillInTheBlankAnswer(pos,data){
     var answer = document.getElementById(pos+"input").value;
     var realAnswer = data.correct;
     return(
-       answer == realAnswer
+       answer === realAnswer
     );
 }
 

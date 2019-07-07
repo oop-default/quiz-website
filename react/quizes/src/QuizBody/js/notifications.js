@@ -130,7 +130,7 @@ class notifications extends Component{
         }
 
         for (let index = 0; index < 3; index++) {
-            if(index != nOfElement) {
+            if(index !== nOfElement) {
                 document.getElementsByClassName("notsBody")[index].style.display = "none";
                 document.getElementsByClassName("heads")[index].style = "background-color: rgb(7, 121, 7)";
             }

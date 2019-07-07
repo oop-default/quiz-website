@@ -35,8 +35,9 @@ class Friends extends Component{
 
     render() {
         return (
+            <div className = "friendsHeader">
+                <div style = {{textAlign : "center"}} className = "scoreBar">Your Friends</div>
             <div className = "friends">
-                <div style = {{textAlign : "center",position : "sticky"}} className = "scoreBar">Your Friends</div>
                 <table className="friendsTable">
                     <tbody>
                         {
@@ -50,6 +51,7 @@ class Friends extends Component{
                         }
                     </tbody>
                 </table>
+            </div>
             </div>
         );
     }

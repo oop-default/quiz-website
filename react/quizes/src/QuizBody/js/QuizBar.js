@@ -3,6 +3,7 @@ import './QuizBar.css';
 import {QuestionComponent} from './QuizQuestions';
 import {AnswerComponent} from './QuizQuestions';
 
+
  const  data1 = {
     ID : 0, img : null,type : "QuestionResponse" , question: "Who was President during the Bay of Pigs fiasco?", correct : "meravici", point : 20
  };
@@ -23,10 +24,10 @@ import {AnswerComponent} from './QuizQuestions';
  class QuizBar extends Component{
     constructor(props){
         super();
-        if(props.Quiz.layout == "vertical"){
-            this.state = {
-            quizSet : false,
-            quizSet : false,
+        if(props.Quiz.layout === "vertical"){
+        this.state = {
+        quizChecked : false,
+        quizSet : false,
         points : 0,
         rightQuestions : 0,
         answerTypes : ["notanswered"],
@@ -79,7 +80,7 @@ import {AnswerComponent} from './QuizQuestions';
                 <p className = "introText">Quiz category : {this.props.Quiz.categoryID}</p>
                 <p className = "introText">Max point you can get is : {this.props.Quiz.numPoints}</p>
                 <p className = "introText">Total questions : {questions.length}</p>
-                <p className= "introText">Desctiption: <div className = "introDescription">{this.props.Quiz.description}</div></p>
+                <div className= "introText">Desctiption: <div className = "introDescription">{this.props.Quiz.description}</div></div>
                 <div style = {{marginRight: "20px",marginBottom : "20px",float : "right"}}> <img  onClick = {()=>this.startQuiz(this)} className = "quizStart" style = {{width : "100px"}} src = {require("./quizStart.png")}  onClick = {()=>this.startQuiz(this)}></img></div>
             </div>
         );
@@ -96,7 +97,7 @@ import {AnswerComponent} from './QuizQuestions';
                     </div>)}
                 </ol>
                 <button className = "introStart" onClick = {()=>this.submitQuiz(this)}>Submit</button>
-                <button className = "introStart" onClick = {()=>this.checkQuiz(this)}>Check</button>
+                <button disabled = {this.state.quizChecked ? true : false} className = "introStart" onClick = {()=>this.checkQuiz(this)}>Check</button>
             </div>
         );
         }else{
@@ -116,7 +117,7 @@ import {AnswerComponent} from './QuizQuestions';
         }
         
         summaryBar = (
-            <div className = {this.state.sideBarOpen ? "reducedQuizBar" : "fullQuizBar"}>
+            <div className = "horizontalQuizBar">
                     <h1 className = "introText">You completed quiz : {this.props.Quiz.title}</h1>
                     <h3 className = "introText"> Correct answers : {this.state.rightQuestions} / {questions.length}</h3>
                     <h3 className = "introText"> You collected : {this.state.points} points </h3>
@@ -229,6 +230,7 @@ import {AnswerComponent} from './QuizQuestions';
        page.setState({
             points : pt,
             rightQuestions : num,
+            quizChecked : true,
        });
     }
      submitQuiz(page){
@@ -243,6 +245,7 @@ import {AnswerComponent} from './QuizQuestions';
        }
        page.setState({
             points : pt,
+            quizChecked : false,
             rightQuestions : num,
             quizStarted : false,
             quizSummary : true,
