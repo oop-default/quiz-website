@@ -7,28 +7,28 @@
 USE QUIZ_DB;
 
 Insert into accounts 
-(username, first_name, last_name, mail, gender, 
+(username, first_name, last_name, gender, 
 password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
-('vika_shonia', 'vika', 'shonia', 'vshon17@freeuni.edu.ge', 'Female',
+('vika_shonia', 'vika', 'shonia','Female',
 'pass', null, 100, sysdate(), false, false, true, false);
 
 USE QUIZ_DB;
 
 Insert into accounts 
-(username, first_name, last_name, mail, gender, 
+(username, first_name, last_name, gender, 
 password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
-('ziki', 'zviad', 'nozadze', 'znoza17@freeuni.edu.ge', 'Male',
+('ziki', 'zviad', 'nozadze','Male',
 'passcode', null, 5.53, sysdate(), false, true, true, false);
 
 USE QUIZ_DB;
 
 Insert into accounts 
-(username, first_name, last_name, mail, gender, 
+(username, first_name, last_name,gender, 
 password, image, num_points, date_created, is_deleted, is_banned, is_admin, is_active)
 values 
-('gioJikia', 'gio', 'jikia', 'gjiki17@freeuni.edu.ge', 'Male',
+('gioJikia', 'gio', 'jikia','Male',
 'password', null, 500, sysdate(), false, false, true, true);
 
 /* insert ACCOUNTS END*/
@@ -77,7 +77,7 @@ insert into achievings
 (achievment_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Quizaholic'), 
-(select id from accounts where mail = 'vshon17@freeuni.edu.ge'), sysdate());
+(select id from accounts where username = 'vika_shonia'), sysdate());
 
 USE QUIZ_DB;
 
@@ -85,7 +85,7 @@ insert into achievings
 (achievment_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Specialsit'), 
-(select id from accounts where mail = 'znoza17@freeuni.edu.ge'), sysdate());
+(select id from accounts where username = 'z'), sysdate());
 
 USE QUIZ_DB;
 
@@ -93,7 +93,7 @@ insert into achievings
 (achievment_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Master'), 
-(select id from accounts where mail = 'gjiki17@freeuni.edu.ge'), sysdate());
+(select id from accounts where username = 'giojikia'), sysdate());
 
 USE QUIZ_DB;
 
@@ -101,7 +101,7 @@ insert into achievings
 (achievment_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Newbie'), 
-(select id from accounts where mail = 'gjiki17@freeuni.edu.ge'), sysdate());
+(select id from accounts where username = 'giojikia'), sysdate());
 
 /* insert achievings END*/
 

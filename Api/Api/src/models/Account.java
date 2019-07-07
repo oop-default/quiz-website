@@ -5,12 +5,10 @@ public class Account {
     private String password;
     private String firstname;
     private String secondname;
-    private String email;
     private String gender;
 
 
-    public Account(String username,String password,String firstname,String secondname,String email,String gender){
-        this.email=email;
+    public Account(String username,String password,String firstname,String secondname,String gender){
         this.password=password;
         this.username=username;
         this.firstname=firstname;
@@ -49,21 +47,12 @@ public class Account {
         this.secondname = secondname;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     @Override
     public String toString() {
         String result = "username: "+username+"\n"
                 +"password: "+password+"\n"
                 +"firstname: "+firstname+"\n"
                 +"secondname: "+secondname+"\n"
-                +"email: "+email+"\n"
                 +"gender: "+gender;
         return result;
     }

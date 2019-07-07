@@ -1,0 +1,44 @@
+#srchAccUsernmaeLbl {
+    font-size: 30px;
+    color: darkslategray;
+    margin-left: 20px;
+    font-family: serif;
+}
+
+#srchAccBtn {
+    float: right;
+    border: none;
+    background-color: whitesmoke;
+    font-size:20px;
+    margin-top:30px;
+    color:darkslateblue;
+    margin-right:10px;
+}
+    #srchAccBtn:hover{
+        color:green;
+        cursor:pointer;
+    }
+
+    #srchAccImage {
+        color: red;
+        float: left;
+        padding: 40px;
+        background-color: black;
+        color: white;
+        border-radius: 50px;
+    }
+
+#srchAccB1 {
+    height: 120px;
+    background-color: whitesmoke;
+    border: 1px solid lightslategray;
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+
+#srchAccNameLbl {
+    margin-left: 5px;
+    font-style: oblique;
+    margin-left:20px;
+}

@@ -34,10 +34,10 @@
   color:darkgreen;
 }
 
-.logOut{
-  cursor: pointer;
-  height:30px;
-  margin-left: 10px;
-  color: darkgreen;
-  margin-top: 15px;
+.logOut {
+    cursor: pointer;
+    height: 30px;
+    margin-left: 10px;
+    color: darkgreen;
+    margin-top: 15px;
 }

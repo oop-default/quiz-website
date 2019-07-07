@@ -2,10 +2,14 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
+<<<<<<< HEAD
 import models.Account;
 import responseModels.friendsQuizzesResponse;
 import responseModels.quizzesResponse;
+=======
+>>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +22,10 @@ public class DatabaseManager {
 
     private Connection con;
     private Statement stmt;
-    private ResultSet rs;
     private ResultSetMetaData rsmd;
 
 
     public DatabaseManager(){
-        rs = null;
         rsmd = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -37,61 +39,18 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-
-    public boolean validUser(String username,String password){
-        String query = "select * from accounts where username="+"\""+username+"\""+"and password="+"\""+password+"\"";
-        System.out.println(query);
+    public ResultSet executeQuery(String query){
         try {
-            rs=stmt.executeQuery(query);
-            if(rs.next()){
-                return true;
-            }
-            return false;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public void insertAccount(Account account){
-
-        String query = "insert into accounts(username,first_name,last_name,mail,gender,password,image," +
-                "date_created,is_deleted,is_banned,num_points,is_admin)" +
-                " values(?,?,?,?,?,?,?,now(),?,?,?,?)";
-        PreparedStatement pre;
-        try {
-            pre = con.prepareStatement(query);
-            pre.setString(1,account.getUsername());
-            pre.setString(2,account.getFirstname());
-            pre.setString(3,account.getSecondname());
-            pre.setString(4,account.getEmail());
-            pre.setString(5,account.getGender());
-            pre.setString(6,account.getPassword());
-            pre.setString(7,"null");
-            pre.setBoolean(8,false);
-            pre.setBoolean(9,false);
-            pre.setDouble(10,0);
-            pre.setBoolean(11,false);
-            System.out.println(pre.toString());
-            pre.executeUpdate();
+            Statement statement = con.createStatement();
+            ResultSet rs=statement.executeQuery(query);
+            return rs;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return null;
     }
-    public boolean accountExists(String username){
-        String query = "select * from accounts where username="+"\""+username+"\"";
-        System.out.println(query);
-        try {
-            rs=stmt.executeQuery(query);
-            if(rs.next()){
-                return true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+<<<<<<< HEAD
 
     public boolean mailExists(String mail){
         String query = "select * from accounts where mail="+"\""+mail+"\"";
@@ -215,4 +174,10 @@ public class DatabaseManager {
 
         return false;
     }
+=======
+    public Connection getConnection(){
+        return con;
+    }
+
+>>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728
 }

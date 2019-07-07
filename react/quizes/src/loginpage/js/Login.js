@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import '../css/Login.css';
 import { withRouter } from 'react-router-dom'
 import { getJWT } from '../../Jwt';
+import cookie from 'react-cookies'
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
+            username: "",
             password: ""
         }
         this.change = this.change.bind(this);
         this.submit = this.submit.bind(this);
     }
     componentDidMount() {
-        const jwt = getJWT();
-        if (jwt) {
+        var token = cookie.load('jwt')
+        console.log(token);
+        if (token) {
             this.props.history.push("/");
         }
     }
@@ -33,7 +35,7 @@ class Login extends Component {
         e.preventDefault();
         console.log("submmit");
         var data = {
-            "username": this.state.email,
+            "username": this.state.username,
             "password": this.state.password
         }
         var error = document.getElementById("errorMessage");
@@ -60,10 +62,16 @@ class Login extends Component {
     processResponse(data) {
         var error = document.getElementById("errorMessage")
         if (data.status === 200) {
+            
             var jwtToken = data.jwsToken;
+            /*
             console.log(jwtToken);
             localStorage.setItem("cool-jwt", jwtToken)
+            */
+            
+            cookie.save('jwt', jwtToken, { path: '/' })
             this.props.history.push("/");
+
         } else if (data.status == 400) {
             error.innerHTML = data.message;
         }
@@ -76,7 +84,7 @@ class Login extends Component {
                     <tbody>
                         <tr>
                             <td>
-                                <label id="usernameLabel">Username or mail</label>
+                                <label id="usernameLabel">Username</label>
                             </td>
                             <td>
                                 <label id="passwordLabel">Password</label>
@@ -84,7 +92,7 @@ class Login extends Component {
                         </tr>
                         <tr>
                             <td>
-                                <input id="usernameInput" type="text" name="email" onChange={e => this.change(e)} value={this.state.email} />
+                                <input id="usernameInput" type="text" name="username" onChange={e => this.change(e)} value={this.state.username} />
                             </td>
                             <td >
                                 <input id="passwordInput" type="password" name="password" onChange={e => this.change(e)} value={this.state.password} />

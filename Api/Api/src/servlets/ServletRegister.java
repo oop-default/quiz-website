@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import cracker.PasswordGenerator;
 import database.DatabaseManager;
 import models.Account;
+import parsers.AuthorizationParser;
 import responseModels.LoginRegisterResponse;
 
 import javax.servlet.ServletException;
@@ -22,28 +23,23 @@ public class ServletRegister extends HttpServlet {
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Account account = gson.fromJson(reader, Account.class);
-        System.out.println(account.toString());
-
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+
         if(account.getUsername().equals("")||account.getPassword().equals("")||
                 account.getFirstname().equals("")||account.getSecondname().equals("")||
-                account.getGender().equals("")||account.getEmail().equals("")){
+                account.getGender().equals("")){
             String message = "Incorrect input!";
             LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(400,null,message);
             sendResponse(response,gson,loginRegisterResponse);
         }else{
-            if(manager.accountExists(account.getUsername())){
+            if(AuthorizationParser.usernameExists(account.getUsername(),manager)){
                 String message = "Username already exists!";
-                LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(406,null,message);
-                sendResponse(response,gson,loginRegisterResponse);
-            }else if(manager.mailExists(account.getEmail())){
-                String message = "Email already exists!";
                 LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(406,null,message);
                 sendResponse(response,gson,loginRegisterResponse);
             }else{
                 account.setPassword(PasswordGenerator.generate(account.getPassword()));
-                manager.insertAccount(account);
-                String jws = JwtManager.createJWS();
+                AuthorizationParser.insertAccount(account,manager);
+                String jws = JwtManager.createJWS(account.getUsername());
                 String message = "Ok";
                 LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(200,jws,message);
                 sendResponse(response,gson,loginRegisterResponse);
@@ -66,6 +62,6 @@ public class ServletRegister extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Register");
+
     }
 }

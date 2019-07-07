@@ -2,10 +2,10 @@ package servlets;
 
 import Jwt.JwtManager;
 import com.google.gson.Gson;
-import com.mysql.jdbc.log.Log;
 import cracker.PasswordGenerator;
 import database.DatabaseManager;
 import models.Account;
+import parsers.AuthorizationParser;
 import responseModels.LoginRegisterResponse;
 
 import javax.servlet.ServletException;
@@ -23,11 +23,11 @@ public class ServletLogin extends HttpServlet {
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Account account = gson.fromJson(reader, Account.class);
-
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+
         String hashedPassword = PasswordGenerator.generate(account.getPassword());
-        if(manager.validUser(account.getUsername(),hashedPassword)){
-            String jws = JwtManager.createJWS();
+        if(AuthorizationParser.validUser(account.getUsername(),hashedPassword,manager)){
+            String jws = JwtManager.createJWS(account.getUsername());
             LoginRegisterResponse response1 = new LoginRegisterResponse(200,jws,"Ok");
             sendResponse(response,gson,response1);
         }else {
