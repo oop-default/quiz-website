@@ -1,11 +1,13 @@
 
   .bodyStyle{  
+    /* background-image: url("multiple-choice.jpg");
     background-size:     cover;
     background-repeat:   no-repeat;
-    background-position: center center;
+    background-position: center center; */
+    background : rgba(54, 187, 2, 0.6);
     
     display: block;
     margin-top: 60px;
     width: auto;
-    height:100vh;
+    height: 91vh;
   }

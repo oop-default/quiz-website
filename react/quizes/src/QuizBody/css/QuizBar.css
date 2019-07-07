@@ -1,43 +1,54 @@
-.quizIntroBar{
+
+    .verticalQuizBar{
+      width: 60%;
+      height: 85vh;
+      background:rgba(255, 255, 255, 0.7);
+      float:left;
+      margin-left: 5%;
+      margin-top: 1%;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+  .verticalQuizBar::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+  }
+  .verticalQuizBar::-webkit-scrollbar{
+    width: 0px;
+  }
+
+
+  .horizontalQuizBar{
     width: 60%;
     height: auto;
-    background:rgba(21, 52, 187, 0.2);
+    max-height: 85vh;
+    background:rgba(255, 255, 255, 0.7);
     float:left;
-    margin-left: 2%;
+    margin-left: 5%;
     margin-top: 1%;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+.horizontalQuizBar::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+.horizontalQuizBar::-webkit-scrollbar{
+  width: 0px;
+}
+
+.quizIntroBar{
+  width: 60%;
+  height: auto;
+  border-radius: 30px;
+  background:rgba(255, 255, 255, 0.7);
+  float:left;
+  margin-left: 5%;
+  margin-top: 2%;
+  }
+    .introref{
+     margin-left: 10px;
     }
-    .fullQuizBar{
-      width: 84%;
-      min-height: 10vh;
-      max-height: 85vh;
-      background:rgba(21, 52, 187, 0.2);
-      float:left;
-      margin-left: 2%;
-      margin-top: 1%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      }
-    .fullQuizBar::-webkit-scrollbar-track-piece{
-      background-color: transparent;
-    }
-    .fullQuizBar::-webkit-scrollbar{
-      width: 0px;
-    }
-    .reducedQuizBar{
-        width: 60%;
-        height: 85vh;
-        background:rgba(21, 52, 187, 0.2);
-        float:left;
-        margin-left: 2%;
-        margin-top: 1%;
-        overflow: scroll;
-        overflow-x: hidden;
-      }
-    .reducedQuizBar::-webkit-scrollbar-track-piece{
-      background-color: transparent;
-    }
-    .reducedQuizBar::-webkit-scrollbar{
-      width: 0px;
+    .introref:hover{
+      text-decoration: underline;
     }
     .introStart{
       background-color:  rgba(28, 19, 151, 0.9);
@@ -52,6 +63,17 @@
       float: right;
       cursor:pointer;
     }
+    .introStart:hover{
+      border-color: rgba(28, 19, 151, 0.9);
+      background-color: white;
+      color : black;
+    }
+    .quizStart{
+
+    }
+    .quizStart:hover{
+      cursor: pointer;
+    }
     .introUser{
       background-color:  rgba(28, 19, 151, 0.7);
       color: white;
@@ -59,6 +81,9 @@
       font-family: 'Times New Roman', Times, serif;
       border-radius: 10px;
       cursor:pointer;
+    }
+    .introUser:hover{
+      background-color:  rgb(14, 121, 0);
     }
   .introText{
     color: black;

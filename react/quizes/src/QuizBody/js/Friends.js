@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './FriendsBar.css';
+import './Friends.css';
 
 const friends = [
     {nick: "vigaca", isActive: true},
@@ -25,27 +25,36 @@ const friends = [
     {nick: "vigaca", isActive: true}
   ];
 
-function FriendsBar(page){
-    let friendsBarDrawer;
-        if(page.state.friendsBarOpen){
-            return ( <div className = "openedFriendsBar">
+class Friends extends Component{
+    constructor(){
+        super();
+        this.state = {
+            friends: friends
+        };
+    }
+
+    render() {
+        return (
+            <div className = "friends">
+                <div style = {{textAlign : "center",position : "sticky"}} className = "scoreBar">Your Friends</div>
                 <table className="friendsTable">
+                    <tbody>
                         {
-                        friends.map((friend) => {
-                            return (<tr>
-                            <td><a style={{color:"white"}} href="https://www.facebook.com">{friend.nick}</a></td>
+                        this.state.friends.map((friend) => {
+                            return <tr>
+                            <td><a style={{textDecoration:"none"}} href="https://www.facebook.com">{friend.nick}</a></td>
                             <td>{friend.isActive ? (<span className="greenDot"></span>) :  <span className="redDot"></span>}</td>
-                            </tr>)
+                            
+                            </tr>
                         })
                         }
+                    </tbody>
                 </table>
             </div>
-            );
-       
-    }else{
-        return(
-            null
         );
     }
+
+
 }
-export default FriendsBar
+
+export default Friends;
