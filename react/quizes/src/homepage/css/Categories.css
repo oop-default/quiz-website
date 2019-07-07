@@ -1,0 +1,11 @@
+.categoriesTable{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width: 90%;
+}
+
+.categoriesTable td, .categoriesTable th{
+    border-radius: 10%;
+    border: ridge; 
+    text-align: center;
+}

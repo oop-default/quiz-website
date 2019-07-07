@@ -1,6 +1,6 @@
 .anouncements{
-  margin-left: 300px;
   width: 40vw;
+  min-width: 240px;
 }
 
 .anoncTable{

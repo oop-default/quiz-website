@@ -1,8 +1,8 @@
 .activities{
-    position: fixed;
-    right: 12.5vw;
-    top:60px;
-    height: calc(100vh - 60px);
+    top: 60px;
+    position: sticky;
+    min-width: 240px;
+    height: -webkit-calc(100vh - 60px);
     overflow: scroll;
 }
 

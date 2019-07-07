@@ -1,8 +1,16 @@
 .left{
   background-color: whitesmoke;
   width: 280px;
+  min-width: 280px;
   height: -webkit-calc(100vh - 60px);
-  position: fixed;
+  position: sticky;
+  top:60px;
+  height: calc(100vh - 60px);
+  overflow: scroll;
+}
+
+.left::-webkit-scrollbar{
+  display: none;
 }
 
 .profile{
@@ -25,6 +33,7 @@
   border-collapse: collapse;
   width: 80%;
   margin-top: 10vh;
+  margin-bottom: 5vh;
   margin-left: 10%;
   background-color: rgb(231, 247, 4);
   color: forestgreen;
@@ -33,15 +42,4 @@
 .quizesTable td, .quizesTable th {
   border: 1px solid forestgreen;
   padding: 8px;
-}
-
-.left{
-  position: fixed;
-  top:60px;
-  height: calc(100vh - 60px);
-  overflow: scroll;
-}
-
-.left::-webkit-scrollbar{
-  display: none;
 }

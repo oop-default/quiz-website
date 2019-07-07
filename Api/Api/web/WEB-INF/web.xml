@@ -35,6 +35,32 @@
         <servlet-name>ServletSearch</servlet-name>
         <url-pattern>/ServletSearch</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletCreatedQuizzes</servlet-name>
+        <servlet-class>servlets.ServletCreatedQuizzes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCreatedQuizzes</servlet-name>
+        <url-pattern>/ServletCreatedQuizzes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletTakenQuizzes</servlet-name>
+        <servlet-class>servlets.ServletTakenQuizzes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletTakenQuizzes</servlet-name>
+        <url-pattern>/ServletTakenQuizzes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletFriendsQuizActivity</servlet-name>
+        <servlet-class>servlets.ServletFriendsQuizActivity</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendsQuizActivity</servlet-name>
+        <url-pattern>/ServletFriendsQuizActivity</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
