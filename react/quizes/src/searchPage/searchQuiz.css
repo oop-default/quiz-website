@@ -1,0 +1,39 @@
+#quizCreator{
+
+}
+#srchQuizBtn {
+    float: right;
+    border: none;
+    background-color: whitesmoke;
+    font-size: 20px;
+    margin-top: 30px;
+    color: darkslateblue;
+    margin-right: 10px;
+}
+#srchQuizTitleLbl {
+    font-size: 30px;
+    color: darkslategray;
+    margin-left: 10px;
+    font-family: serif;
+}
+
+#srchDescLnl {
+    margin-top: 10px;
+}
+
+#quizCreator{
+    margin-top:30px;
+    font-style:oblique;
+    display:inline;
+    font:bold;
+}
+#srchQuizBtn:hover{
+    color:green;
+    cursor:pointer;
+}
+#srchQuizDescrLbl {
+    font-family: monospace;
+    color: black;
+    font-style: italic;
+    font-size: 15px;
+}

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import '../css/Register.css'
+import '../css/Register.css';
+import cookie from 'react-cookies';
+
+import { withRouter } from 'react-router-dom'
 class Register extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username:"",
             firstname: "",
             secondname:"",
-            email: "",
             gender:"Male",
             password: ""
         }
@@ -27,7 +29,6 @@ class Register extends Component {
             "password": this.state.password,
             "firstname": this.state.firstname,
             "secondname": this.state.secondname,
-            "email": this.state.email,
             "gender": this.state.gender
         }
         if (!checkInputValidation(data.username, data.password, data.firstname, data.secondname, data.email)) {
@@ -53,7 +54,7 @@ class Register extends Component {
         var error = document.getElementById("ErrorMessageRegister")
         if (data.status === 200) {
             var jwtToken = data.jwsToken;
-            localStorage.setItem("cool-jwt", jwtToken)
+            cookie.save('jwt', jwtToken, { path: '/' });
             this.props.history.push("/");
         } else if (data.status == 406) {
             error.innerHTML = data.message;
@@ -88,9 +89,6 @@ class Register extends Component {
                             <label htmlFor="g3">Other</label>
                         </span>
                     </span>
-
-                    <input id="emailInput" type="text" placeholder="Email" onClick={(event) => defaultConditions(event.target)}
-                        onChange={e => this.change(e)} name="email" value={this.state.email} />
 
                     <input id="registerUsernameInput" type="text" placeholder="Username" onClick={(event) => defaultConditions(event.target)}
                         onChange={e => this.change(e)} name="username" value={this.state.username} />
@@ -128,10 +126,7 @@ function checkInputValidation(username, password, firstname, secondname, email) 
         document.getElementById("secondnameInput").style.borderColor = "red";
         valid = false;
     }
-    if (email === "") {
-        document.getElementById("emailInput").style.borderColor = "red";
-        valid = false;
-    }
+   
     return valid;
 }
-export default Register;
+export default withRouter(Register);

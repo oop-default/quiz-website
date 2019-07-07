@@ -2,10 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\loginpage",
-    "\\src\\loginpage\\css",
-    "\\src\\loginpage\\js"
+    "\\src\\homepage",
+    "\\src\\homepage\\js",
+    "\\src\\QuizBody",
+    "\\src\\QuizBody\\css",
+    "\\src\\QuizBody\\js",
+    "\\src\\searchPage"
   ],
-  "SelectedNode": "\\src\\index.js",
+  "SelectedNode": "\\src\\searchPage\\searchPage.css",
   "PreviewInSolutionExplorer": false
 }

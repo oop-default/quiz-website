@@ -19,7 +19,22 @@
         <servlet-name>ServletRegister</servlet-name>
         <url-pattern>/ServletRegister</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>ServletQuiz</servlet-name>
+        <servlet-class>servlets.ServletQuiz</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletQuiz</servlet-name>
+        <url-pattern>/ServletQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletSearch</servlet-name>
+        <servlet-class>servlets.ServletSearch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSearch</servlet-name>
+        <url-pattern>/ServletSearch</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
@@ -33,7 +48,11 @@
         </init-param>
         <init-param>
             <param-name>cors.allowed.headers</param-name>
-            <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+            <param-value>Content-Type,X-Requested-With,Accept,Authorization,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.exposed.headers</param-name>
+            <param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
         </init-param>
     </filter>
     <filter-mapping>

@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import NavBar from './NavBar'
 import Middle from './Middle'
 import { withRouter } from 'react-router-dom'
-import { getJWT } from '../../Jwt';
+import cookie from 'react-cookies'
  
 class Homepage extends Component {
 
@@ -12,10 +12,10 @@ class Homepage extends Component {
   }
 
     componentDidMount() {
-       const jwt = getJWT();
-       if (!jwt) {
+        var token = cookie.load('jwt')
+        if (!token) {
             this.props.history.push("/login");
-       }
+        }
         //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
     }
 

@@ -1,0 +1,18 @@
+#peopleBox {
+    margin: auto;
+    background-color: whitesmoke;
+    display: block;
+    
+}
+#searchBox {
+    margin: auto;
+    width: 50%;
+    background-color:whitesmoke;
+    padding:10px;
+    border-radius:3px;
+}
+#srchPeopleLabel{
+    font-size:30px;
+    color:darkslategray;
+    font-family:serif;
+}
