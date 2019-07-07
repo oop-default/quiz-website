@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import '../css/Left.css';
 import '../css/Arrows.css';
 import {changeTable} from './functions';
+import Categories from './Categories';
 
 
 const popQuizes = [
@@ -104,6 +105,7 @@ class Left extends Component {
                         </tbody>
                     </table>
                 </div>
+                <Categories></Categories>
             </div>
         );
     }
