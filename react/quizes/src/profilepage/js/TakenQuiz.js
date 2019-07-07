@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import '../css/takenQuiz.css'
 
-const takenQuizes = [
-  { quizName: "Do I know JavaScript?" },
-  { quizName: "Do I know what I do" }
-];
-
 class TakenQuiz extends Component {
     constructor() {
         super();
         this.state = {
-          takenQuizes: takenQuizes,
+          takenQuizes: [],
         }
+    }
+
+    componentDidMount() {
+      var data = null;
+      fetch('http://localhost:8080/ServletTakenQuizzes?id=' + 1)
+        .then((response) => {
+            response.json().then(data => {
+              this.setState({takenQuizes: data});
+            })
+          });
     }
 
     render() {
@@ -23,10 +28,11 @@ class TakenQuiz extends Component {
             </tr>
             {
               this.state.takenQuizes.map((tknqz) => {
+                var url = "localHost::8080/quizes?id=" + tknqz.id;
                 return <tr>
-                <td>
-                {tknqz.quizName}
-                </td>
+                  <td>
+                    <a href={url}>{tknqz.title}</a>
+                  </td>
                 </tr>
               })
             }
@@ -35,5 +41,8 @@ class TakenQuiz extends Component {
       );
     }
   }
+
+
+
 
   export default TakenQuiz;

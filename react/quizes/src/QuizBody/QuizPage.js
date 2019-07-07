@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuizBar from './QuizBar';
 import SideBar from './SideBar'
-import NavBar from './NavBar'
+import NavBar from '../homepage/js/NavBar'
 import FriendsBar from './FriendsBar'
 import './QuizPage.css';
 // const  todoItems = [
@@ -62,7 +62,7 @@ class QuizPage extends Component {
     return(
        
        <body className = "bodyStyle">
-       {NavBar()}
+       <NavBar></NavBar>
        {SideBar(topScores,friendTopScores,previousTries,this) }
        {QuizBar(Quiz,this) }
        {FriendsBar(this)}

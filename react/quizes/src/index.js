@@ -7,6 +7,7 @@ import Homepage from './homepage/js/Homepage';
 import notfound from './notfound'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Container from './profilepage/js/Container';
+import QuizPage from './QuizBody/QuizPage'
 
 
 const routing = (
@@ -15,6 +16,7 @@ const routing = (
             <Route path="/" exact component={Homepage} />
             <Route path="/login" exact component={Loginpage} />
             <Route path="/profile" component={Container} />
+            <Route path="/quiz" component={QuizPage} />
             <Route component={notfound} />
         </Switch>
         
