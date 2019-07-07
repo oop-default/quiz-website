@@ -14,6 +14,15 @@ class CreatedQuiz extends Component {
         }
     }
 
+    componentDidMount() {
+      fetch('http://localhost:8080/ServletCreatedQuizzes?id=' + 1)
+        .then((response) => {
+            response.json().then((data) => {
+              this.setState({createdQuizes: data});
+            })
+          });
+    }
+
     render() {
       return (
           <div id="createdQuizSection">
@@ -25,7 +34,7 @@ class CreatedQuiz extends Component {
               this.state.createdQuizes.map((crtqz) => {
                 return <tr>
                 <td>
-                {crtqz.quizName}
+                {crtqz.title}
                 </td>
                 </tr>
               })
