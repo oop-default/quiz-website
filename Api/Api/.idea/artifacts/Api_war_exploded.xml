@@ -8,15 +8,7 @@
           <element id="module-output" name="Api" />
         </element>
         <element id="directory" name="lib">
-<<<<<<< HEAD
-          <element id="library" level="project" name="io.jsonwebtoken:jjwt-jackson:0.10.6" />
-          <element id="library" level="project" name="io.jsonwebtoken:jjwt-impl:0.10.6" />
-          <element id="library" level="project" name="io.jsonwebtoken:jjwt-api:0.10.6" />
           <element id="library" level="project" name="com.google.code.gson:gson:2.8.5" />
-          <element id="library" level="project" name="io.jsonwebtoken:jjwt:0.9.1" />
-=======
-          <element id="library" level="project" name="com.google.code.gson:gson:2.8.5" />
->>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728
         </element>
       </element>
     </root>

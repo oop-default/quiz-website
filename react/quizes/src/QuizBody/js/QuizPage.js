@@ -13,7 +13,7 @@ import FriendsBar from './FriendsBar';
 //   { id: 3, title: "task 3", done: true },
 //   { id: 4, title: "task 4", done: false }
 // ];
- 
+
 const  topScores = [
   { pos: 1, user: "vvash17", score: 1000 },
   { pos: 2, user: "tbarb18", score: 900 },

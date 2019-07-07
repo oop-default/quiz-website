@@ -1,74 +1,74 @@
 .openedSideBar{
-  min-width: 100px;
-  background:rgba(21, 52, 187, 0.2);
-  width: 15%;
-  height: auto;
-  float:left;
-  margin-left: 3%;
-  margin-top: 1%;
-}
-.closedSideBar{
-  background:rgba(21, 52, 187, 0.2);
-  width: 35px;
-  height: auto;
-  float:left;
-  margin-left: 3%;
-  margin-top: 1%;
-}
-.sideDrawerButtonArea{
-  font-size: auto;
-  cursor:pointer;
-}
-.sideDrawerButton{
-  color: white;
-  text-decoration: none;
-  padding: 7px 10px;
-  position: relative;
-  display: inline-block;
-  border-radius: 10%;
-}
-.rankingPos{
-  text-align: center;
-  background : rgba(33, 206, 17, 0.5);
-  width: 1%;
-  border:1px solid black;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-}
-.rankingTh,.rankingTd{
-  text-align: center;
-  width: 20%;
-  font-size: 80%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background : rgba(33, 206, 17, 0.5);
-  border:1px solid black;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-}
-.rankingHeader{
-  border-radius: 19px;
-  width: 45%;
-  min-height: 10px;
-  height: auto;
-  padding: 2px 10px;
-  text-align: center;
-  font-size: auto;
-  color: rgb(0, 0, 0);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: rgb(134, 127, 228);
-  border: 1px solid rgb(29, 19, 158);
-}
-
-.friendRanks{
-  float: right;
-  width: max-content;
-  align-content:flex-end;
-  flex: inherit;
-  background-color: #ffffff;
-  border-style: double;
-}
-.topRanks{
-  width: 40%;
-  border-style: dotted;
-  margin-left: 50%;
-}
+    min-width: 100px;
+    background:rgba(21, 52, 187, 0.2);
+    width: 15%;
+    height: auto;
+    float:left;
+    margin-left: 3%;
+    margin-top: 1%;
+  }
+  .closedSideBar{
+    background:rgba(21, 52, 187, 0.2);
+    width: 35px;
+    height: auto;
+    float:left;
+    margin-left: 3%;
+    margin-top: 1%;
+  }
+  .sideDrawerButtonArea{
+    font-size: auto;
+    cursor:pointer;
+  }
+  .sideDrawerButton{
+      color: white;
+      text-decoration: none;
+      padding: 7px 10px;
+      position: relative;
+      display: inline-block;
+      border-radius: 10%;
+  }
+  .rankingPos{
+    text-align: center;
+    background : rgba(33, 206, 17, 0.5);
+    width: 1%;
+    border:1px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+  }
+  .rankingTh,.rankingTd{
+    text-align: center;
+    width: 20%;
+    font-size: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background : rgba(33, 206, 17, 0.5);
+    border:1px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+  }
+  .rankingHeader{
+    border-radius: 19px;
+    width: 45%;
+    min-height: 10px;
+    height: auto;
+    padding: 2px 10px;
+    text-align: center;
+    font-size: auto;
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(134, 127, 228);
+    border: 1px solid rgb(29, 19, 158);
+  }
+  
+    .friendRanks{
+      float: right;
+      width: max-content;
+      align-content:flex-end;
+      flex: inherit;
+      background-color: #ffffff;
+      border-style: double;
+    }
+    .topRanks{
+      width: 40%;
+      border-style: dotted;
+      margin-left: 50%;
+    }

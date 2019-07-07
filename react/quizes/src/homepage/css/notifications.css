@@ -4,6 +4,7 @@
 
 .notsTable th {
     border: none;
+    border-right: solid 5px forestgreen;
     padding: 8px;
 }
 

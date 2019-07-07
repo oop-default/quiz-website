@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../homepage/css/NavBar.css'
-import '../../homepage/css/Notifications.css'
+import '../../homepage/css/notifications.css'
 function NavBar() {
     return (<nav className="navBar">
         <div className="logo">

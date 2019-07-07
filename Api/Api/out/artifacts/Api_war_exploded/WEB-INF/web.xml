@@ -20,32 +20,6 @@
         <url-pattern>/ServletRegister</url-pattern>
     </servlet-mapping>
     <servlet>
-<<<<<<< HEAD
-        <servlet-name>ServletCreatedQuizzes</servlet-name>
-        <servlet-class>servlets.ServletCreatedQuizzes</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletCreatedQuizzes</servlet-name>
-        <url-pattern>/ServletCreatedQuizzes</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ServletTakenQuizzes</servlet-name>
-        <servlet-class>servlets.ServletTakenQuizzes</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletTakenQuizzes</servlet-name>
-        <url-pattern>/ServletTakenQuizzes</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ServletFriendsQuizActivity</servlet-name>
-        <servlet-class>servlets.ServletFriendsQuizActivity</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletFriendsQuizActivity</servlet-name>
-        <url-pattern>/ServletFriendsQuizActivity</url-pattern>
-    </servlet-mapping>
-
-=======
         <servlet-name>ServletQuiz</servlet-name>
         <servlet-class>servlets.ServletQuiz</servlet-class>
     </servlet>
@@ -61,7 +35,6 @@
         <servlet-name>ServletSearch</servlet-name>
         <url-pattern>/ServletSearch</url-pattern>
     </servlet-mapping>
->>>>>>> 1dcc1d182628f10b7347ea8bd58199f15e926728
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>

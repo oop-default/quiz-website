@@ -1,15 +1,10 @@
 .navBar{
-  overflow-x: scroll;
   position: fixed;
   height:60px;
   top: 0;
   width: 100vw;
   display: flex;
   background-color: forestgreen;
-}
-
-.navBar::-webkit-scrollbar{
-  display: none;
 }
 
 .logo{

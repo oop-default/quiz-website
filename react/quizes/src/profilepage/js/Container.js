@@ -10,7 +10,7 @@ import '../css/container.css'
 class Container extends Component {
     constructor() {
         super();
-        // console.log("in Container do something")
+        console.log("in Container do something")
     }
 
     render() {

@@ -27,7 +27,7 @@ class UserInfo extends Component {
         <div>
           <p className="nameLastname">
             {this.state.info.firstname + " " + this.state.info.lastname}
-            <i id="addFriend" className="fas fa-user-plus" onClick="addFriend()"></i>
+            <i id="addFriend" className="fas fa-user-plus" onclick="addFriend()"></i>
               <p className="username"> @{this.state.info.username} </p>
           </p>
         </div>
