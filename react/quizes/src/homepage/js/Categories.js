@@ -3,6 +3,7 @@ import '../css/Categories.css'
 
 const categories = [
     {id: 1, category: "imnairi"},
+    {id :2, category: "magadi"}
 ];
 
 class Categories extends Component{
@@ -24,7 +25,7 @@ class Categories extends Component{
                     {
                         this.state.categories.map((category) => {
                             return <tr key={category.id}>
-                                <td>
+                                <td onClick={() => window.location.href="https://www.facebook.com"}>
                                     {category.category}
                                 </td>
                             </tr>

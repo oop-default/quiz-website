@@ -1,11 +1,23 @@
 .categoriesTable{
     margin-bottom: 5%;
     margin-top: 5%;
-    width: 90%;
+    width: 200px;
+    min-width: 200px;
+    margin-bottom: 30vh;
+    margin-left: 40px;
 }
 
 .categoriesTable td, .categoriesTable th{
     border-radius: 10%;
     border: ridge; 
     text-align: center;
+    border-color: aqua;
+}
+
+.categoriesTable th {
+    cursor: default
+}
+
+.categoriesTable td {
+    cursor: pointer;
 }

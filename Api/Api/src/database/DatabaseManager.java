@@ -2,6 +2,7 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
+import responseModels.NotPersonalScoreResponse;
 import responseModels.friendsQuizzesResponse;
 import responseModels.quizzesResponse;
 

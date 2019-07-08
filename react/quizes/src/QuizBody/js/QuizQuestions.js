@@ -1,13 +1,12 @@
 import React from 'react';
 
-export function AnswerComponent(page,data){
+export function AnswerComponent(data,pos){
     var answerType = data.type;
-    var pos = page.state.questionPosition;
     switch(answerType){
         case "QuestionResponse" : return(QuestionResponseAnswer(pos,data));
         case "MultipleChoice" : return(MultipleChoiceAnswer(pos,data));
         case "PictureResponseQuestions" : return(PictureResponseQuestionsAnswer(pos,data));
-        case "MultiAnswerQuestions" : return(MultiAnswerQuestionsAnswer(pos,data));
+        case "FillInTheBlank" : return(FillInTheBlankAnswer(pos,data));
         default : return(QuestionResponseAnswer(pos,data));
     }
 }
@@ -15,7 +14,7 @@ function QuestionResponseAnswer(pos,data){
     var answer = document.getElementById(pos+"input").value;
     var realAnswer = data.correct;
     return(
-       answer == realAnswer
+       answer === realAnswer
     );
 }
 function MultipleChoiceAnswer(pos,data){
@@ -24,9 +23,9 @@ function MultipleChoiceAnswer(pos,data){
 
     for (let index = 0; index <= answerSize; index++) {
         button = document.getElementById(pos+"input"+index);
-        if(button == null)continue;
+        if(button === null)continue;
         if(button.checked){
-            return(button.value == data.correct);
+            return(button.value === data.correct);
         }
     }
     return(false);
@@ -35,29 +34,18 @@ function PictureResponseQuestionsAnswer(pos,data){
     var answer = document.getElementById(pos+"input").value;
     var realAnswer = data.correct;
     return(
-       answer == realAnswer
+       answer === realAnswer
     );
 }
-function MultiAnswerQuestionsAnswer(pos,data){
-return(
-    <div id = {data.ID+"question"} className = "QuizContent">
-    <h3 className = "questionText">{data.question}</h3>
-    <div>Insert your answer here :  <textarea className = "QuizInput" /></div>
-    </div>
-);
+function FillInTheBlankAnswer(pos,data){
+    var answer = document.getElementById(pos+"input").value;
+    var realAnswer = data.correct;
+    return(
+       answer === realAnswer
+    );
 }
 
-
-
-
-
-
-
-
-
-
-
-
+//------------------------------------------------------------------------------------
 export function QuestionComponent(data){
     var questionType = data.type;
     switch(questionType){
@@ -65,9 +53,6 @@ export function QuestionComponent(data){
         case "MultipleChoice" : return(MultipleChoice(data));
         case "PictureResponseQuestions" : return(PictureResponseQuestions(data));
         case "MultiAnswerQuestions" : return(MultiAnswerQuestions(data));
-        case "MultipleChoiceWithMultipleAnswers" : return(MultipleChoiceWithMultipleAnswers(data));
-        case "Matching" : return(Matching(data));
-        case "FillInTheBlank" : return(FillInTheBlank(data));
         default : return(FillInTheBlank(data));
     }
 }
@@ -91,11 +76,10 @@ function PictureResponseQuestions(data){
     return(
         <div id = {data.ID+"question"} className = "QuizContent">
         <h3 className = "questionText">{data.question}</h3>
-        <div className = "questionText"></div>
+        <div className = "questionText"><img style = {{position : "unset"}} src = {require("./multiple-choice.jpg")} className = "questionImage"/></div>
         <div>Insert your answer here :  <textarea id = {data.ID+"input"} className = "QuizInput" /></div>
         </div>
     );
-    //<img src={} className="questionImage" />
 }
 function MultiAnswerQuestions(data){
     return(
@@ -105,18 +89,11 @@ function MultiAnswerQuestions(data){
         </div>
     );
 }
-function MultipleChoiceWithMultipleAnswers(data){
-    return(
-        <div>{}</div>
-    );
-}
-function Matching(data){
-    return(
-        <div></div>
-    );
-}
 function FillInTheBlank(data){
     return(
-        <div></div>
+        <div id = {data.ID+"question"} className = "QuizContent">
+        <h3 className = "questionText">{data.question}</h3>
+        <div>Insert your answer here :  <textarea id = {data.ID+"input"} className = "QuizInput" /></div>
+        </div>
     );
 }
