@@ -23,9 +23,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.19" level="application_server_libraries" />
-    <orderEntry type="library" name="com.google.code.gson:gson:2.8.5" level="project" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.19" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.8.5" level="project" />
+    <orderEntry type="module-library" exported="" scope="TEST">
       <library name="JUnit5.3">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.5.0-RC2/junit-jupiter-api-5.5.0-RC2.jar!/" />
@@ -37,7 +37,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module-library" exported="" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/" />
@@ -47,6 +47,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="junit:junit:4.12" level="project" />
+    <orderEntry type="library" exported="" name="junit:junit:4.12" level="project" />
   </component>
 </module>
