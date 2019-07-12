@@ -2,12 +2,15 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
+import models.SubmittedQuiz;
+import responseModels.FriendAchievements;
 import responseModels.NotPersonalScoreResponse;
 import responseModels.friendsQuizzesResponse;
 import responseModels.quizzesResponse;
 
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +50,84 @@ public class DatabaseManager {
 
         return null;
     }
+    private void insertNewAchievementFor(int personID,int achievingID,long updateTime){
+        String query = "insert into achievings(achievment_id,account_id,date_achieved) values ("+achievingID+
+                ","+personID+","+
+                "FROM_UNIXTIME("+updateTime+"))";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private void updateAchievingsFor(int personID,long updateTime){
+        //getting points from here
+        String points = "select coalesce(sum(num_points),0) pt from history \n" +
+                        "where account_id = "+personID;
+        int point = 0;
+        ResultSet rspoints = executeQuery(points);
 
+        try {
+            rspoints.next();
+            point = rspoints.getInt("pt");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //if point is 0, zero achievings are added
+        if(point == 0)return;
+        //getting total achievements player can take
+        String achievements = "select id,num_points from achievements";
+        ResultSet rsachievements = executeQuery(achievements);
+        ArrayList<Integer> achievementsArr = new ArrayList<>();
+        while(true){
+            try {
+                if (!rsachievements.next()) break;
+                int id = rsachievements.getInt("id");
+                int num_points = rsachievements.getInt("num_points");
+                if(num_points <= point) {
+                    achievementsArr.add(id);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        //if cant returns
+        if(achievementsArr.size() == 0)return;
+        //older achievings
+        String personalAchievings = "select achievment_id from achievings \n" +
+                                    "where account_id = "+personID;
+        ResultSet rsachievings = executeQuery(personalAchievings);
+        ArrayList<Integer> achievingsArr = new ArrayList<>();
+        while(true){
+            try {
+                if (!rsachievings.next()) break;
+                int id = rsachievings.getInt("achievment_id");
+                achievingsArr.add(id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        for (int i = 0; i<achievementsArr.size(); i++){
+            if(!achievingsArr.contains(achievementsArr.get(i))){
+                insertNewAchievementFor(personID,achievementsArr.get(i),updateTime);
+            }
+        }
+
+    }
+    public void saveQuizResults(SubmittedQuiz sq){
+        String query = "insert into history(account_id,quiz_id,num_points,time_spent,date_taken) "+
+                        "values("+sq.getPersonID()+","+sq.getQuizID()+","+sq.getPoints()+","+sq.getTimeSpent()+","
+                        +"FROM_UNIXTIME("+sq.getDateSubmittedMillis()+"))";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        updateAchievingsFor(sq.getPersonID(),sq.getDateSubmittedMillis());
+
+    }
     public List<quizzesResponse> getCreatedQuizzes(int id) {
         List<quizzesResponse> quizzes = new ArrayList<>();
 //        PreparedStatement stmt;

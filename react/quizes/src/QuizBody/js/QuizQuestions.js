@@ -1,99 +1,112 @@
 import React from 'react';
 
-export function AnswerComponent(data,pos){
+export function AnswerComponent(data,pos,page){
     var answerType = data.type;
     switch(answerType){
-        case "QuestionResponse" : return(QuestionResponseAnswer(pos,data));
-        case "MultipleChoice" : return(MultipleChoiceAnswer(pos,data));
-        case "PictureResponseQuestions" : return(PictureResponseQuestionsAnswer(pos,data));
-        case "FillInTheBlank" : return(FillInTheBlankAnswer(pos,data));
-        default : return(QuestionResponseAnswer(pos,data));
+        case "QR" : return(QuestionResponseAnswer(pos,data,page));
+        case "MC" : return(MultipleChoiceAnswer(pos,data,page));
+        case "PR" : return(PictureResponseAnswer(pos,data,page));
+        case "FB" : return(FillInTheBlankAnswer(pos,data,page));
+        default : return(QuestionResponseAnswer(pos,data,page));
     }
 }
-function QuestionResponseAnswer(pos,data){
+function QuestionResponseAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.correct;
+    var realAnswer = data.answers[0].answer;
+    if(answer === null || answer.length != 0){
+    page.state.answers[pos] = answer;
+    }
+    page.state.realAnswers[pos] = realAnswer;
     return(
        answer === realAnswer
     );
 }
-function MultipleChoiceAnswer(pos,data){
-    var answerSize = data.correct.length;
+function MultipleChoiceAnswer(pos,data,page){
+    var answerSize = data.answers.length;
     let button;
-
-    for (let index = 0; index <= answerSize; index++) {
+    var answer = "";
+    var realAnswer = "";
+    for (let index = 0; index < answerSize; index++) {
         button = document.getElementById(pos+"input"+index);
         if(button === null)continue;
         if(button.checked){
-            return(button.value === data.correct);
+            answer = data.answers[index].answer;
+        }
+        if(data.answers[index].correct){
+            realAnswer = data.answers[index].answer;
         }
     }
-    return(false);
+
+    if(answer === null || answer.length != 0){
+        page.state.answers[pos] = answer;
+    }
+    page.state.realAnswers[pos] = realAnswer;
+    return(realAnswer === answer);
 }
-function PictureResponseQuestionsAnswer(pos,data){
+function PictureResponseAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.correct;
+    var realAnswer = data.answers[0].answer;
+    if(answer === null || answer.length != 0){
+    page.state.answers[pos] = answer;
+    }
+    page.state.realAnswers[pos] = realAnswer;
     return(
        answer === realAnswer
     );
 }
-function FillInTheBlankAnswer(pos,data){
+function FillInTheBlankAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.correct;
+    var realAnswer = data.answers[0].answer;
+    if(answer === null || answer.length != 0){
+       page.state.answers[pos] = answer+"asd"; 
+    }
+    page.state.realAnswers[pos] = realAnswer;
     return(
        answer === realAnswer
     );
 }
 
 //------------------------------------------------------------------------------------
-export function QuestionComponent(data){
+export function QuestionComponent(data,pos){
     var questionType = data.type;
     switch(questionType){
-        case "QuestionResponse" : return(QuestionResponse(data));
-        case "MultipleChoice" : return(MultipleChoice(data));
-        case "PictureResponseQuestions" : return(PictureResponseQuestions(data));
-        case "MultiAnswerQuestions" : return(MultiAnswerQuestions(data));
-        default : return(FillInTheBlank(data));
+        case "QR" : return(QuestionResponse(data,pos));
+        case "MC" : return(MultipleChoice(data,pos));
+        case "PR" : return(PictureResponse(data,pos));
+        case "FB" : return(FillInTheBlank(data,pos));
+        default : return(FillInTheBlank(data,pos));
     }
 }
-function QuestionResponse(data){
+function QuestionResponse(data,pos){
         return(
-            <div id = {data.ID+"question"} className = "QuizContent">
+            <div id = {pos+"question"} className = "QuizContent">
             <h3 className = "questionText">{data.question}</h3>
-            <div>Insert your answer here :  <textarea id = {data.ID+"input"} className = "QuizInput" /></div>
+            <div>Insert your answer here :  <textarea id = {pos+"input"} className = "QuizInput" /></div>
             </div>
         );
 }
-function MultipleChoice(data){
+function MultipleChoice(data,pos){
     return(
-        <div id = {data.ID+"question"} className = "QuizContent">
+        <div id = {pos+"question"} className = "QuizContent">
         <h3 className = "questionText">{data.question}</h3>
-        {data.answers.map((answer,index) => <div><input id = {data.ID+"input"+index} type = "radio" name = {"group"+data.ID} className = "introtext" value = {answer} />{answer}</div>)}
+        {data.answers.map((answer,index) => <div><input id = {pos+"input"+index} type = "radio" name = {"group"+pos} className = "introtext" value = {answer.answer} />{answer.answer}</div>)}
         </div>
     );
 }
-function PictureResponseQuestions(data){
+function PictureResponse(data,pos){
     return(
-        <div id = {data.ID+"question"} className = "QuizContent">
+        <div id = {pos+"question"} className = "QuizContent">
         <h3 className = "questionText">{data.question}</h3>
-        <div className = "questionText"><img style = {{position : "unset"}} src = {require("./multiple-choice.jpg")} className = "questionImage"/></div>
-        <div>Insert your answer here :  <textarea id = {data.ID+"input"} className = "QuizInput" /></div>
+        <div className = "questionText"><img style = {{position : "unset"}} src = {require("./wrong.png")} className = "questionImage"/></div>
+        <div>Insert your answer here :  <textarea id = {pos+"input"} className = "QuizInput" /></div>
         </div>
     );
 }
-function MultiAnswerQuestions(data){
+function FillInTheBlank(data,pos){
     return(
-        <div id = {data.ID+"question"} className = "QuizContent">
+        <div id = {pos+"question"} className = "QuizContent">
         <h3 className = "questionText">{data.question}</h3>
-        {data.correct.map((answer,index) => <textarea id = {data.ID + "input"+index} className = "QuizInput" />)}
-        </div>
-    );
-}
-function FillInTheBlank(data){
-    return(
-        <div id = {data.ID+"question"} className = "QuizContent">
-        <h3 className = "questionText">{data.question}</h3>
-        <div>Insert your answer here :  <textarea id = {data.ID+"input"} className = "QuizInput" /></div>
+        <div>Insert your answer here :  <textarea id = {pos+"input"} className = "QuizInput" /></div>
         </div>
     );
 }

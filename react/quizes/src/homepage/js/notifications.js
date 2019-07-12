@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import '../css/Notifications.css';
-import AcceptOrDenie from './AcceptOrDenie';
+import '../css/notifications.css';
+import AcceptOrDenie from './acceptOrDenie';
 
 const requests = [
     {fromId: 1, from: "vigaca"},
