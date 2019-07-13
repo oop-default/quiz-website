@@ -66,18 +66,11 @@ class Notifications extends Component{
                     </tr>
                 </thead>
                 <tbody className="notsBody">
-                    <tr>
-                        <td id = "notHide">
-                            <input id = "notHide" style={{width:"100px"}} placeholder="Enter receiver"></input>
-                            <input id = "notHide" style={{width:"250px"}} placeholder="Enter message"></input>
-                            <button id = "notHide" onClick={()=>this.reply()} style={{float:"right"}}>send</button>
-                        </td>
-                    </tr>
                     {
-                        this.state.messages.map((notification) => {
-                            return <tr key={notification.fromId}>
-                                <td id = "notHide" colSpan="3" style={{wordBreak:"break-word"}}>
-                                    <a href={"http://localhost:3000/profile/:userId"}><h6 className="from">{notification.from}:</h6></a>
+                        this.state.messages.map((notification, i) => {
+                            return <tr key={i}>
+                                <td id = "notHide" colSpan="3" style={{wordBreak:"break-all"}}>
+                                    <a href={"http://localhost:3000/profile/" + notification.fromId}><h6 className="from">{notification.from}:</h6></a>
                                     <div id = "notHide" style={{overflow:"auto"}}>{notification.note}</div>
                                     <input className="sendingMessage" id = "notHide" style={{width:"250px"}}></input>
                                     <button id = "notHide" onClick={()=>this.reply()} style={{float:"right"}}>reply</button>
@@ -88,12 +81,12 @@ class Notifications extends Component{
                 </tbody>
                 <tbody className="notsBody">
                     {
-                        this.state.Challenges.map((notification) => {
-                            return <tr key={notification.fromId}>
+                        this.state.Challenges.map((notification, i) => {
+                            return <tr key={i}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href={"http://localhost:3000/profile/:userId"}>
+                                    <a href={"http://localhost:3000/profile/" + notification.fromId}>
                                         {notification.from}{notification.quiz_id}
-                                    </a> challenged you to take quiz number 
+                                    </a> challenged you to take quiz number {notification.quiz_id}
                                     <AcceptOrDenie></AcceptOrDenie>
                                 </td>
                             </tr>
@@ -102,10 +95,10 @@ class Notifications extends Component{
                 </tbody>
                 <tbody className="notsBody">
                     {
-                        this.state.requests.map((notification) => {
-                            return <tr key={notification.fromId}>
+                        this.state.requests.map((notification, i) => {
+                            return <tr key={i}>
                                 <td id="notHide" colSpan="3" style={{textAlign:"center"}}>
-                                    <a href={"http://localhost:3000/profile/:userId"}>{notification.from}</a> sent you a friend request
+                                    <a href={"http://localhost:3000/profile/" + notification.fromId}>{notification.from}</a> sent you a friend request
                                     <AcceptOrDenie></AcceptOrDenie>
                                 </td>
                             </tr>

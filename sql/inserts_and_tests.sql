@@ -74,7 +74,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(achievment_id, account_id, date_achieved)
+(account_id, date_achieved)
 values
 ((select id from achievements where name = 'Quizaholic'), 
 (select id from accounts where username = 'vika_shonia'), sysdate());
@@ -82,7 +82,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(achievment_id, account_id, date_achieved)
+(account_id, date_achieved)
 values
 ((select id from achievements where name = 'Specialsit'), 
 (select id from accounts where username = 'z'), sysdate());
@@ -90,7 +90,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(achievment_id, account_id, date_achieved)
+(account_id, date_achieved)
 values
 ((select id from achievements where name = 'Master'), 
 (select id from accounts where username = 'giojikia'), sysdate());
@@ -98,7 +98,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(achievment_id, account_id, date_achieved)
+(account_id, date_achieved)
 values
 ((select id from achievements where name = 'Newbie'), 
 (select id from accounts where username = 'giojikia'), sysdate());
@@ -155,7 +155,7 @@ insert into quizzes
 (tittle, author_id, description, date_created, category_id, num_points)
 values
 ('Capital cities', 
-(select id from accounts where mail = 'znoza17@freeuni.edu.ge'),
+(select id from accounts where username = 'ziki'),
 'Quiz is about capital cities of countries, check how well you know them',
 sysdate(), 
 (select id from categories where category = 'Geography'), 50);
@@ -166,7 +166,7 @@ insert into quizzes
 (tittle, author_id, description, date_created, category_id, num_points)
 values
 ('GRE exam simulation', 
-(select id from accounts where mail = 'vshon17@freeuni.edu.ge'),
+(select id from accounts where username = 'vika_shonia'),
 'Quiz is like GRE exam with real GRE question',
 sysdate(), 
 (select id from categories where category = 'Math'), 100);
@@ -175,7 +175,7 @@ insert into quizzes
 (tittle, author_id, description, date_created, category_id, num_points)
 values
 ('Significant WW II political moves', 
-(select id from accounts where mail = 'gjiki17@freeuni.edu.ge'),
+(select id from accounts where username = 'giojikia'),
 'Quiz will check how well you know reasons and outcomes of political moves',
 sysdate(), 
 (select id from categories where category = 'History'), 150);

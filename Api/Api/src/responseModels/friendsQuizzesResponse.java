@@ -7,10 +7,10 @@ public class friendsQuizzesResponse {
     private String quizName;
     private int points;
 
-    public friendsQuizzesResponse(int friendId, String friendName, int quizId, String quizName, int points) {
+    public friendsQuizzesResponse(int quizId, int friendId, String friendName, String quizName, int points) {
+        this.quizId = quizId;
         this.friendId = friendId;
         this.friendName = friendName;
-        this.quizId = quizId;
         this.quizName = quizName;
         this.points = points;
     }

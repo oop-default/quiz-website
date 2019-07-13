@@ -8,11 +8,18 @@ import Activities from './Activities'
 
 class Middle extends Component {
 
+    constructor() {
+        super();
+        this.state= {
+            isAdmin: false
+        }
+    }
+
     render() {
         return (
             <div className ="middle">
-                <Left></Left>
-                <Anouncements></Anouncements>
+                <Left isAdmin={this.state.isAdmin}></Left>
+                <Anouncements isAdmin={this.state.isAdmin}></Anouncements>
                 <Activities></Activities>
                 <Friends></Friends>
             </div>

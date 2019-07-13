@@ -1,9 +1,9 @@
 .categoriesTable{
-    margin-bottom: 5%;
+    margin-bottom: 5px;
     margin-top: 5%;
     width: 200px;
     min-width: 200px;
-    margin-bottom: 30vh;
+    margin-bottom: 5vh;
     margin-left: 40px;
 }
 
@@ -15,6 +15,7 @@
 }
 
 .categoriesTable th {
+    border-color: rgb(2, 75, 5);
     cursor: default
 }
 

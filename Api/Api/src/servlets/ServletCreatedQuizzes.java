@@ -12,6 +12,7 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import database.DatabaseManager;
+import parsers.AuthenticationService;
 import responseModels.quizzesResponse;
 
 @WebServlet(name = "ServletCreatedQuizzes")
@@ -20,8 +21,13 @@ public class ServletCreatedQuizzes extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idString = request.getParameter("id");
-        int id = Integer.parseInt(idString);
+        String token = request.getHeader("Authorization");
+        System.out.println(token);
+        AuthenticationService service = new AuthenticationService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+        }
+        int id = service.getUserId();
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
         List<quizzesResponse> createdQuizzes = manager.getCreatedQuizzes(id);
         ServletOutputStream out = response.getOutputStream();

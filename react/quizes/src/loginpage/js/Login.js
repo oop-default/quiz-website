@@ -64,12 +64,11 @@ class Login extends Component {
         if (data.status === 200) {
             
             var jwtToken = data.jwsToken;
-            /*
-            console.log(jwtToken);
-            localStorage.setItem("cool-jwt", jwtToken)
-            */
             
-            cookie.save('jwt', jwtToken, { path: '/' })
+            cookie.save('jwt', jwtToken, {
+                 path: '/',
+                 maxAge:1000*60*60
+            })
             this.props.history.push("/");
 
         } else if (data.status == 400) {

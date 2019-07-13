@@ -29,8 +29,7 @@ public class ServletQuiz extends HttpServlet {
         if(!service.isAuthenticated()){
             response.setStatus(401);
         }
-        String quizId = request.getParameter("id");
-        int id = Integer.parseInt(quizId);
+        int id = service.getUserId();
         System.out.println("get Quiz: " + id);
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
         Quiz quiz = QuizParser.getQuiz(id,manager);

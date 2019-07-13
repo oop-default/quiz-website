@@ -60,6 +60,46 @@
         <servlet-name>ServletFriendsQuizActivity</servlet-name>
         <url-pattern>/ServletFriendsQuizActivity</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletCategories</servlet-name>
+        <servlet-class>servlets.ServletCategories</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCategories</servlet-name>
+        <url-pattern>/ServletCategories</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletPopularQuizzes</servlet-name>
+        <servlet-class>servlets.ServletPopularQuizzes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPopularQuizzes</servlet-name>
+        <url-pattern>/ServletPopularQuizzes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletRecentQuizzes</servlet-name>
+        <servlet-class>servlets.ServletRecentQuizzes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRecentQuizzes</servlet-name>
+        <url-pattern>/ServletRecentQuizzes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletIHaveSentRequest</servlet-name>
+        <servlet-class>servlets.ServletIHaveSentRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletIHaveSentRequest</servlet-name>
+        <url-pattern>/ServletIHaveSentRequest</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletStatistics</servlet-name>
+        <servlet-class>servlets.ServletStatistics</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletStatistics</servlet-name>
+        <url-pattern>/ServletStatistics</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>CorsFilter</filter-name>

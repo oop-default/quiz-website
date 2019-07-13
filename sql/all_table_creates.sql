@@ -9,7 +9,7 @@ status is active online user?
 ---        ---
 */
 
-CREATE SCHEMA `QUIZ_DB` ;
+drop schema quiz_db;
 
 USE QUIZ_DB;
 
@@ -20,7 +20,6 @@ CREATE TABLE accounts (
     username VARCHAR (255) NOT NULL,
     first_name VARCHAR (255) NOT NULL, 
     last_name VARCHAR (255) NOT NULL,
-    mail VARCHAR (255) NOT NULL,
     gender VARCHAR(50) NOT NULL, /* 'Male', 'Female' or 'Other' */
     password VARCHAR (255) NOT NULL,
     image LONGBLOB,
@@ -31,7 +30,6 @@ CREATE TABLE accounts (
     is_admin BOOLEAN,
     is_active BOOLEAN,
 
-    UNIQUE KEY (mail),
     UNIQUE KEY (username)
 );
 

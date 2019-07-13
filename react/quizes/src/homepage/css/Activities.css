@@ -1,9 +1,11 @@
 .activities{
     top: 60px;
     position: sticky;
-    min-width: 240px;
+    min-width: 300px;
     height: -webkit-calc(100vh - 60px);
     overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .activities::-webkit-scrollbar{

@@ -49,6 +49,9 @@
 }
 
 .notsBody td{
+    word-Break: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
     border:outset 1px rgb(241, 243, 241);
     width: 330px;
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import '../css/takenQuiz.css'
+import '../css/takenQuiz.css';
+import cookie from 'react-cookies';
 
 const takenQuizes = [
-  { quizName: "Do I know JavaScript?" },
-  { quizName: "Do I know what I do" }
+  {id: 1, title: "Do I know JavaScript?" },
+  {id: 2, title: "Do I know what I do" }
 ];
 
 class TakenQuiz extends Component {
@@ -15,8 +16,13 @@ class TakenQuiz extends Component {
     }
 
     componentDidMount() {
-      var data = null;
-      fetch('http://localhost:8080/ServletTakenQuizzes?id=' + 1)
+      var token = cookie.load("jwt");
+      var bearer = "Bearer " + token;
+      fetch('http://localhost:8080/ServletTakenQuizzes', {
+        headers: {
+          'Authorization': bearer
+        }
+      })
         .then((response) => {
             response.json().then(data => {
               this.setState({takenQuizes: data});

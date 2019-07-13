@@ -6,6 +6,8 @@
   width: 100vw;
   display: flex;
   background-color: forestgreen;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .navBar::-webkit-scrollbar{

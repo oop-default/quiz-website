@@ -23,6 +23,15 @@ public class AuthenticationService {
         }
         return null;
     }
+
+    public int getUserId() {
+        if(jws!=null) {
+            return (int)jws.getBody().get("userId");
+        }
+        return -1;
+    }
+
+
     public boolean isAdmin(){
 
         return false;

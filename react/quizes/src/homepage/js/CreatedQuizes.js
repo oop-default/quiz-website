@@ -58,18 +58,18 @@ class CreatedQuizes extends Component{
                     <tbody>
                         {
                         this.state.nOfTable === 0 ? 
-                            (this.state.myCreatedQuizes.map((quiz) => {
-                                return <tr key={quiz.id}>
-                                    <td><a href={"/quiz/:quizId"}>{quiz.id}</a></td>
-                                    <td><a href={"/quiz/:quizId"}>{quiz.quizName}</a></td>
+                            (this.state.myCreatedQuizes.map((quiz, i) => {
+                                return <tr key={i}>
+                                    <td><a href={"/quiz/" + quiz.id}>{quiz.id}</a></td>
+                                    <td><a href={"/quiz/" + quiz.id}>{quiz.quizName}</a></td>
                                 </tr>
                             }))
                         :
-                            (this.state.friendsCreatedQuizes.map((quiz) => {
-                                return <tr key={quiz.id}>
-                                    <td><a href={"/quiz/:quizId"}>{quiz.id}</a></td>
-                                    <td><a href={"/profile/:userId"}>{quiz.friend}</a></td>
-                                    <td><a href={"/quiz/:quizId"}>{quiz.quizName}</a></td>
+                            (this.state.friendsCreatedQuizes.map((quiz, i) => {
+                                return <tr key={i}>
+                                    <td><a href={"/quiz/" + quiz.id}>{quiz.id}</a></td>
+                                    <td><a href={"/profile/" + quiz.frinedId}>{quiz.friend}</a></td>
+                                    <td><a href={"/quiz/" + quiz.id}>{quiz.quizName}</a></td>
                                 </tr>
                             }))
                         }

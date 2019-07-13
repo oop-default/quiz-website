@@ -72,15 +72,15 @@ class Achievements extends Component{
                     <tbody>
                         {
                         this.state.nOfTable === 0 ? 
-                            (this.state.myAchieves.map((achievement) => {
-                                return <tr key={achievement.id}>
+                            (this.state.myAchieves.map((achievement, i) => {
+                                return <tr key={i}>
                                     <td>{achievement.achievement}</td>
                                 </tr>
                             }))
                         :
-                            (this.state.friendsAchieves.map((achievement) => {
-                                return <tr key={achievement.id}>
-                                    <td><a href={"/profile/:userId"}>{achievement.friend}</a></td>
+                            (this.state.friendsAchieves.map((achievement, i) => {
+                                return <tr key={i}>
+                                    <td><a href={'/profile/' + achievement.friendId}>{achievement.friend}</a></td>
                                     <td>{achievement.achievement}</td>
                                 </tr>
                             }))

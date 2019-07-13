@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 import NavBar from './NavBar'
 import Middle from './Middle'
 import { withRouter } from 'react-router-dom'
-import { getJWT } from '../../Jwt';
+import cookie from 'react-cookies'
+
  
 class Homepage extends Component {
 
@@ -12,11 +13,10 @@ class Homepage extends Component {
   }
 
   componentDidMount() {
-    //  const jwt = getJWT();
-    //  if (!jwt) {
-    //       this.props.history.push("/login");
-    //  }
-      //make fetch get to API about this user to not succes request this.props.history.push(/login); localstorage.remove("cool-jwt")
+    // var token = cookie.load("jwt");
+    // if(!token) {
+    //   this.props.history.push("/login");
+    // }
   }
 
   render() {
@@ -28,16 +28,17 @@ class Homepage extends Component {
     );
   }
 
-hideAllNots(e) {
-  if(e.target.id === "notHide") {
-    return;
+
+  hideAllNots(e) {
+    if(e.target.id === "notHide") {
+      return;
+    }
+    var ele = document.getElementsByClassName("notsBody");
+    for (let index = 0; index < ele.length; index++) {
+        ele[index].style.display = "none";
+        document.getElementsByClassName("heads")[index].style = "background-color: forestgreen";
+    }
   }
-  var ele = document.getElementsByClassName("notsBody");
-  for (let index = 0; index < ele.length; index++) {
-      ele[index].style.display = "none";
-      document.getElementsByClassName("heads")[index].style = "background-color: forestgreen";
-  }
-}
 
 }
 
