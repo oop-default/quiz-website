@@ -26,6 +26,9 @@ class SideBar extends Component{
   constructor(props){
       super();
       this.state = {
+        PersonalTopScore : null,
+        FriendTopScore : null,
+        GlobalTopScore : null,
         categories : categories,
         topScores : topScores,
         friendTopScores : friendTopScores,
@@ -34,48 +37,10 @@ class SideBar extends Component{
         scoreBar : true,
       }
   }
-  render() {
-  let scoreBarContent;
-  let categoryBarContent;
-  let descriptionBarContent;
-  var globalTop = "Global top scores";
-  var friendsTop = "Friends' top scores";
-  categoryBarContent = (
-    <div>
-      <div onClick = {()=>this.setState({categoryBar : !this.state.categoryBar})} className = "scoreBar">Categories</div>
-      {this.state.categoryBar ? <ul>{
-      categories.map((cat) => {
-        return <li><a className = "categoryStyle" href = "iasna">{cat}</a></li>
-      })
-    }
-    </ul> : null}
-  </div>
-  );
-  descriptionBarContent = (
-    <div>
-    <div className = "scoreBar">Description</div>
-    <div>Created by me</div>
-    <div>Points 100</div>
-    <div>created by me</div>
-</div>
-  );
-    scoreBarContent = (<div>
-      <div onClick = {()=>this.setState({scoreBar : !this.state.scoreBar})} className = "scoreBar">Score Bar</div>
-      {this.state.scoreBar ? [this.topUsersForm(topScores,globalTop),
-                              this.topUsersForm(friendTopScores,friendsTop),
-                              this.PersonalTop(previousTries)] : null}
-      </div>
-    );
-  return(<div className = "sideBar">
-          {categoryBarContent}
-          {/* {sideBarDrawer} */}
-          {scoreBarContent}
-          {descriptionBarContent}
-          {this.state.scoreBar ? null : <img style = {{height : "40%",width : "80%",marginTop : "50px"}} src = {require("./clipart.png")}></img>}
-        </div>);
-  }
 
-   topUsersForm(topScores,scoreType){
+   topUsersForm(scoreType){
+    let topUser;
+    {scoreType==="Global top scores" ? topUser = this.state.GlobalTopScore : topUser = this.state.FriendTopScore};
     return (
       <div>
         <div className = "rankingHeader">{scoreType}</div>
@@ -88,21 +53,20 @@ class SideBar extends Component{
       </tr>
       </thead>
       <tbody>
-      {
-       this.state.topScores.map((info) => {
-        return <tr>
-          <td className = "rankingPos">{info.pos}</td>
-          <td className = "rankingTd"><a className = "rankingref" href = "https://www.facebook.com">{info.user}</a></td>
-          <td className = "rankingTd">{info.score}</td>
-        </tr>
-      })
-    }
+      {topUser === null ? null : 
+      topUser.map((data) => <tr>
+      <td className = "rankingPos">{data.position}</td>
+      <td className = "rankingTd">{data.user}</td>
+      <td className = "rankingPos">{data.score}</td>
+          </tr>)
+      }
     </tbody>
     </table>
     </div>
     );
   }
-   PersonalTop(topScores){
+   PersonalTop(){
+     let myTopScores = this.state.PersonalTopScore;
     return (
     <div>
       <div className = "rankingHeader">Personal' top scores</div>
@@ -114,19 +78,158 @@ class SideBar extends Component{
       </tr>
       </thead>
       <tbody>
-      {
-      this.state.topScores.map((info) => {
-        return <tr>
-          <td className = "rankingPos">{info.pos}</td>
-          <td className = "rankingTd">{info.score}</td>
-        </tr>
-      })
-    }
+
+      {myTopScores === null ? null : 
+      myTopScores.map((data) => <tr>
+      <td className = "rankingPos">{data.position}</td>
+      <td className = "rankingPos">{data.score}</td>
+          </tr>)
+      }
+  
     </tbody>
     </table>
     </div>
     );
   }
 //----------------------------------------------------------
+
+componentDidMount() {
+  // console.log(this.props.match.params.quizId);
+  // var quizId = this.props.match.params.quizId;
+  this.fetchTopScoresData(1,1);
+}
+
+fetchGlobalTopScores(quizID){
+  var url = "http://localhost:8030/ServletGlobalTopScores?quizid=" + quizID;
+  console.log(url);
+  fetch(url).then(response => {
+      
+      if (response.ok) {
+          console.log("ok status");
+          return response.json();
+      }
+      else if (response.status == 401) {
+          return null;
+      } else {
+          return null;
+      }
+
+  })  .then(response => this.processResponse(response,"GlobalTopScore"))
+      .catch(error => {
+          console.log(error);  
+      });
+}
+fetchPersonalTopScores(userID,quizID){
+  var url = "http://localhost:8030/ServletGlobalTopScores?id="+userID+"&quizid=" + quizID;
+  console.log(url);
+  fetch(url).then(response => {
+      
+      if (response.ok) {
+          console.log("ok status");
+          return response.json();
+      }
+      else if (response.status == 401) {
+          return null;
+      } else {
+          return null;
+      }
+
+  })  .then(response => this.processResponse(response,"PersonalTopScore"))
+      .catch(error => {
+          console.log(error);  
+      });
+}
+fetchFriendTopScores(userID,quizID){
+  var url = "http://localhost:8030/ServletFriendTopScores?id=" +userID+"&quizid=" + quizID;
+  console.log(url);
+  fetch(url).then(response => {
+      
+      if (response.ok) {
+          console.log("ok status");
+          return response.json();
+      }
+      else if (response.status == 401) {
+          return null;
+      } else {
+          return null;
+      }
+
+  })  .then(response => this.processResponse(response,"FriendTopScore"))
+      .catch(error => {
+          console.log(error);  
+      });
+}
+fetchTopScoresData(userID,quizID) {
+  this.fetchGlobalTopScores(quizID);
+  this.fetchFriendTopScores(userID,quizID);
+  this.fetchPersonalTopScores(userID,quizID);
+}
+processResponse(data,type) {
+  if (data != null) {
+      var jsonData = JSON.stringify(data)
+      console.log(jsonData);
+      this.processData(jsonData,type);
+  } else if (this.state.notAuthenticated) {
+      console.log("not Authenticated");
+  } else {
+      this.props.history.push("/notfound");
+  } 
+  
+}
+
+processData(jsonString,type) {
+  if(type === "GlobalTopScore"){
+    var object = JSON.parse(jsonString);
+    console.log(object);
+    this.setState({ GlobalTopScore: object });
+  }else if(type === "FriendTopScore"){
+    var object = JSON.parse(jsonString);
+    console.log(object);
+    this.setState({ FriendTopScore: object });
+  }else{
+    var object = JSON.parse(jsonString);
+    console.log(object);
+    this.setState({ PersonalTopScore: object });
+  }
+
+}
+
+render() {
+  let scoreBarContent;
+  let categoryBarContent;
+  let descriptionBarContent;
+  var globalTop = "Global top scores";
+  var friendsTop = "Friends' top scores";
+  categoryBarContent = (
+    <div>
+      <div onClick = {()=>this.setState({categoryBar : !this.state.categoryBar})} className = "scoreBar">Categories</div>
+{this.state.categoryBar ? <div>{categories.map((cat,index) => <div className = "categoryComponent">{(index+1)}.<a className = "categoryStyle" href = "fasd" >{cat}</a></div>)}</div>: null}
+  </div>
+  );
+  descriptionBarContent = (
+    <div>
+    <div className = "scoreBar">Description</div>
+    <div>Created by me</div>
+    <div>Points 100</div>
+    <div>created by me</div>
+</div>
+  );
+    scoreBarContent = (<div>
+      <div onClick = {()=>this.setState({scoreBar : !this.state.scoreBar})} className = "scoreBar">Score Bar</div>
+      {this.state.scoreBar ? [this.topUsersForm(globalTop)
+                                ,
+                              this.topUsersForm(friendsTop),
+                              this.PersonalTop()
+                              ] : null}
+      </div>
+    );
+  return(<div className = "sideBar">
+          {categoryBarContent}
+          {/* {sideBarDrawer} */}
+          {scoreBarContent}
+          {descriptionBarContent}
+          {this.state.scoreBar ? null : <img style = {{height : "40%",width : "80%",marginTop : "50px"}} src = {require("./clipart.png")}></img>}
+        </div>);
+  }
 }
 export default SideBar
