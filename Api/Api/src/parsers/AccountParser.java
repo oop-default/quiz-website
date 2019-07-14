@@ -2,8 +2,8 @@ package parsers;
 
 import database.DatabaseManager;
 import models.Account;
-
-import javax.xml.crypto.Data;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,5 +29,43 @@ public class AccountParser {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static int getUserId(String username , DatabaseManager manager) throws SQLException {
+        String query = "select * from accounts where username =(?)";
+        Connection con = manager.getConnection();
+        PreparedStatement pre = con.prepareStatement(query);
+        pre.setString(1,username);
+        ResultSet rs = pre.executeQuery();
+        try {
+            if(rs.next()){
+                return rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public static void removeAccount(String username,DatabaseManager manager) throws SQLException {
+        String query = "delete from accounts where username=(?)";
+        Connection con = manager.getConnection();
+        PreparedStatement pre = con.prepareStatement(query);
+        pre.setString(1,username);
+        pre.executeUpdate();
+    }
+
+    public static boolean isAdmin(String username, DatabaseManager manager) throws SQLException {
+        String query = "select * from accounts where username=(?)";
+        System.out.println(query);
+
+        Connection con = manager.getConnection();
+        PreparedStatement pre = con.prepareStatement(query);
+        pre.setString(1,username);
+        ResultSet set =pre.executeQuery();
+        if(set.next()){
+            return set.getBoolean("is_admin");
+        }
+        return false;
     }
 }

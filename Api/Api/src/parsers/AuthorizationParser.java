@@ -2,6 +2,8 @@ package parsers;
 
 import database.DatabaseManager;
 import models.Account;
+
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,7 +47,17 @@ public class AuthorizationParser {
             }
         }
     }
+    public static boolean isAdmin(int id, DatabaseManager manager) throws SQLException {
+        String query = "select * from accounts where id=(?);";
+        PreparedStatement pre = manager.getConnection().prepareStatement(query);
 
+        pre.setInt(1,id);
+        ResultSet resultSet= pre.executeQuery();
+        if(resultSet.next()){
+            return resultSet.getBoolean("isAdmin");
+        }
+        return false;
+    }
 
     private static boolean exists(ResultSet rs){
         try {
@@ -57,4 +69,6 @@ public class AuthorizationParser {
         }
         return false;
     }
+
+
 }

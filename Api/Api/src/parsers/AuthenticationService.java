@@ -23,18 +23,18 @@ public class AuthenticationService {
         }
         return null;
     }
+    public boolean isAdmin(){
+        if(jws!=null){
 
-    public int getUserId() {
-        if(jws!=null) {
+            return (boolean)jws.getBody().get("isAdmin");
+        }
+        return false;
+    }
+    public int getUserId(){
+        if(jws!=null){
             return (int)jws.getBody().get("userId");
         }
         return -1;
-    }
-
-
-    public boolean isAdmin(){
-
-        return false;
     }
 
     private String parseToken(String token){
