@@ -9,7 +9,6 @@ status is active online user?
 ---        ---
 */
 
-drop schema quiz_db;
 
 USE QUIZ_DB;
 
