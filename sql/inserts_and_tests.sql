@@ -74,7 +74,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(account_id, date_achieved)
+(achievement_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Quizaholic'), 
 (select id from accounts where username = 'vika_shonia'), sysdate());
@@ -82,7 +82,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(account_id, date_achieved)
+(achievement_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Specialsit'), 
 (select id from accounts where username = 'ziki'), sysdate());
@@ -90,7 +90,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(account_id, date_achieved)
+(achievement_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Master'), 
 (select id from accounts where username = 'giojikia'), sysdate());
@@ -98,7 +98,7 @@ values
 USE QUIZ_DB;
 
 insert into achievings
-(account_id, date_achieved)
+(achievement_id, account_id, date_achieved)
 values
 ((select id from achievements where name = 'Newbie'), 
 (select id from accounts where username = 'giojikia'), sysdate());

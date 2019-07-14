@@ -52,11 +52,11 @@ DROP TABLE IF EXISTS achievings;
 
 CREATE TABLE achievings (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    achievment_id INTEGER NOT NULL,
+    achievement_id INTEGER NOT NULL,
     account_id INTEGER NOT NULL,
     date_achieved DATETIME NOT NULL,
 
-    UNIQUE KEY (account_id, achievment_id)
+    UNIQUE KEY (account_id, achievement_id)
 );
 
 USE QUIZ_DB;
