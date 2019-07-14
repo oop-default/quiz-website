@@ -1,6 +1,5 @@
 package database;
 
-import database.DatabaseManager;
 import models.FriendRequest;
 
 import java.sql.ResultSet;
@@ -19,7 +18,7 @@ public class ZvikisDatabaseCommunicator {
 
     public static void insertFriendRequest(int senderId, int recieverId, DatabaseManager manager) throws SQLException {
         String query = "insert into friend_requests " +
-                "(status, sender_id, reciever_id, date_sent, is_seen) " +
+                "(status, sender_id, receiver_id, date_sent, is_seen) " +
                 "values (\"Pending\", " + senderId + ", "
                 + recieverId + ", sysdate(), true);";
         manager.executeUpdateQuery(query);
@@ -28,12 +27,12 @@ public class ZvikisDatabaseCommunicator {
     public static ResultSet getFriendRequests(int id, DatabaseManager manager) throws SQLException {
         String query = "select sender_id as fromId, " +
                 "(select username from accounts acc where acc.id = sender_id) as fromName " +
-                "from friend_requests where reciever_id = " + id + " order by date_sent desc;";
+                "from friend_requests where receiver_id = " + id + " order by date_sent desc;";
         return manager.executeGetQuery(query);
     }
 
     private static void deleteFriendRequest(int recieverId, int senderId, DatabaseManager manager) {
-        String query = "delete from friend_requests where sender_id = " + senderId + " and reciever_id = " + recieverId + ";";
+        String query = "delete from friend_requests where sender_id = " + senderId + " and receiver_id = " + recieverId + ";";
         try {
             manager.executeUpdateQuery(query);
         } catch (SQLException e) {
@@ -59,8 +58,8 @@ public class ZvikisDatabaseCommunicator {
     }
 
     public static boolean requestAlreadyExists(int recieverId, int senderId, DatabaseManager manager) throws SQLException {
-        String query = "select count(*) as rowcount from friend_requests where (sender_id = " + senderId + " and reciever_id = " +
-                recieverId + ")" + " or (sender_id = " + recieverId + " and reciever_id = " + senderId + " );";
+        String query = "select count(*) as rowcount from friend_requests where (sender_id = " + senderId + " and receiver_id = " +
+                recieverId + ")" + " or (sender_id = " + recieverId + " and receiver_id = " + senderId + " );";
         ResultSet rs = manager.executeGetQuery(query);
         rs.next();
         return rs.getInt("rowcount") != 0;
@@ -68,7 +67,7 @@ public class ZvikisDatabaseCommunicator {
 
     public static void sendChallenge(int senderId, int recieverId, int quizId, DatabaseManager manager) throws SQLException {
         String query = "insert into challenges " +
-                "(quiz_id, status, sender_id, reciever_id, date_sent, is_seen) " +
+                "(quiz_id, status, sender_id, receiver_id, date_sent, is_seen) " +
                 "values" +
                 "(" + quizId + ", 'pending', " + senderId + ", " + recieverId + ", sysdate(), false);";
         manager.executeUpdateQuery(query);
@@ -79,14 +78,14 @@ public class ZvikisDatabaseCommunicator {
         String query = "select sender_id as fromId, " +
                 "(select username from accounts acc where acc.id = sender_id) " +
                 "as fromName, quiz_id as quizId from challenges " +
-                "where reciever_id = "+ userId +" and status = \'pending\' order by date_sent desc;";
+                "where receiver_id = "+ userId +" and status = \'pending\' order by date_sent desc;";
         // System.out.println(query);
         return manager.executeGetQuery(query);
     }
 
     public static void sendNote(int senderId, int recieverId, String text, DatabaseManager manager) throws SQLException {
 
-        String query = "insert into notes (note, sender_id, reciever_id, date_sent, is_seen) " +
+        String query = "insert into notes (note, sender_id, receiver_id, date_sent, is_seen) " +
                 "values " +
                 "(\'" + text + "\'," + senderId + ", " + recieverId + ", sysdate(), false);";
         manager.executeUpdateQuery(query);
@@ -95,19 +94,19 @@ public class ZvikisDatabaseCommunicator {
     public static ResultSet getNotes(int userId, DatabaseManager manager) throws SQLException {
         String query = "select sender_id as fromId, " +
                 "(select username from accounts acc where acc.id = sender_id) as fromName," +
-                " note from notes where reciever_id = " + userId +" and not is_seen order by date_sent desc;";
+                " note from notes where receiver_id = " + userId +" and not is_seen order by date_sent desc;";
         return manager.executeGetQuery(query);
     }
 
     public static void markNotesAsSeen(int senderId, int recieverId, DatabaseManager manager) throws SQLException {
         String query = "update notes " +
                 "set is_seen = true " +
-                "where reciever_id = " + senderId + " and sender_id = " + recieverId + ";";
+                "where receiver_id = " + senderId + " and sender_id = " + recieverId + ";";
         manager.executeUpdateQuery(query);
     }
 
     public static void answerChallenge(int id, int fromId, int quizId, String answer, DatabaseManager manager) throws SQLException {
-        String query = "delete from challenges where sender_id = " + fromId + " and reciever_id = " + id + " and quiz_id = " + quizId + ";";
+        String query = "delete from challenges where sender_id = " + fromId + " and receiver_id = " + id + " and quiz_id = " + quizId + ";";
         manager.executeUpdateQuery(query);
     }
 }

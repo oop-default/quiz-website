@@ -18,7 +18,7 @@ public class AchievementsParser {
                 "\t\t\t\tjoin accounts acc on acc.id = f.second_id\n" +
                 "\t\t\t\twhere f.first_id = "+userID+") friends \n" +
                 "join achievings achi on achi.account_id = friends.id\n" +
-                "join achievements ach on ach.id = achi.achievment_id\n" +
+                "join achievements ach on ach.id = achi.achievement_id\n" +
                 "group by achi.date_achieved\n" +
                 "order by achi.date_achieved desc";
         ResultSet rs = manager.executeQuery(query);
