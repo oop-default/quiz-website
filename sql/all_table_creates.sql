@@ -20,7 +20,7 @@ CREATE TABLE accounts (
     last_name VARCHAR (255) NOT NULL,
     gender VARCHAR(50) NOT NULL, /* 'Male', 'Female' or 'Other' */
     password VARCHAR (255) NOT NULL,
-    image LONGBLOB,
+    image TEXT,
     num_points DOUBLE,
     date_created DATETIME NOT NULL,
     is_deleted BOOLEAN,
@@ -40,7 +40,7 @@ CREATE TABLE achievements (
     name VARCHAR (255) NOT NULL,
     num_points DOUBLE NOT NULL, /* needed to get it */
     description TEXT,
-    image LONGBLOB,
+    image TEXT,
     
     UNIQUE KEY (name)
 );
@@ -51,11 +51,11 @@ DROP TABLE IF EXISTS achievings;
 
 CREATE TABLE achievings (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    achievment_id INTEGER NOT NULL,
+    achievement_id INTEGER NOT NULL,
     account_id INTEGER NOT NULL,
     date_achieved DATETIME NOT NULL,
 
-    UNIQUE KEY (account_id, achievment_id)
+    UNIQUE KEY (account_id, achievement_id)
 );
 
 USE QUIZ_DB;

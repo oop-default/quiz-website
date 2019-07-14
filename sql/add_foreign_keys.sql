@@ -9,7 +9,7 @@ ADD FOREIGN KEY (category_id)
     ON DELETE CASCADE;
 
 ALTER TABLE achievings
-ADD FOREIGN KEY (achievment_id) 
+ADD FOREIGN KEY (achievement_id) 
     REFERENCES achievements (id)
     ON DELETE CASCADE;
     
