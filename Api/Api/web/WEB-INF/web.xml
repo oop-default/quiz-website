@@ -146,7 +146,30 @@
         <servlet-name>ServletFriendsAchievements</servlet-name>
         <url-pattern>/ServletFriendsAchievements</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>ServletFriendRequest</servlet-name>
+        <servlet-class>servlets.ServletFriendRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendRequest</servlet-name>
+        <url-pattern>/ServletFriendRequest</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletChallenge</servlet-name>
+        <servlet-class>servlets.ServletChallenge</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletChallenge</servlet-name>
+        <url-pattern>/ServletChallenge</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletNote</servlet-name>
+        <servlet-class>servlets.ServletNote</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletNote</servlet-name>
+        <url-pattern>/ServletNote</url-pattern>
+    </servlet-mapping>
 
 
 

@@ -47,6 +47,16 @@ public class DatabaseManager {
 
         return null;
     }
+
+    public ResultSet executeGetQuery(String query) throws SQLException {
+        Statement st = con.createStatement();
+        return st.executeQuery(query);
+    }
+
+    public void executeUpdateQuery(String query) throws SQLException {
+        stmt.executeUpdate(query);
+    }
+
     private void insertNewAchievementFor(int personID,int achievingID,long updateTime){
         String query = "insert into achievings(achievment_id,account_id,date_achieved) values ("+achievingID+
                 ","+personID+","+

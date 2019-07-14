@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Container from './profilepage/js/Container';
 import QuizPage from './QuizBody/js/QuizPage';
 import searchPage from './searchPage/searchPage';
+import CreateQuiz from './createQuiz/js/CreateQuiz';
 
 
 const routing = (
@@ -19,6 +20,7 @@ const routing = (
             <Route path="/profile/:userId" exact component={Container} />
             <Route path="/quiz/:quizId" exact component={QuizPage} />
             <Route path="/search/:searchQuery" exact component={searchPage}/>
+            <Route path="/createQuiz" exact component={CreateQuiz}/>
             <Route component={notfound} />
         </Switch>
     </Router>
