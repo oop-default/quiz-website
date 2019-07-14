@@ -18,6 +18,8 @@ import java.sql.ResultSet;
 
 import static parsers.VikaParser.parseUserInfo;
 
+import static parsers.VikaParser.parseUserInfo;
+
 
 @WebServlet(name = "ServletAccountInfo")
 public class ServletAccountInfo extends HttpServlet {

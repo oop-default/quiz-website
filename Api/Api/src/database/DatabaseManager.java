@@ -2,6 +2,14 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
+import models.*;
+import parsers.AchievementsParser;
+import parsers.AuthenticationService;
+import parsers.ScoreParser;
+import responseModels.FriendAchievements;
+import responseModels.NotPersonalScoreResponse;
+import responseModels.friendsQuizzesResponse;
+import responseModels.quizzesResponse;
 import parsers.AccountParser;
 import parsers.AuthenticationService;
 import parsers.QuizParser;
@@ -66,7 +74,7 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-    private void updateAchievingsFor(int personID,long updateTime){
+    private boolean updateAchievingsFor(int personID,long updateTime){
         //getting points from here
         String points = "select coalesce(sum(num_points),0) pt from history \n" +
                         "where account_id = "+personID;
@@ -77,10 +85,10 @@ public class DatabaseManager {
             rspoints.next();
             point = rspoints.getInt("pt");
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
         //if point is 0, zero achievings are added
-        if(point == 0)return;
+        if(point == 0)return false;;
         //getting total achievements player can take
         String achievements = "select id,num_points from achievements";
         ResultSet rsachievements = executeQuery(achievements);
@@ -94,11 +102,11 @@ public class DatabaseManager {
                     achievementsArr.add(id);
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                return false;
             }
         }
         //if cant returns
-        if(achievementsArr.size() == 0)return;
+        if(achievementsArr.size() == 0)return false;;
         //older achievings
         String personalAchievings = "select achievment_id from achievings \n" +
                                     "where account_id = "+personID;
@@ -110,7 +118,7 @@ public class DatabaseManager {
                 int id = rsachievings.getInt("achievment_id");
                 achievingsArr.add(id);
             } catch (SQLException e) {
-                e.printStackTrace();
+                return false;
             }
         }
         for (int i = 0; i<achievementsArr.size(); i++){
@@ -118,9 +126,32 @@ public class DatabaseManager {
                 insertNewAchievementFor(personID,achievementsArr.get(i),updateTime);
             }
         }
-
+        return true;
     }
-    public void saveQuizResults(SubmittedQuiz sq){
+
+    private void insertAnswer(Answer answer,int pos){
+        String query = "insert into answers(answer,is_correct,question_id) values('"+answer.getAnswer()+"',"
+                        +answer.isCorrect()+","+pos+")";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertQuestion(Question question,int pos){
+        String query = "insert into questions(type,question,quiz_id,num_points,image) values('"+question.getType()+"','"+question.getQuestion()
+                        +"',"+pos+","+question.getNum_poin()+",'"+question.getImage()+"')";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean saveQuizResults(SubmittedQuiz sq){
         String query = "insert into history(account_id,quiz_id,num_points,time_spent,date_taken) "+
                         "values("+sq.getPersonID()+","+sq.getQuizID()+","+sq.getPoints()+","+sq.getTimeSpent()+","
                         +"FROM_UNIXTIME("+sq.getDateSubmittedMillis()+"))";
@@ -128,10 +159,120 @@ public class DatabaseManager {
             Statement statement = con.createStatement();
             statement.executeUpdate(query);
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
-        updateAchievingsFor(sq.getPersonID(),sq.getDateSubmittedMillis());
+        return updateAchievingsFor(sq.getPersonID(),sq.getDateSubmittedMillis());
+    }
+    public boolean saveNewQuiz(Quiz nq){
+       String description =  nq.getDescription();
+       String title = nq.getTitle();
+       String author = nq.getAuthor();
+       int num_points = nq.getNum_points();
+       ArrayList<Question> questionData = nq.getQuestions();
+       String type = nq.getType();
 
+       System.out.println("title: "+title+" author : "+author+" description : "+description+" num_points : "+num_points
+                            + "questions? "+questionData.size());
+       if(type == null ||title == null || author == null || title.length() == 0
+               || type.length() == 0 || author.length() == 0 || questionData.size() == 0
+                    || num_points == 0){
+           return false;
+       }
+        System.out.println("gaiara bazisi test");
+       //get userID
+        ResultSet rsuserid = executeQuery("select count(*) count,id from accounts\n" +
+                                          "where username = '"+author+"'");
+        int authorID = 0;
+        try {
+            rsuserid.next();
+            int count = rsuserid.getInt("count");
+            if(count == 0)return false;
+
+            authorID = rsuserid.getInt("id");
+        } catch (SQLException e) {
+            return false;
+        }
+        //
+        System.out.println("gaiara authorID test");
+        //get typeID
+        ResultSet rstypeid = executeQuery("select count(*) count,id from categories\n" +
+                "where category = '"+type+"'");
+        int typeID = 0;
+        try {
+            rstypeid.next();
+            int count = rstypeid.getInt("count");
+            if(count == 0)return false;
+            typeID = rstypeid.getInt("id");
+        } catch (SQLException e) {
+            return false;
+        }
+        System.out.println("gaiara typeID test");
+        //
+       int addedQuestions = 0;
+       for(int i = 0; i<questionData.size(); i++){
+           Question question = questionData.get(i);
+           String questionString = question.getQuestion();
+           ArrayList<Answer> answers = question.getAnswers();
+           String img = question.getImage();
+           double points = question.getNum_poin();
+           String questionType = question.getType();
+
+           if(questionString == null || questionString.length() == 0 || points == 0
+                || questionType == null || questionType.length() == 0 || (!questionType.equals("QR")
+                   && !questionType.equals("MC") && !questionType.equals("PR") && !questionType.equals("FB"))){
+               continue;
+           }
+           System.out.println("gaiara question bazisi test");
+           if(answers == null || answers.size() == 0)continue;
+
+           int addedAnswers = 0;
+           for(int j = 0; j<answers.size(); j++) {
+               Answer answer = answers.get(j);
+               String answerString = answer.getAnswer();
+               if (answerString == null || answerString.length() == 0) continue;
+
+               //add answer
+               ResultSet rsquestionpos = executeQuery("select coalesce(count(*),0) pos from questions");
+               int questionpos = 0;
+               try {
+                   rsquestionpos.next();
+                   questionpos = rsquestionpos.getInt("pos");
+               } catch (SQLException e) {
+                   return false;
+               }
+               //
+               insertAnswer(answer, questionpos + 1);
+               addedAnswers++;
+           }
+           if(addedAnswers == 0)continue;
+           System.out.println("gaiara answer test");
+
+           ResultSet rsquizpos = executeQuery("select coalesce(count(*),0) pos from quizzes");
+           int quizpos = 0;
+           try {
+               rsquizpos.next();
+               quizpos = rsquizpos.getInt("pos");
+           } catch (SQLException e) {
+               return false;
+           }
+            //add question
+           insertQuestion(question,quizpos+1);
+           addedQuestions++;
+       }
+       if(addedQuestions == 0)return false;
+        System.out.println("gaiara question chamateba test");
+       //add quizData;
+        String query= "insert into quizzes(title,author_id,description,"+"" +
+                      "date_created,category_id,num_points) values('"+title+"',"+authorID+",'"+description+
+                      "',sysdate(),"+typeID+","+num_points+")";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            return false;
+        }
+        System.out.println("gaiara quizz chamateba test");
+        return true;
     }
 
     public List<quizzesResponse> getCreatedQuizzes(int id) {
@@ -186,7 +327,7 @@ public class DatabaseManager {
     public boolean haveSentRequest(int myId, int receiverId) {
         PreparedStatement stmt;
         try {
-            stmt = con.prepareStatement("select * from friend_requests where sender_id = ? and reciever_id = ? and status=?");
+            stmt = con.prepareStatement("select * from friend_requests where sender_id = ? and receiver_id = ? and status=?");
             stmt.setInt(1, myId);
             stmt.setInt(2, receiverId);
             stmt.setString(3, "pending");
@@ -329,7 +470,7 @@ public class DatabaseManager {
         try {
             String sql = "select q_id, a_id, a_username, q_title, h_num_points, h_date\n" +
                     "from (\n" +
-                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_tittle, h.num_points h_num_points, h.date_taken h_date\n" +
+                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_title, h.num_points h_num_points, h.date_taken h_date\n" +
                     "from history h \n" +
                     "join quizzes q \n" +
                     "on q.id = h.quiz_id \n" +
@@ -340,7 +481,7 @@ public class DatabaseManager {
                     "where h.account_id in \n" +
                     "(select second_id from friends where first_id=?) \n" +
                     "UNION \n" +
-                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_tittle, h.num_points h_num_points, h.date_taken h_date \n" +
+                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_title, h.num_points h_num_points, h.date_taken h_date \n" +
                     "from history h \n" +
                     "join quizzes q \n" +
                     "on q.id = h.quiz_id \n" +
@@ -394,6 +535,18 @@ public class DatabaseManager {
 
     public Connection getConnection(){
         return con;
+    }
+    public ArrayList<Score> getGlobalTopScores(int quizID){
+        return ScoreParser.getGlobalTopScores(quizID,this);
+    }
+    public ArrayList<Score> getFriendTopScores(int id,int quizID){
+        return ScoreParser.getFriendTopScores(id,quizID,this);
+    }
+    public ArrayList<Score> getPersonalTopScores(int id,int quizID){
+       return ScoreParser.getPersonalTopScores(id,quizID,this);
+    }
+    public ArrayList<FriendAchievements> getAchievementsFor(int id){
+        return AchievementsParser.getAchievementsFor(id,this);
     }
 
     public SearchResponse getSearchResponse(String query) {

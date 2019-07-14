@@ -12,6 +12,7 @@ public class Quiz {
     private ArrayList<Question> questions;
     private int num_points;
     private String dateCreated;
+
     public Quiz(int id,String title, String type, String description, String author, int num_points,ArrayList<Question> questions,String dateCreated){
         this.id=id;
         this.title=title;
@@ -71,4 +72,18 @@ public class Quiz {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public int getId(){return id;}
+
+
+    @Override
+    public boolean equals(Object obj) {
+        Quiz quiz = (Quiz)obj;
+        return quiz != null && this.title.equals(quiz.getTitle()) && this.type.equals(quiz.getType())
+                && this.author.equals(quiz.getAuthor()) && this.dateCreated.equals(quiz.dateCreated)
+                && this.description.equals(quiz.getDescription()) && this.id == quiz.getId()
+                && this.questions.equals(quiz.getQuestions());
+
+    }
+
 }

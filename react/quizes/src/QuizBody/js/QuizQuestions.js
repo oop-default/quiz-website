@@ -12,13 +12,21 @@ export function AnswerComponent(data,pos,page){
 }
 function QuestionResponseAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.answers[0].answer;
-    if(answer === null || answer.length != 0){
-    page.state.answers[pos] = answer;
+    if(!(answer === null) && !(answer.length === 0)){
+        page.state.answers[pos] = answer;
     }
-    page.state.realAnswers[pos] = realAnswer;
+    var realAnswers = "";
+    var answerSize = data.answers.length;
+    var res = false;
+    for(let index = 0; index < answerSize; index++){
+        realAnswers += data.answers[index].answer+", ";
+        if(data.answers[index].answer === answer){
+            res = true;
+        }
+    }
+    page.state.realAnswers[pos] = realAnswers;
     return(
-       answer === realAnswer
+       res
     );
 }
 function MultipleChoiceAnswer(pos,data,page){
@@ -37,7 +45,7 @@ function MultipleChoiceAnswer(pos,data,page){
         }
     }
 
-    if(answer === null || answer.length != 0){
+    if(!(answer === null) && !(answer.length === 0)){
         page.state.answers[pos] = answer;
     }
     page.state.realAnswers[pos] = realAnswer;
@@ -45,24 +53,40 @@ function MultipleChoiceAnswer(pos,data,page){
 }
 function PictureResponseAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.answers[0].answer;
-    if(answer === null || answer.length != 0){
-    page.state.answers[pos] = answer;
+    if(!(answer === null) && !(answer.length === 0)){
+        page.state.answers[pos] = answer;
     }
-    page.state.realAnswers[pos] = realAnswer;
+    var realAnswers = "";
+    var answerSize = data.answers.length;
+    var res = false;
+    for(let index = 0; index < answerSize; index++){
+        realAnswers += data.answers[index].answer+", ";
+        if(data.answers[index].answer === answer){
+            res = true;
+        }
+    }
+    page.state.realAnswers[pos] = realAnswers;
     return(
-       answer === realAnswer
+       res
     );
 }
 function FillInTheBlankAnswer(pos,data,page){
     var answer = document.getElementById(pos+"input").value;
-    var realAnswer = data.answers[0].answer;
-    if(answer === null || answer.length != 0){
-       page.state.answers[pos] = answer+"asd"; 
+    if(!(answer === null) && !(answer.length === 0)){
+        page.state.answers[pos] = answer;
     }
-    page.state.realAnswers[pos] = realAnswer;
+    var realAnswers = "";
+    var answerSize = data.answers.length;
+    var res = false;
+    for(let index = 0; index < answerSize; index++){
+        realAnswers += data.answers[index].answer+", ";
+        if(data.answers[index].answer === answer){
+            res = true;
+        }
+    }
+    page.state.realAnswers[pos] = realAnswers;
     return(
-       answer === realAnswer
+       res
     );
 }
 
@@ -97,7 +121,7 @@ function PictureResponse(data,pos){
     return(
         <div id = {pos+"question"} className = "QuizContent">
         <h3 className = "questionText">{data.question}</h3>
-        <div className = "questionText"><img style = {{position : "unset"}} src = {require("./wrong.png")} className = "questionImage"/></div>
+        <div className = "questionText"><img style = {{position : "unset"}} src = {data.image} className = "questionImage"/></div>
         <div>Insert your answer here :  <textarea id = {pos+"input"} className = "QuizInput" /></div>
         </div>
     );

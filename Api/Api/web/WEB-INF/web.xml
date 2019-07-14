@@ -36,6 +36,24 @@
         <url-pattern>/ServletSearch</url-pattern>
     </servlet-mapping>
 
+
+
+
+
+    <servlet>
+        <servlet-name>ServletSaveNewQuiz</servlet-name>
+        <servlet-class>servlets.ServletSaveNewQuiz</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSaveNewQuiz</servlet-name>
+        <url-pattern>/ServletSaveNewQuiz</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
     <servlet>
         <servlet-name>ServletCreatedQuizzes</servlet-name>
         <servlet-class>servlets.ServletCreatedQuizzes</servlet-class>

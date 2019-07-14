@@ -94,9 +94,36 @@ processData(jsonString,quizId) {
         questions: object.questions,
         layout : "vertical"
     }
+    // this.sendQuiz(object);
     this.setState({ quiz: newQuiz });
     console.log(this.state.quiz);
 }
+
+sendQuiz(object) {
+    var newQuiz = {
+        author: object.author,
+        title: object.title,
+        description: object.description,
+        type: object.type,
+        num_points: object.num_points,
+        dateCreated: object.dateCreated,
+        questions: object.questions,
+    }
+    fetch("http://localhost:8030/ServletSaveNewQuiz", {
+        method: "POST", 
+        body: JSON.stringify(newQuiz),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+          if (response.status !== 200 ) {
+              console.log("erorinio");
+          }
+        }).catch(error => {
+                console.log(error);
+        });
+  }
+
 render() {
 
   if (this.state.quiz === null) {

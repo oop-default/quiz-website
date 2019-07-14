@@ -430,7 +430,8 @@ class NewQuiz extends Component {
   }
 
   postData(data) {
-    fetch('http://localhost:8080/ServletNote', {
+    console.log(data);
+    fetch('http://localhost:8030/ServletSaveNewQuiz', {
         method: 'POST', // or 'PUT'
         body: JSON.stringify(data), // data can be `string` or {object}!
         headers: {

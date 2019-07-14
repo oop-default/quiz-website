@@ -7,6 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2654ed59-2f35-4923-8073-a1cb1e25d791" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/quiz-website-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/CategoriesResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/statisticsResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCategories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest$boolClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletPopularQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletRecentQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/CategoriesResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletRecentQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/VikasDatabaseCommunicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Challenge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ChallengeAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/FriendRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parsers/VikaParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parsers/ZvikisParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/CategoriesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/ChallengeParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/FriendRequestParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/NoteParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/boolClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/statisticsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletChallenge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletIHaveSentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletNote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletPopularQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletRecentQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestFriendsTakenQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestPopulars.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testCreatedQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testIHaveSentRequests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testRecQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testTakenQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Notifications.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Api.iml" afterDir="false" />
@@ -217,6 +272,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/tests/parsers/AuthenticationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/parsers/AuthenticationService.java" />
         <option value="$PROJECT_DIR$/src/tests/parsers/QuizParserTest.java" />
         <option value="$PROJECT_DIR$/src/tests/test.java" />
         <option value="$PROJECT_DIR$/src/parsers/AccountParser.java" />
@@ -284,10 +340,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="21" />
-    <option name="y" value="-18" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -295,6 +350,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Tests'; set:Tests; class com.intellij.psi.search.scope.TestsScope">
           <expand>
@@ -361,6 +418,13 @@
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="servlets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -378,8 +442,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,11 +456,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../quiz-website/Api/.idea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
@@ -696,7 +758,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -710,6 +772,7 @@
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.24962178" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1232,7 +1295,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>1.8 (2)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
