@@ -64,4 +64,15 @@ public class Account {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+
+        Account ac = (Account)obj;
+        if(ac.getPassword().equals(password)){
+            return true;
+        }
+        return false;
+    }
 }
