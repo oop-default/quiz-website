@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import cracker.PasswordGenerator;
 import database.DatabaseManager;
 import models.Account;
+import parsers.AccountParser;
 import parsers.AuthorizationParser;
 import responseModels.LoginRegisterResponse;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet(name = "ServletRegister")
 public class ServletRegister extends HttpServlet {
@@ -23,8 +25,7 @@ public class ServletRegister extends HttpServlet {
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Account account = gson.fromJson(reader, Account.class);
-        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-
+        DatabaseManager manager = (DatabaseManager)request.getServletContext().getAttribute("database");
         if(account.getUsername().equals("")||account.getPassword().equals("")||
                 account.getFirstname().equals("")||account.getSecondname().equals("")||
                 account.getGender().equals("")){
@@ -32,14 +33,15 @@ public class ServletRegister extends HttpServlet {
             LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(400,null,message);
             sendResponse(response,gson,loginRegisterResponse);
         }else{
-            if(AuthorizationParser.usernameExists(account.getUsername(),manager)){
+            if(manager.usernameExists(account.getUsername())){
                 String message = "Username already exists!";
                 LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(406,null,message);
                 sendResponse(response,gson,loginRegisterResponse);
             }else{
                 account.setPassword(PasswordGenerator.generate(account.getPassword()));
-                AuthorizationParser.insertAccount(account,manager);
-                String jws = JwtManager.createJWS(account.getUsername());
+                manager.insertAccount(account);
+                String jws = null;
+                jws = JwtManager.createJWS(account.getUsername(), manager.getUserId(account.getUsername()),false);
                 String message = "Ok";
                 LoginRegisterResponse loginRegisterResponse = new LoginRegisterResponse(200,jws,message);
                 sendResponse(response,gson,loginRegisterResponse);
@@ -55,13 +57,10 @@ public class ServletRegister extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             out.print(jsonInString);
             out.flush();
+            throw new IOException();
         } catch (IOException e) {
-            e.printStackTrace();
         }
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
