@@ -21,10 +21,5 @@ public class ServletSaveQuizResults extends HttpServlet {
         SubmittedQuiz sq = gson.fromJson(reader, SubmittedQuiz.class);
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
         manager.saveQuizResults(sq);
-        System.out.println("asd");
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

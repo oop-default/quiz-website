@@ -24,4 +24,9 @@ public class Answer {
     public void setCorrect(boolean correct) {
         this.correct = correct;
     }
+    @Override
+    public boolean equals(Object obj) {
+        Answer answ = (Answer)obj;
+        return answ!=null && answ.isCorrect() == correct && answer.equals(answ.getAnswer());
+    }
 }

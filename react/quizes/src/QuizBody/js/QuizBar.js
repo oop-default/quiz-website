@@ -240,7 +240,7 @@ import {AnswerComponent} from './QuizQuestions';
         var num = 0;
         var pt = 0;
         var questions = this.props.Quiz.questions;
-       if(!this.state.quizChecked){
+       
        for (let index = 0; index < questions.length; index++) {
         var answer = AnswerComponent(questions[index],index,this);
             if(answer){
@@ -251,7 +251,7 @@ import {AnswerComponent} from './QuizQuestions';
                 this.state.answerTypes[index] = "false";
             }
        }
-    }
+    
     
     this.sendResults();
        this.setState({

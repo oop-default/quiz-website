@@ -20,16 +20,13 @@ import java.util.ArrayList;
 
 @WebServlet(name = "ServletFriendsAchievements")
 public class ServletFriendsAchievements extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idString = request.getParameter("id");
         int id = Integer.parseInt(idString);
 
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<FriendAchievements> res = AchievementsParser.getAchievementsFor(id,manager);
+        ArrayList<FriendAchievements> res = manager.getAchievementsFor(1);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         PrintWriter writer = response.getWriter();

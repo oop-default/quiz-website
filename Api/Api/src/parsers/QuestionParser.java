@@ -24,7 +24,7 @@ public class QuestionParser {
                 String type = rs.getString("type");
                 String question = rs.getString("question");
                 double num_points = rs.getDouble("num_points");
-                Image image = (Image)rs.getBlob("image");
+                String image = rs.getString("image");
                 int id = rs.getInt("id");
                 ArrayList<Answer> answers = AnswerParser.getAnswers(id,manager);
                 Question question1 = new Question(type,question,num_points,image,answers);

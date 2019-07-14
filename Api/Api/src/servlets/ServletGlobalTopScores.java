@@ -20,16 +20,12 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "ServletGlobalTopScores")
 public class ServletGlobalTopScores extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String quizid = request.getParameter("quizid");
         int quizID = Integer.parseInt(quizid);
 
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<Score> scores =  ScoreParser.getGlobalTopScores(quizID,manager);
+        ArrayList<Score> scores =  manager.getGlobalTopScores(quizID);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         PrintWriter writer = response.getWriter();

@@ -2,13 +2,17 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
-import models.SubmittedQuiz;
+import models.*;
+import parsers.AchievementsParser;
+import parsers.AuthenticationService;
+import parsers.ScoreParser;
 import responseModels.FriendAchievements;
 import responseModels.NotPersonalScoreResponse;
 import responseModels.friendsQuizzesResponse;
 import responseModels.quizzesResponse;
 
 import javax.swing.plaf.nimbus.State;
+import java.awt.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -115,6 +119,29 @@ public class DatabaseManager {
         }
 
     }
+
+    private void insertAnswer(Answer answer,int pos){
+        String query = "insert into answers(answer,is_correct,question_id) values('"+answer.getAnswer()+"',"
+                        +answer.isCorrect()+","+pos+")";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertQuestion(Question question,int pos){
+        String query = "insert into questions(type,question,quiz_id,num_points,image) values('"+question.getType()+"','"+question.getQuestion()
+                        +"',"+pos+","+question.getNum_poin()+",'"+question.getImage()+"')";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void saveQuizResults(SubmittedQuiz sq){
         String query = "insert into history(account_id,quiz_id,num_points,time_spent,date_taken) "+
                         "values("+sq.getPersonID()+","+sq.getQuizID()+","+sq.getPoints()+","+sq.getTimeSpent()+","
@@ -127,6 +154,117 @@ public class DatabaseManager {
         }
         updateAchievingsFor(sq.getPersonID(),sq.getDateSubmittedMillis());
 
+    }
+    public boolean saveNewQuiz(Quiz nq){
+       String description =  nq.getDescription();
+       String title = nq.getTitle();
+       String author = nq.getAuthor();
+       int num_points = nq.getNum_points();
+       ArrayList<Question> questionData = nq.getQuestions();
+       String type = nq.getType();
+
+       System.out.println("title: "+title+" author : "+author+" description : "+description+" num_points : "+num_points
+                            + "questions? "+questionData.size());
+       if(type == null ||title == null || author == null || title.length() == 0
+               || type.length() == 0 || author.length() == 0 || questionData.size() == 0
+                    || num_points == 0){
+           return false;
+       }
+        System.out.println("gaiara bazisi test");
+       //get userID
+        ResultSet rsuserid = executeQuery("select count(*) count,id from accounts\n" +
+                                          "where username = '"+author+"'");
+        int authorID = 0;
+        try {
+            rsuserid.next();
+            int count = rsuserid.getInt("count");
+            if(count == 0)return false;
+
+            authorID = rsuserid.getInt("id");
+        } catch (SQLException e) {
+            return false;
+        }
+        //
+        System.out.println("gaiara authorID test");
+        //get typeID
+        ResultSet rstypeid = executeQuery("select count(*) count,id from categories\n" +
+                "where category = '"+type+"'");
+        int typeID = 0;
+        try {
+            rstypeid.next();
+            int count = rstypeid.getInt("count");
+            if(count == 0)return false;
+            typeID = rstypeid.getInt("id");
+        } catch (SQLException e) {
+            return false;
+        }
+        System.out.println("gaiara typeID test");
+        //
+       int addedQuestions = 0;
+       for(int i = 0; i<questionData.size(); i++){
+           Question question = questionData.get(i);
+           String questionString = question.getQuestion();
+           ArrayList<Answer> answers = question.getAnswers();
+           String img = question.getImage();
+           double points = question.getNum_poin();
+           String questionType = question.getType();
+
+           if(questionString == null || questionString.length() == 0 || points == 0
+                || questionType == null || questionType.length() == 0 || (!questionType.equals("QR")
+                   && !questionType.equals("MC") && !questionType.equals("PR") && !questionType.equals("FB"))){
+               continue;
+           }
+           System.out.println("gaiara question bazisi test");
+           if(answers == null || answers.size() == 0)continue;
+
+           int addedAnswers = 0;
+           for(int j = 0; j<answers.size(); j++) {
+               Answer answer = answers.get(j);
+               String answerString = answer.getAnswer();
+               if (answerString == null || answerString.length() == 0) continue;
+
+               //add answer
+               ResultSet rsquestionpos = executeQuery("select coalesce(count(*),0) pos from questions");
+               int questionpos = 0;
+               try {
+                   rsquestionpos.next();
+                   questionpos = rsquestionpos.getInt("pos");
+               } catch (SQLException e) {
+                   return false;
+               }
+               //
+               insertAnswer(answer, questionpos + 1);
+               addedAnswers++;
+           }
+           if(addedAnswers == 0)continue;
+           System.out.println("gaiara answer test");
+
+           ResultSet rsquizpos = executeQuery("select coalesce(count(*),0) pos from quizzes");
+           int quizpos = 0;
+           try {
+               rsquizpos.next();
+               quizpos = rsquizpos.getInt("pos");
+           } catch (SQLException e) {
+               return false;
+           }
+            //add question
+           insertQuestion(question,quizpos+1);
+           addedQuestions++;
+       }
+       if(addedQuestions == 0)return false;
+        System.out.println("gaiara question chamateba test");
+       //add quizData;
+        String query= "insert into quizzes(tittle,author_id,description,"+"" +
+                      "date_created,category_id,num_points) values('"+title+"',"+authorID+",'"+description+
+                      "',sysdate(),"+typeID+","+num_points+")";
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            return false;
+        }
+        System.out.println("gaiara quizz chamateba test");
+        return true;
     }
     public List<quizzesResponse> getCreatedQuizzes(int id) {
         List<quizzesResponse> quizzes = new ArrayList<>();
@@ -223,5 +361,19 @@ public class DatabaseManager {
     public Connection getConnection(){
         return con;
     }
-
+    public ArrayList<Score> getGlobalTopScores(int quizID){
+        return ScoreParser.getGlobalTopScores(quizID,this);
+    }
+    public ArrayList<Score> getFriendTopScores(int id,int quizID){
+        return ScoreParser.getFriendTopScores(id,quizID,this);
+    }
+    public ArrayList<Score> getPersonalTopScores(int id,int quizID){
+       return ScoreParser.getPersonalTopScores(id,quizID,this);
+    }
+    public ArrayList<FriendAchievements> getAchievementsFor(int id){
+        return AchievementsParser.getAchievementsFor(id,this);
+    }
+    public AuthenticationService getService(String token){
+        return new AuthenticationService(token);
+    }
 }

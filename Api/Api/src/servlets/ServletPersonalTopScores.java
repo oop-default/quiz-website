@@ -17,10 +17,6 @@ import java.util.ArrayList;
 
 @WebServlet(name = "ServletPersonalTopScores")
 public class ServletPersonalTopScores extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userid = request.getParameter("id");
         String quizid = request.getParameter("quizid");
@@ -28,7 +24,7 @@ public class ServletPersonalTopScores extends HttpServlet {
         int id = Integer.parseInt(userid);
 
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<Score> scores =  ScoreParser.getPersonalTopScores(id,quizID,manager);
+        ArrayList<Score> scores =  manager.getPersonalTopScores(id,quizID);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         PrintWriter writer = response.getWriter();

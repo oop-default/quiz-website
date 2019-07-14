@@ -16,7 +16,8 @@ CREATE TABLE accounts (
     is_banned BOOLEAN,
     num_points DOUBLE,
     is_admin BOOLEAN,
-
+	is_active BOOLEAN,
+    
     UNIQUE KEY (mail),
     UNIQUE KEY (username)
 );
