@@ -557,4 +557,99 @@ public class DatabaseManager {
         return new AuthenticationService(token);
     }
 
+     public ArrayList<Announcement> getAllAnnouncement() throws SQLException {
+        return AnnouncementParser.getAllAnnouncement(this);
+    }
+
+    public void addNewAnnouncement(int id, String author,String announcement) throws SQLException {
+        AnnouncementParser.addNewAnnouncement(id,author,announcement,this);
+    }
+
+    public void removeQuizHistory(int quizId){
+        try {
+            QuizParser.removeQuizHistory(quizId,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Quiz> friendRecentCreatedQuizes(int userId){
+        try {
+            return QuizParser.friendRecentCreatedQuizes(userId,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Quiz getQuiz(int id){
+        try {
+            return QuizParser.getQuiz(id,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void removeAccount(String username){
+        try {
+            AccountParser.removeAccount(username,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public ArrayList<Quiz> getQuizesByCategory(String category){
+        try {
+            return QuizParser.getQuizesByCategory(category,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void removeQuiz(int quizId){
+        QuizParser.removeQuiz(quizId,this);
+    }
+
+    public ArrayList<Account> getAccountsByPatrialMatchName(String query){
+        return AccountParser.getAccountsByPatrialMatchName(query,this);
+    }
+
+    public ArrayList<Quiz> findQuizByTitle(String query){
+        return QuizParser.findQuizByTitle(query,this);
+    }
+
+    public boolean validUser(String username, String password){
+        return AuthorizationParser.validUser(username,password,this);
+    }
+
+    public boolean isAdmin(String username){
+        try {
+            return AccountParser.isAdmin(username,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public int getUserId(String username){
+        try {
+            return AccountParser.getUserId(username,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public boolean usernameExists(String username){
+        return AuthorizationParser.usernameExists(username,this);
+    }
+
+
+    public void insertAccount(Account account){
+        AuthorizationParser.insertAccount(account,this);
+    }
+
 }
