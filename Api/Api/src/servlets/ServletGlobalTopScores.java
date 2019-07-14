@@ -23,8 +23,16 @@ public class ServletGlobalTopScores extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String quizid = request.getParameter("quizid");
         int quizID = Integer.parseInt(quizid);
-
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+
+
+//        String token = request.getHeader("Authorization");
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+
         ArrayList<Score> scores =  manager.getGlobalTopScores(quizID);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 

@@ -9,8 +9,6 @@ status is active online user?
 ---        ---
 */
 
-
-
 USE QUIZ_DB;
 
 DROP TABLE IF EXISTS accounts;
@@ -176,14 +174,14 @@ DROP TABLE IF EXISTS quizzes;
 
 CREATE TABLE quizzes (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    tittle VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
     author_id INTEGER NOT NULL,
     description TEXT,
     date_created DATETIME NOT NULL,
     category_id INTEGER NOT NULL,
     num_points DOUBLE,
     
-    UNIQUE KEY (tittle)
+    UNIQUE KEY (title)
 );
 
 USE QUIZ_DB;
@@ -216,6 +214,6 @@ DROP TABLE IF EXISTS news;
 CREATE TABLE news (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     author_id INTEGER NOT NULL,
-    tittle VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
     description TEXT
 );

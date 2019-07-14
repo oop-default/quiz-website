@@ -30,10 +30,11 @@ const anouncements = [
 
 
   class Anouncements extends Component{
-    constructor() {
+    constructor(props) {
         super();
         this.state = {
-          anouncements: anouncements,
+            isAdmin: props.isAdmin,
+            anouncements: anouncements,
         }
     }
 
@@ -44,9 +45,20 @@ const anouncements = [
                 <table className="anoncTable">
                     <tbody>
                         {
-                        this.state.anouncements.map((anons) => {
-                            return <tr key={anons.id}>
-                            <td><a style={{textDecoration:"none"}} href="https://www.facebook.com">{anons.statement}</a></td>
+                            this.state.isAdmin ? 
+                                <tr>
+                                    <td style={{display:""}}>
+                                        <textarea className="postArea"></textarea>
+                                        <button style={{cursor:"pointer"}}>POST</button>
+                                    </td>
+                                </tr>
+                                :
+                                null
+                        }
+                        {
+                        this.state.anouncements.map((anons, i) => {
+                            return <tr key={i}>
+                            <td>{anons.statement}</td>
                             </tr>
                         })
                         }

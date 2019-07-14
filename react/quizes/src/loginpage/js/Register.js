@@ -54,7 +54,10 @@ class Register extends Component {
         var error = document.getElementById("ErrorMessageRegister")
         if (data.status === 200) {
             var jwtToken = data.jwsToken;
-            cookie.save('jwt', jwtToken, { path: '/' });
+            cookie.save('jwt', jwtToken, {
+                path: '/',
+                maxAge:1000*60*60
+            })
             this.props.history.push("/");
         } else if (data.status == 406) {
             error.innerHTML = data.message;

@@ -20,13 +20,24 @@ import java.io.PrintWriter;
 @WebServlet(name = "ServletFriendTopScores")
 public class ServletFriendTopScores extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userid = request.getParameter("id");
+        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+
+
+//        String token = request.getHeader("Authorization");
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//        int userID = service.getUserId();
+
         String quizid = request.getParameter("quizid");
         int quizID = Integer.parseInt(quizid);
-        int id = Integer.parseInt(userid);
 
-        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<Score> scores =  manager.getFriendTopScores(id,quizID);
+        int userID = 1;
+
+
+        ArrayList<Score> scores =  manager.getFriendTopScores(userID,quizID);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         PrintWriter writer = response.getWriter();

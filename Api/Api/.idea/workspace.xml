@@ -7,50 +7,143 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2654ed59-2f35-4923-8073-a1cb1e25d791" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_mockito_mockito_all_1_10_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/FriendAchievementsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/FriendTopScoresTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/GlobalTopScoresTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/PersonalTopScoresTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/SaveNewQuizTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/quiz-website-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/CategoriesResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/statisticsResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCategories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest$boolClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletPopularQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletRecentQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/CategoriesResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletRecentQuizzes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/VikasDatabaseCommunicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Challenge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ChallengeAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/FriendRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parsers/VikaParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parsers/ZvikisParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/CategoriesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/ChallengeParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/FriendRequestParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/NoteParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/boolClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/responseModels/statisticsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletChallenge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletIHaveSentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletNote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletPopularQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletRecentQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlets/ServletStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestFriendsTakenQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestPopulars.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testCreatedQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testIHaveSentRequests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testRecQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testTakenQuizzes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Notifications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/MyDBInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/MyDBInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/parsers/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/parsers/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/friendsQuizzesResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/friendsQuizzesResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/quizzesResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/quizzesResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCreatedQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCreatedQuizzes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletFriendsQuizActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletFriendsQuizActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletQuiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletQuiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletTakenQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletTakenQuizzes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/META-INF/Api.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Api/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Answer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/database/MyDBInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/database/MyDBInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/parsers/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/friendsQuizzesResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/responseModels/friendsQuizzesResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/quizzesResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/responseModels/quizzesResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletCreatedQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCreatedQuizzes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsQuizActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsQuizActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletQuiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletQuiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletTakenQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletTakenQuizzes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/QuestionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/QuestionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/MyDBInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/MyDBInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsers/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsers/QuizParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/QuizParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/responseModels/friendsQuizzesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/responseModels/friendsQuizzesResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/responseModels/quizzesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/responseModels/quizzesResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletCreatedQuizzes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletCreatedQuizzes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletQuiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletTakenQuizzes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletTakenQuizzes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/css/NavBar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/css/acceptOrDenie.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/css/notifications.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/NavBar.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/serviceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/acceptOrDenie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/createQuiz/js/NewQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/createQuiz/js/NewQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Achievements.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Achievements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Activities.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Activities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Anouncements.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Anouncements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Categories.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Categories.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/CreatedQuizes.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/CreatedQuizes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Friends.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Friends.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Left.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Left.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/QuizTaking.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/QuizTaking.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/acceptOrDenie.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/AcceptOrDenie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/notifications.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/css/Notifications.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Achievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Achievements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Anouncements.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Anouncements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/CreatedQuizes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/CreatedQuizes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Friends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Left.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Middle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Middle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/QuizTaking.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/QuizTaking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/acceptOrDenie.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/AcceptOrDenie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/notifications.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react/quizes/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sql/accounts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql/accounts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/loginpage/js/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/loginpage/js/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/loginpage/js/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/loginpage/js/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/CreatedQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/CreatedQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/TakenQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/TakenQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql/all_table_creates.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql/all_table_creates.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sql/inserts_and_tests.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql/inserts_and_tests.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="../../../../quiz-website/Api/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,116 +173,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/servlets/FriendAchievementsTest.java">
+        <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="363">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/servlets/FriendTopScoresTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/servlets/GlobalTopScoresTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="41" column="16" selection-start-line="48" selection-start-column="8" selection-end-line="49" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1516#1656#0" expanded="true" />
-                <element signature="e#1655#1656#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/servlets/PersonalTopScoresTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1592#1734#0" expanded="true" />
-                <element signature="e#1733#1734#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/parsers/AuthenticationServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/servlets/SaveNewQuizTest.java">
+        <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="26" column="11" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="26" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="20" column="70" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="70" />
+            <state relative-caret-position="112">
+              <caret line="166" column="80" selection-start-line="166" selection-start-column="80" selection-end-line="166" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,6 +214,10 @@
       <find>servletSaveN</find>
       <find>aq movida 0.4</find>
       <find>savenew</find>
+      <find>recieve</find>
+      <find>tittle</find>
+      <find>recie</find>
+      <find>updateA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,9 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/responseModels/LoginRegisterResponse.java" />
-        <option value="$PROJECT_DIR$/src/tests/parsers/parsers/AuthorizationParserTest.java" />
-        <option value="$PROJECT_DIR$/src/servlets/ServletLogin.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletRegister.java" />
         <option value="$PROJECT_DIR$/src/parsers/AuthorizationParser.java" />
         <option value="$PROJECT_DIR$/src/parsers/AnswerParser.java" />
@@ -240,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/parsers/AccountParser.java" />
         <option value="$PROJECT_DIR$/src/responseModels/SearchResponse.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletSearch.java" />
-        <option value="$PROJECT_DIR$/src/parsers/QuizParser.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java" />
         <option value="$PROJECT_DIR$/src/responseModels/NotPersonalScoreResponce.java" />
         <option value="$PROJECT_DIR$/src/responseModels/NotPersonalScoreResponse.java" />
@@ -250,24 +249,34 @@
         <option value="$PROJECT_DIR$/src/models/Account.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletQuiz.java" />
         <option value="$PROJECT_DIR$/src/models/SubmittedQuiz.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java" />
         <option value="$PROJECT_DIR$/src/tests/servlets/GlobalTopScoresTest.java" />
         <option value="$PROJECT_DIR$/src/parsers/ScoreParser.java" />
-        <option value="$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java" />
         <option value="$PROJECT_DIR$/src/tests/servlets/PersonalTopScoresTest.java" />
         <option value="$PROJECT_DIR$/src/tests/servlets/FriendAchievementsTest.java" />
-        <option value="$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java" />
         <option value="$PROJECT_DIR$/src/tests/servlets/FriendTopScoresTest.java" />
         <option value="$PROJECT_DIR$/src/models/Answer.java" />
         <option value="$PROJECT_DIR$/src/models/Quiz.java" />
         <option value="$PROJECT_DIR$/src/tests/servlets/SaveNewQuizTest.java" />
-        <option value="$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java" />
         <option value="$PROJECT_DIR$/src/parsers/QuestionParser.java" />
         <option value="$PROJECT_DIR$/src/models/Question.java" />
-        <option value="$PROJECT_DIR$/src/database/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletNote.java" />
+        <option value="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" />
+        <option value="$PROJECT_DIR$/src/parsers/ZvikisParser.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletChallenge.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" />
+        <option value="$PROJECT_DIR$/src/models/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/parsers/VikaParser.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletFriends.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/parsers/QuizParser.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java" />
+        <option value="$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java" />
+        <option value="$PROJECT_DIR$/src/database/DatabaseManager.java" />
       </list>
     </option>
   </component>
@@ -284,7 +293,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -295,6 +304,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Tests'; set:Tests; class com.intellij.psi.search.scope.TestsScope">
@@ -357,12 +367,6 @@
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="responseModels" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="servlets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -370,13 +374,6 @@
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="parsers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -400,7 +397,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,6 +417,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -602,11 +599,11 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.SaveNewQuizTest.firstTest" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.19" />
       <item itemvalue="JUnit.FriendAchievementsTest.firstTest" />
       <item itemvalue="JUnit.FriendTopScoresTest.firstTest" />
       <item itemvalue="JUnit.GlobalTopScoresTest.firstTest" />
       <item itemvalue="JUnit.PersonalTopScoresTest.firstTest" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.19" />
     </list>
     <recent_temporary>
       <list>
@@ -648,6 +645,7 @@
       <workItem from="1562926289713" duration="16367000" />
       <workItem from="1563006826200" duration="26801000" />
       <workItem from="1563097560027" duration="9887000" />
+      <workItem from="1563110563732" duration="4972000" />
     </task>
     <servers />
   </component>
@@ -684,23 +682,23 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139692000" />
+    <option name="totallyTimeSpent" value="144664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8341385" visible="true" weight="0.22768533" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8321343" visible="true" weight="0.27685326" />
       <window_info id="Structure" order="1" sideWeight="0.396072" side_tool="true" weight="0.26096824" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.16586152" side_tool="true" visible="true" weight="0.22768533" />
+      <window_info id="Web" order="7" sideWeight="0.16786571" side_tool="true" visible="true" weight="0.27685326" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.431562" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.12882447" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38486314" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -709,7 +707,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -750,157 +748,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/parsers/AuthorizationParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/AccountParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10202" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/listener/Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Api.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Api_war_exploded.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/responseModels/friendsQuizzesResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/responseModels/SearchResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/AnswerParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletTakenQuizzes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/SubmittedQuiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/QuizParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Score.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -922,27 +769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/ScoreParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="10" column="103" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/responseModels/FriendAchievements.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/AchievementsParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -995,61 +825,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Answer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="29" column="58" lean-forward="true" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletQuiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1562965772804" expanded="true" signature="1880:1932" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/MyDBInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
           <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="135" column="91" lean-forward="true" selection-start-line="135" selection-start-column="91" selection-end-line="135" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13830#13831#0" expanded="true" />
-            <element signature="e#13856#13857#0" expanded="true" />
-            <element signature="e#13916#13917#0" expanded="true" />
-            <element signature="e#13982#13983#0" expanded="true" />
-            <element signature="e#14504#14505#0" expanded="true" />
-            <element signature="e#14537#14538#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,71 +844,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/QuestionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="63" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="20" column="70" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="26" column="11" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/servlets/FriendAchievementsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="527">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/servlets/FriendTopScoresTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/servlets/PersonalTopScoresTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1138,15 +876,243 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/parsers/AuthenticationServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="204">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/servlets/FriendTopScoresTest.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/servlets/SaveNewQuizTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="171">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletNote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="67" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/jre/lib/tomcat-util.jar!/org/apache/tomcat/util/IntrospectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="125" column="14" lean-forward="true" selection-start-line="125" selection-start-column="14" selection-end-line="125" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletAccountInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="60" column="75" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletChallenge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+            <element signature="e#1420#1421#0" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletQuiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1563109812114" expanded="true" signature="1880:1932" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/MyDBInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/VikasDatabaseCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Answer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="58" lean-forward="true" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+          <folding>
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/QuestionParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/AchievementsParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/AccountParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/AnswerParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/QuizParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/ScoreParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/AuthorizationParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/AuthenticationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/ZvikisParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding>
+            <element signature="e#2247#2258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/VikaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1155,32 +1121,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/servlets/GlobalTopScoresTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="482">
           <caret line="41" column="16" selection-start-line="48" selection-start-column="8" selection-end-line="49" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1516#1656#0" expanded="true" />
-            <element signature="e#1655#1656#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/servlets/PersonalTopScoresTest.java">
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletGlobalTopScores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1592#1734#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/servlets/SaveNewQuizTest.java">
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="238">
+          <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletPersonalTopScores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveNewQuiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletSaveQuizResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="166" column="80" selection-start-line="166" selection-start-column="80" selection-end-line="166" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

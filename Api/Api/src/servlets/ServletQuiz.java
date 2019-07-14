@@ -49,9 +49,5 @@ public class ServletQuiz extends HttpServlet {
             response.setStatus(404);
         }
 
-
-
-
-
     }
 }

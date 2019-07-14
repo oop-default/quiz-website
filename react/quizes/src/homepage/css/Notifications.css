@@ -1,0 +1,71 @@
+.nots{
+    margin-top:5px
+}
+
+.notsTable th {
+    border: none;
+    padding: 8px;
+}
+
+.notsTable td{
+    padding: 8px;
+}
+
+.notification {
+    background-color: forestgreen;
+    color: white;
+    text-decoration: none;
+    padding: 7px 10px;
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.notification:hover {
+    background-color:rgb(8, 119, 13);
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -7px;
+    padding: 1px 5px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.notsBody::-webkit-scrollbar{
+    display: none;
+}
+
+.notsBody{
+    width: 330px;
+    max-height:50vh;
+    table-layout: fixed;
+    display: none;
+    background:#eef1ee;
+    position:fixed;
+    overflow: scroll;
+}
+
+.notsBody td{
+    word-Break: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    border:outset 1px rgb(241, 243, 241);
+    width: 330px;
+}
+
+.from{
+    text-align: left;
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+
+a{
+    text-decoration: none
+}
+
+
+
+

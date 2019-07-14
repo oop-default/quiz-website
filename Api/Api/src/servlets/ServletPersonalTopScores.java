@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import database.DatabaseManager;
 import models.Score;
+import parsers.AuthenticationService;
 import parsers.ScoreParser;
 
 import javax.servlet.ServletException;
@@ -18,13 +19,22 @@ import java.util.ArrayList;
 @WebServlet(name = "ServletPersonalTopScores")
 public class ServletPersonalTopScores extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userid = request.getParameter("id");
+
         String quizid = request.getParameter("quizid");
         int quizID = Integer.parseInt(quizid);
-        int id = Integer.parseInt(userid);
 
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<Score> scores =  manager.getPersonalTopScores(id,quizID);
+//        String token = request.getHeader("Authorization");
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//        int userID = service.getUserId();
+
+        int userID = 1;
+
+        ArrayList<Score> scores =  manager.getPersonalTopScores(userID,quizID);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         PrintWriter writer = response.getWriter();

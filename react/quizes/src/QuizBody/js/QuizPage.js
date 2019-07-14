@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuizBar from './QuizBar';
 import SideBar from './SideBar'
-import NavBar from './NavBar'
+import NavBar from '../../homepage/js/NavBar'
 import Friends from './Friends'
 import '../css/QuizPage.css';
 import cookie from 'react-cookies';

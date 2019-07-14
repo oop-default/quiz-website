@@ -22,11 +22,18 @@ import java.util.ArrayList;
 public class ServletFriendsAchievements extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idString = request.getParameter("id");
-        int id = Integer.parseInt(idString);
-
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        ArrayList<FriendAchievements> res = manager.getAchievementsFor(1);
+
+//        String token = request.getHeader("Authorization");
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//        int userID = service.getUserId();
+
+        int userID = 1;
+        ArrayList<FriendAchievements> res = manager.getAchievementsFor(userID);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         PrintWriter writer = response.getWriter();

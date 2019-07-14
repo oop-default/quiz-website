@@ -16,7 +16,7 @@ public class QuizParser {
         try {
             if(rs.next()){
                 int quizId = rs.getInt("id");
-                String title = rs.getString("tittle");
+                String title = rs.getString("title");
                 int categoryId = rs.getInt("category_id");
                 String description = rs.getString("description");
                 int author_id = rs.getInt("author_id");
@@ -47,14 +47,14 @@ public class QuizParser {
     }
 
     public  static ArrayList<Quiz> findQuizByTitle(String title,DatabaseManager manager){
-        String query = "select * from quizzes where tittle like '%"+title+"%'";
+        String query = "select * from quizzes where title like '%"+title+"%'";
         System.out.println(query);
         ArrayList<Quiz> list= new ArrayList<>();
         ResultSet rs = manager.executeQuery(query);
         try{
             while (rs.next()){
                 int id = rs.getInt("id");
-                String title1 = rs.getString("tittle");
+                String title1 = rs.getString("title");
                 int categoryId = rs.getInt("category_id");
                 String description = rs.getString("description");
                 int author_id = rs.getInt("author_id");

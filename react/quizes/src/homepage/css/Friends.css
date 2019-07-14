@@ -1,38 +1,24 @@
-.friends{
+.homeFriends{
   background-color: #fbfcfa;
   position: sticky;
   left: 90vw;
   top:60px;
   border-left: solid 1px black;
   height: calc(100vh - 60px);
-  width:10vw;
   overflow: scroll;
+  width: 10vw;
   min-width: 100px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.friends::-webkit-scrollbar{
+.homeFriends::-webkit-scrollbar{
   display: none;
 }
 
 .friendsTable td{
   border : none;
   height: 30px;
-  width: 100%;
+  width: 50px;
   text-align: left;
-}
-
-.greenDot{
-  height: 5px;
-  width: 5px;
-  background-color: rgb(10, 197, 10);
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.redDot{
-  height: 5px;
-  width: 5px;
-  background-color: rgb(204, 3, 3);
-  border-radius: 50%;
-  display: inline-block;
 }

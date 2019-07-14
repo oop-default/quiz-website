@@ -96,7 +96,7 @@ class SideBar extends Component{
 componentDidMount() {
   // console.log(this.props.match.params.quizId);
   // var quizId = this.props.match.params.quizId;
-  this.fetchTopScoresData(1,1);
+  this.fetchTopScoresData(1);
 }
 
 fetchGlobalTopScores(quizID){
@@ -119,8 +119,8 @@ fetchGlobalTopScores(quizID){
           console.log(error);  
       });
 }
-fetchPersonalTopScores(userID,quizID){
-  var url = "http://localhost:8030/ServletGlobalTopScores?id="+userID+"&quizid=" + quizID;
+fetchPersonalTopScores(quizID){
+  var url = "http://localhost:8030/ServletGlobalTopScores?quizid=" + quizID;
   console.log(url);
   fetch(url).then(response => {
       
@@ -139,8 +139,8 @@ fetchPersonalTopScores(userID,quizID){
           console.log(error);  
       });
 }
-fetchFriendTopScores(userID,quizID){
-  var url = "http://localhost:8030/ServletFriendTopScores?id=" +userID+"&quizid=" + quizID;
+fetchFriendTopScores(quizID){
+  var url = "http://localhost:8030/ServletFriendTopScores?quizid=" + quizID;
   console.log(url);
   fetch(url).then(response => {
       
@@ -159,10 +159,10 @@ fetchFriendTopScores(userID,quizID){
           console.log(error);  
       });
 }
-fetchTopScoresData(userID,quizID) {
+fetchTopScoresData(quizID) {
   this.fetchGlobalTopScores(quizID);
-  this.fetchFriendTopScores(userID,quizID);
-  this.fetchPersonalTopScores(userID,quizID);
+  this.fetchFriendTopScores(quizID);
+  this.fetchPersonalTopScores(quizID);
 }
 processResponse(data,type) {
   if (data != null) {

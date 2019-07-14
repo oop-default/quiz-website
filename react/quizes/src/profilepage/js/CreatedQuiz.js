@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../css/createdQuiz.css'
+import cookie from "react-cookies"
 
 const createdQuizes = [
-  { quizName: "Do I know JavaScript?" },
-  { quizName: "Do I know what I do" }
+  { title: "Do I know JavaScript?" },
+  { title: "Do I know what I do" }
 ];
 
 class CreatedQuiz extends Component {
@@ -15,7 +16,13 @@ class CreatedQuiz extends Component {
     }
 
     componentDidMount() {
-      fetch('http://localhost:8080/ServletCreatedQuizzes?id=' + 1)
+      var token = cookie.load("jwt");
+      var bearer = "Bearer " + token;
+      fetch('http://localhost:8080/ServletCreatedQuizzes', {
+        headers: {
+          'Authorization': bearer
+        }
+      })
         .then((response) => {
             response.json().then((data) => {
               this.setState({createdQuizes: data});
@@ -28,7 +35,7 @@ class CreatedQuiz extends Component {
           <div id="createdQuizSection">
           <table id="createdQuiz">
             <tr>
-              <th id="createdQuizLabel">Taken Quizes :</th>
+              <th id="createdQuizLabel">Created Quizes :</th>
             </tr>
             {
               this.state.createdQuizes.map((crtqz) => {

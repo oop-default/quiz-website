@@ -25,10 +25,12 @@ public class ServletSaveNewQuiz extends HttpServlet {
 //            response.setStatus(401);
 //            return;
 //        }
+//        String author = service.getUserName();
+        String author = "vaxushti";
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Quiz nq = gson.fromJson(reader, Quiz.class);
-        nq.setAuthor("vaxushti");
+        nq.setAuthor(author);
         boolean inserted = manager.saveNewQuiz(nq);
         if(inserted){
             response.setStatus(200);
