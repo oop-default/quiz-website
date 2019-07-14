@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import cracker.PasswordGenerator;
 import database.DatabaseManager;
 import models.Account;
+import parsers.AccountParser;
 import parsers.AuthorizationParser;
 import responseModels.LoginRegisterResponse;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet(name = "ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -23,11 +25,13 @@ public class ServletLogin extends HttpServlet {
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Account account = gson.fromJson(reader, Account.class);
-        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-
+        DatabaseManager manager = (DatabaseManager)request.getServletContext().getAttribute("database");
         String hashedPassword = PasswordGenerator.generate(account.getPassword());
-        if(AuthorizationParser.validUser(account.getUsername(),hashedPassword,manager)){
-            String jws = JwtManager.createJWS(account.getUsername());
+        String username = account.getUsername();
+        if(manager.validUser(username,hashedPassword)){
+            boolean isAdmin = false;
+            isAdmin = manager.isAdmin(username);
+            String jws = JwtManager.createJWS(username, manager.getUserId(username),isAdmin);
             LoginRegisterResponse response1 = new LoginRegisterResponse(200,jws,"Ok");
             sendResponse(response,gson,response1);
         }else {
@@ -35,10 +39,6 @@ public class ServletLogin extends HttpServlet {
             LoginRegisterResponse response1 = new LoginRegisterResponse(400,null,message);
             sendResponse(response,gson,response1);
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
     private void sendResponse(HttpServletResponse response,Gson gson,LoginRegisterResponse response1){
         PrintWriter out = null;
@@ -49,8 +49,9 @@ public class ServletLogin extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             out.print(jsonInString);
             out.flush();
+            throw new IOException();
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
 
     }
