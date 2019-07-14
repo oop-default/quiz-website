@@ -254,14 +254,17 @@ import {AnswerComponent} from './QuizQuestions';
     
     
     
-       this.setState({
-            points : pt,
-            quizChecked : false,
-            rightQuestions : num,
-            quizStarted : false,
-            quizSummary : true,
-       });
-       this.sendResults();
+         this.setState({
+             points: pt,
+             quizChecked: false,
+             rightQuestions: num,
+             quizStarted: false,
+             quizSummary: true,
+         }
+             ,
+             this.sendResults
+       );
+       
     }
 
     sendResults() {

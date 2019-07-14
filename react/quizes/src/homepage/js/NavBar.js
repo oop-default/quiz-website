@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import '../css/NavBar.css';
 import Notifications from './Notifications';
-
+import cookie from 'react-cookies'
 
 class NavBar extends Component{
     // http://localhost:3000/createQuiz
@@ -10,7 +10,10 @@ class NavBar extends Component{
         window.location.href = "http://localhost:3000/createQuiz";
       };
     }
-
+    logout() {
+        console.log(this.logout);
+        cookie.remove('jwt', { path: '/' });
+    }
     render() {
         return(
             <nav className = "navBar">
@@ -25,11 +28,13 @@ class NavBar extends Component{
                 </div>
                 <Notifications></Notifications>
                 <div>
-                    <a href = "/login"><button className="logOut">Log out</button></a>
+                    <a href="/login"><button className="logOut" onClick={() => this.logout()}>Log out</button></a>
                 </div>
             </nav>
         );
     }
+
+
 
 }
 
