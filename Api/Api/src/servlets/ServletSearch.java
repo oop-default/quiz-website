@@ -17,15 +17,18 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "ServletSearch")
 public class ServletSearch extends HttpServlet {
-
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String query = request.getParameter("query");
+        if(query.equals("")){
+            response.setStatus(404);
+            return;
+        }
         PrintWriter writer = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        SearchResponse response1 = manager.getSearchResponse(query);
+        DatabaseManager manager = (DatabaseManager)request.getServletContext().getAttribute("database");
+        SearchResponse response1 = new SearchResponse(manager.getAccountsByPatrialMatchName(query),
+               manager.findQuizByTitle(query));
         Gson gson = new Gson();
         String jsonString = gson.toJson(response1,SearchResponse.class);
         writer.print(jsonString);
