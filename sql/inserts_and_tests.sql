@@ -85,7 +85,7 @@ insert into achievings
 (account_id, date_achieved)
 values
 ((select id from achievements where name = 'Specialsit'), 
-(select id from accounts where username = 'z'), sysdate());
+(select id from accounts where username = 'ziki'), sysdate());
 
 USE QUIZ_DB;
 
@@ -152,7 +152,7 @@ values
 USE QUIZ_DB;
 
 insert into quizzes
-(tittle, author_id, description, date_created, category_id, num_points)
+(title, author_id, description, date_created, category_id, num_points)
 values
 ('Capital cities', 
 (select id from accounts where username = 'ziki'),
@@ -163,7 +163,7 @@ sysdate(),
 USE QUIZ_DB;
 
 insert into quizzes
-(tittle, author_id, description, date_created, category_id, num_points)
+(title, author_id, description, date_created, category_id, num_points)
 values
 ('GRE exam simulation', 
 (select id from accounts where username = 'vika_shonia'),
@@ -172,7 +172,7 @@ sysdate(),
 (select id from categories where category = 'Math'), 100);
 
 insert into quizzes
-(tittle, author_id, description, date_created, category_id, num_points)
+(title, author_id, description, date_created, category_id, num_points)
 values
 ('Significant WW II political moves', 
 (select id from accounts where username = 'giojikia'),
@@ -236,44 +236,44 @@ insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'countries'),
-(select id from quizzes where tittle = 'Capital cities'));
+(select id from quizzes where title = 'Capital cities'));
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'cities'),
-(select id from quizzes where tittle = 'Capital cities'));
+(select id from quizzes where title = 'Capital cities'));
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'politics'),
-(select id from quizzes where tittle = 'Significant WW II political moves'));
+(select id from quizzes where title = 'Significant WW II political moves'));
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'WW2'),
-(select id from quizzes where tittle = 'Significant WW II political moves'));
+(select id from quizzes where title = 'Significant WW II political moves'));
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'math exam'),
-(select id from quizzes where tittle = 'GRE exam simulation'));
+(select id from quizzes where title = 'GRE exam simulation'));
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'GRE'),
-(select id from quizzes where tittle = 'GRE exam simulation'));
+(select id from quizzes where title = 'GRE exam simulation'));
 
 
 insert into taggings
 (tag_id, quiz_id)
 values
 ((select id from tags where tag = 'math'),
-(select id from quizzes where tittle = 'GRE exam simulation'));
+(select id from quizzes where title = 'GRE exam simulation'));
 
 /* insert taggings END*/
 
@@ -285,35 +285,35 @@ insert into questions
 (type, question, quiz_id, num_points, image)
 values
 ('True/False', 'World War 2 started on the 1 September 1939', 
-(select id from quizzes where tittle = 'Significant WW II political moves'),
+(select id from quizzes where title = 'Significant WW II political moves'),
 5, null);
 
 insert into questions
 (type, question, quiz_id, num_points, image)
 values
 ('True/False', 'The attack on Pearl Harbour brought the US into the war', 
-(select id from quizzes where tittle = 'Significant WW II political moves'),
+(select id from quizzes where title = 'Significant WW II political moves'),
 5, null);
 
 insert into questions
 (type, question, quiz_id, num_points, image)
 values
 ('True/False', 'World War 2 ended in the year 1946', 
-(select id from quizzes where tittle = 'Significant WW II political moves'),
+(select id from quizzes where title = 'Significant WW II political moves'),
 5, null);
 
 insert into questions
 (type, question, quiz_id, num_points, image)
 values
 ('Fill-in-the-blank', 'What is Capital of Brazil?', 
-(select id from quizzes where tittle = 'Capital cities'),
+(select id from quizzes where title = 'Capital cities'),
 5, null);
 
 insert into questions
 (type, question, quiz_id, num_points, image)
 values
 ('True/False', 'Capital of Georgia is Tbilisi', 
-(select id from quizzes where tittle = 'Capital cities'),
+(select id from quizzes where title = 'Capital cities'),
 5, null);
 
 /* insert questions END*/
@@ -491,17 +491,17 @@ values
 /* insert news START */
 
 insert into news
-(author_id, tittle, description)
+(author_id, title, description)
 values
 (1, 'coca cola open cup', 'here is description of coca cola cup, winner will get bunch of coca colas.');
 
 insert into news
-(author_id, tittle, description)
+(author_id, title, description)
 values
 (2, 'fanta open cup', 'here is description of fanta cup, winner will get bunch of fantas.');
 
 insert into news
-(author_id, tittle, description)
+(author_id, title, description)
 values
 (3, 'sprite open cup', 'here is description of sprite cup, winner will get bunch of sprites.');
 
