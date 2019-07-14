@@ -1,8 +1,10 @@
 import React from 'react';
 import "./searchQuiz.css";
-export function searchQuiz(data, page) {
+export function searchQuiz(data, page, i) {
+    var key = i;
+    console.log(key);
     return (
-        <div>
+        <div key={key}>
             <div id="srchAccB1">
                 <div>
                     <div id="srchAccBody">
@@ -13,7 +15,7 @@ export function searchQuiz(data, page) {
                     <label id="srchQuizDescrLbl">{data.description}</label>
                 </div>
                 <div id="quizCreator">
-                    Created by : {data.author}
+                    Created by : <button id="quiz-creator-button" onClick={e=>search(data.author,page)}>{data.author}</button>
                 </div>
                 <button id="srchQuizBtn" onClick={e => clicked(e, page)} value={data.id}>View Quiz</button>
             </div>
@@ -24,4 +26,8 @@ export function searchQuiz(data, page) {
 
 function clicked(e, page) {
     page.props.history.push("/quiz/" + e.target.value);
+}
+
+function search(txt,page) {
+    page.props.history.push("/profile/" + txt);
 }

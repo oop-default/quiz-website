@@ -1,14 +1,12 @@
-#quizCreator{
 
-}
 #srchQuizBtn {
-    float: right;
     border: none;
     background-color: whitesmoke;
     font-size: 20px;
-    margin-top: 30px;
     color: darkslateblue;
-    margin-right: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 #srchQuizTitleLbl {
     font-size: 30px;
@@ -21,11 +19,13 @@
     margin-top: 10px;
 }
 
-#quizCreator{
-    margin-top:30px;
-    font-style:oblique;
-    display:inline;
-    font:bold;
+#quizCreator {
+    font-style: oblique;
+    display: inline;
+    font: bold;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
 }
 #srchQuizBtn:hover{
     color:green;
@@ -36,4 +36,14 @@
     color: black;
     font-style: italic;
     font-size: 15px;
+}
+
+#quiz-creator-button {
+    font-style: oblique;
+    border:none;
+    background-color:whitesmoke;
+}
+#quiz-creator-button:hover {
+    
+    cursor:pointer;
 }

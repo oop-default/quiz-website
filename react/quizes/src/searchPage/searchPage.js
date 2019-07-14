@@ -13,9 +13,12 @@ class searchPage extends Component {
         }
     }
     componentDidMount() {
+        console.log("componentDidMount");
         var query = this.props.match.params.searchQuery
-        this.setState({ query: query })
         this.fetchSearchQuery(query);
+    }
+    componentDidUpdate() {
+        
     }
 
     fetchSearchQuery(query) {
@@ -26,7 +29,7 @@ class searchPage extends Component {
                 console.log("ok status");
                 return response.json();
             }
-            else if (response.status == 401) {
+            else if (response.status === 401) {
                 return null;
             } else {
                 return null;
@@ -37,7 +40,6 @@ class searchPage extends Component {
             });
     }
     processResponse(response) {
-        console.log("in proccess response");
         var accounts = response.accounts;
         var quizzes = response.quizzes;
         console.log(accounts.length);
@@ -47,42 +49,106 @@ class searchPage extends Component {
             quizzes: quizzes
         });
     }
-    render() {
-        /*
-        var data = {
-            username: "jikssi",
-            firstname: "giorgi",
-            secondname: "jikia"
-        }
-        var people = [10];
-        for (var i = 0; i < 2; i++) {
-            people[i] = searchedAccount(data, this);
-        }
-        */
-       
-        
+    render() { 
         var accounts = this.state.accounts;
         var people = [accounts.length];
         var quizzes = this.state.quizzes;
         for (var i = 0; i < accounts.length; i++) {
-            people[i] = searchedAccount(accounts[i],this);
+            people[i] = searchedAccount(accounts[i],this,i);
         }
         var quizes = [quizzes.length];
-        for (var i = 0; i < quizzes.length; i++) {
-            quizes[i] = searchQuiz(quizzes[i], this);
+        for (var i = accounts.length; i < quizzes.length + accounts.length; i++) {
+            quizes[i - accounts.length] = searchQuiz(quizzes[i - accounts.length], this, i);
         }
-        return (
-            <div id="searchBox">
-                <label id="srchPeopleLabel">People</label>
-                <div id="peopleBox">
-                    {people}
+        if (this.state.quizzes.length === 0 && this.state.accounts.length!==0) {
+            return (
+                <div id="searchBox">
+                    <h1 id="search-head">Search</h1>
+                    <div class="wrap">
+                        <div className="searchCategory">
+                            <input type="text" id="searchInput" className="searchTerm" placeholder="What are you looking for?" />
+                            <button type="submit" onClick={() => this.search()} className="searchButton">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <label id="srchPeopleLabel">People</label>
+                    <div id="peopleBox">
+                        {people}
+                    </div>
                 </div>
-                <label id="srchPeopleLabel">Quizes</label>
-                <div>
-                    {quizes}
+            );
+        } else if (this.state.accounts.length === 0 && this.state.quizzes.length !== 0 ) {
+            return (
+                <div id="searchBox">
+                    <h1 id="search-head">Search</h1>
+                    <div className="wrap">
+                        <div className="searchCategory">
+                            <input type="text" id="searchInput" className="searchTerm" placeholder="What are you looking for?" />
+                            <button type="submit" onClick={()=>this.search()} className="searchButton">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div id="srch-box-2">
+                        <label id="srchPeopleLabel">Quizes</label>
+                        <div id="quizesBox">
+                            {quizes}
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        );
+            );
+        } else if (this.state.accounts.length === 0 && this.state.quizzes.length === 0) {
+            return (
+                <div id="searchBox">
+                    <h1 id="search-head">Search</h1>
+                    <div className="wrap">
+                        <div className="searchCategory">
+                            <input type="text" id="searchInput" className="searchTerm" placeholder="What are you looking for?" />
+                            <button type="submit" onClick={()=>this.search()} className="searchButton">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div id="searchBox">
+                    <h1 id="search-head">Search</h1>
+                    <div className="wrap">
+                        <div className="searchCategory">
+                            <input type="text" id="searchInput" className="searchTerm" placeholder="What are you looking for?" />
+                            <button type="submit" onClick={() => this.search()} className="searchButton">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <label id="srchPeopleLabel">People</label>
+                    <div id="peopleBox">
+                        {people}
+                    </div>
+                    <div id="srch-box-2">
+                        <label id="srchPeopleLabel">Quizes</label>
+                        <div id="quizesBox">
+                            {quizes}
+                        </div>
+                    </div>
+
+                </div>
+            );
+        }
+
+                  
+        
+    }
+
+    search() {
+        var txt = document.getElementById("searchInput").value;
+        this.props.history.push("/search/" + txt);
+        this.fetchSearchQuery(txt);
+        document.getElementById("searchInput").value = "";
     }
 
     
