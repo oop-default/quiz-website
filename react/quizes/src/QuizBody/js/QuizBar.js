@@ -240,7 +240,7 @@ import {AnswerComponent} from './QuizQuestions';
         var num = 0;
         var pt = 0;
         var questions = this.props.Quiz.questions;
-       if(!this.state.quizChecked){
+       
        for (let index = 0; index < questions.length; index++) {
         var answer = AnswerComponent(questions[index],index,this);
             if(answer){
@@ -251,9 +251,9 @@ import {AnswerComponent} from './QuizQuestions';
                 this.state.answerTypes[index] = "false";
             }
        }
-    }
     
-    this.sendResults();
+    
+    
        this.setState({
             points : pt,
             quizChecked : false,
@@ -261,6 +261,7 @@ import {AnswerComponent} from './QuizQuestions';
             quizStarted : false,
             quizSummary : true,
        });
+       this.sendResults();
     }
 
     sendResults() {
@@ -271,7 +272,7 @@ import {AnswerComponent} from './QuizQuestions';
           "timeSpent" : (Date.now()-this.state.startTime),
           "dateSubmittedMillis" : Date.now(),
         }
-        fetch("http://localhost:8030/ServletSaveQuizResults", {
+        fetch("http://localhost:8080/ServletSaveQuizResults", {
             method: "POST", 
             body: JSON.stringify(results),
             headers: {

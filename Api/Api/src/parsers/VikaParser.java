@@ -1,7 +1,8 @@
-package VikasModels;
+package parsers;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonWriter;
+import models.UserInfo;
 
 import java.io.IOException;
 import java.sql.ResultSet;

@@ -20,15 +20,17 @@ public class ServletTakenQuizzes extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String token = request.getHeader("Authorization");
-        System.out.println(token);
+        System.out.println("asdas");
+//        String token = request.getHeader("Authorization");
+//        System.out.println(token);
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        AuthenticationService service = manager.getService(token);
-        if(!service.isAuthenticated()){
-            response.setStatus(401);
-            return;
-        }
-        int id = service.getUserId();
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//        int id = service.getUserId();
+        int id = 1;
         List<quizzesResponse> takenQuizzes = manager.getTakenQuizzes(id);
 
         PrintWriter writer = response.getWriter();

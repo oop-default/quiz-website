@@ -1,10 +1,9 @@
-package VikasServlets;
+package servlets;
 
-import VikasModels.AuthenticationService;
-import VikasModels.VikaParser;
 import VikasModels.VikasDatabaseCommunicator;
 import com.google.gson.stream.JsonWriter;
 import database.DatabaseManager;
+import parsers.AuthenticationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static parsers.VikaParser.resultSetToJsonArray;
 
 //import static VikasModels.VikasDatabaseCommunicator.*;
 
@@ -42,8 +43,8 @@ public class ServletFriends extends HttpServlet {
 
         if (username != null) {
             try {
-                System.out.println(otherId + " " + service.getId());
-                VikasDatabaseCommunicator.deleteFriend(service.getId(), otherId, manager);
+                System.out.println(otherId + " " + service.getUserId());
+                VikasDatabaseCommunicator.deleteFriend(service.getUserId(), otherId, manager);
                 response.setStatus(200);
             } catch (SQLException e) {
                 response.setStatus(500);
@@ -70,7 +71,7 @@ public class ServletFriends extends HttpServlet {
                 final ResultSet friendsList = VikasDatabaseCommunicator.getFriends(username, manager);
 
                 JsonWriter jw = new JsonWriter(response.getWriter());
-                VikaParser.resultSetToJsonArray(jw, friendsList);
+                resultSetToJsonArray(jw, friendsList);
                 response.setStatus(200);
             } catch (SQLException e) {
                 e.printStackTrace();

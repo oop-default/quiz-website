@@ -101,6 +101,78 @@
         <url-pattern>/ServletStatistics</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>ServletPersonalTopScores</servlet-name>
+        <servlet-class>servlets.ServletPersonalTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPersonalTopScores</servlet-name>
+        <url-pattern>/ServletPersonalTopScores</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletGlobalTopScores</servlet-name>
+        <servlet-class>servlets.ServletGlobalTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletGlobalTopScores</servlet-name>
+        <url-pattern>/ServletGlobalTopScores</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletFriendTopScores</servlet-name>
+        <servlet-class>servlets.ServletFriendTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendTopScores</servlet-name>
+        <url-pattern>/ServletFriendTopScores</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletSaveQuizResults</servlet-name>
+        <servlet-class>servlets.ServletSaveQuizResults</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletSaveQuizResults</servlet-name>
+        <url-pattern>/ServletSaveQuizResults</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletFriendsAchievements</servlet-name>
+        <servlet-class>servlets.ServletFriendsAchievements</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendsAchievements</servlet-name>
+        <url-pattern>/ServletFriendsAchievements</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletFriendRequest</servlet-name>
+        <servlet-class>servlets.ServletFriendRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendRequest</servlet-name>
+        <url-pattern>/ServletFriendRequest</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletChallenge</servlet-name>
+        <servlet-class>servlets.ServletChallenge</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletChallenge</servlet-name>
+        <url-pattern>/ServletChallenge</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletNote</servlet-name>
+        <servlet-class>servlets.ServletNote</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletNote</servlet-name>
+        <url-pattern>/ServletNote</url-pattern>
+    </servlet-mapping>
+
+
+
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>

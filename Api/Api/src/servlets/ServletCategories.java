@@ -19,6 +19,7 @@ import java.util.List;
 public class ServletCategories extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("dsadhsbaiwdnask");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
         List<CategoriesResponse> categories = manager.getCategories();
         PrintWriter writer = response.getWriter();

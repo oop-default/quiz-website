@@ -8,9 +8,7 @@ import parsers.QuizParser;
 import responseModels.*;
 import models.SubmittedQuiz;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -163,7 +161,7 @@ public class DatabaseManager {
         List<quizzesResponse> quizzes = new ArrayList<>();
         PreparedStatement stmt;
         try {
-            stmt = con.prepareStatement("select q.id, q.tittle " +
+            stmt = con.prepareStatement("select q.id, q.title " +
                     "from quizzes q " +
                     "join history h " +
                     "on q.id = h.quiz_id " +
@@ -208,7 +206,7 @@ public class DatabaseManager {
         List<quizzesResponse> res = new ArrayList<>();
         PreparedStatement stmt;
         try {
-            String sql = "select q.id, q.tittle, a.id, a.username, count(*) counts\n" +
+            String sql = "select q.id, q.title, a.id, a.username, count(*) counts\n" +
                     "from quizzes q\n" +
                     "join history h\n" +
                     "on q.id = h.quiz_id\n" +
@@ -237,7 +235,7 @@ public class DatabaseManager {
         List<quizzesResponse> recQuizzes = new ArrayList<>();
         PreparedStatement stmt;
         try {
-            String sql = "select q.id, q.tittle, a.id, a.username\n" +
+            String sql = "select q.id, q.title, a.id, a.username\n" +
                     "from quizzes q\n" +
                     "join accounts a\n" +
                     "on a.id = q.author_id\n" +
@@ -329,9 +327,9 @@ public class DatabaseManager {
 
         PreparedStatement stmt;
         try {
-            String sql = "select q_id, a_id, a_username, q_tittle, h_num_points, h_date\n" +
+            String sql = "select q_id, a_id, a_username, q_title, h_num_points, h_date\n" +
                     "from (\n" +
-                    "select q.id q_id, a.id a_id, a.username a_username, q.tittle q_tittle, h.num_points h_num_points, h.date_taken h_date\n" +
+                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_tittle, h.num_points h_num_points, h.date_taken h_date\n" +
                     "from history h \n" +
                     "join quizzes q \n" +
                     "on q.id = h.quiz_id \n" +
@@ -342,7 +340,7 @@ public class DatabaseManager {
                     "where h.account_id in \n" +
                     "(select second_id from friends where first_id=?) \n" +
                     "UNION \n" +
-                    "select q.id q_id, a.id a_id, a.username a_username, q.tittle q_tittle, h.num_points h_num_points, h.date_taken h_date \n" +
+                    "select q.id q_id, a.id a_id, a.username a_username, q.title q_tittle, h.num_points h_num_points, h.date_taken h_date \n" +
                     "from history h \n" +
                     "join quizzes q \n" +
                     "on q.id = h.quiz_id \n" +

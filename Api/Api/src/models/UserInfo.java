@@ -1,4 +1,4 @@
-package VikasModels;
+package models;
 
 public class UserInfo {
     private String first_name;

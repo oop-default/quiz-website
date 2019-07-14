@@ -1,10 +1,9 @@
-package VikasServlets;
+package servlets;
 
-import VikasModels.AuthenticationService;
-import VikasModels.VikaParser;
 import VikasModels.VikasDatabaseCommunicator;
 import com.google.gson.stream.JsonWriter;
 import database.DatabaseManager;
+import parsers.AuthenticationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static parsers.VikaParser.resultSetToJsonArray;
 
 @WebServlet(name = "ServletAchievements")
 public class ServletAchievements extends HttpServlet {
@@ -48,7 +49,7 @@ public class ServletAchievements extends HttpServlet {
             try {
                 final ResultSet achievements = VikasDatabaseCommunicator.getAchievements(idOthers, manager);
                 JsonWriter jw = new JsonWriter(response.getWriter());
-                VikaParser.resultSetToJsonArray(jw, achievements);
+                resultSetToJsonArray(jw, achievements);
                 response.setStatus(200);
             } catch (SQLException e) {
                 e.printStackTrace();

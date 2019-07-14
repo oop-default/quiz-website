@@ -100,7 +100,7 @@ componentDidMount() {
 }
 
 fetchGlobalTopScores(quizID){
-  var url = "http://localhost:8030/ServletGlobalTopScores?quizid=" + quizID;
+  var url = "http://localhost:8080/ServletGlobalTopScores?quizid=" + quizID;
   console.log(url);
   fetch(url).then(response => {
       
@@ -120,7 +120,7 @@ fetchGlobalTopScores(quizID){
       });
 }
 fetchPersonalTopScores(userID,quizID){
-  var url = "http://localhost:8030/ServletGlobalTopScores?id="+userID+"&quizid=" + quizID;
+  var url = "http://localhost:8080/ServletGlobalTopScores?id="+userID+"&quizid=" + quizID;
   console.log(url);
   fetch(url).then(response => {
       
@@ -140,7 +140,7 @@ fetchPersonalTopScores(userID,quizID){
       });
 }
 fetchFriendTopScores(userID,quizID){
-  var url = "http://localhost:8030/ServletFriendTopScores?id=" +userID+"&quizid=" + quizID;
+  var url = "http://localhost:8080/ServletFriendTopScores?id=" +userID+"&quizid=" + quizID;
   console.log(url);
   fetch(url).then(response => {
       

@@ -29,7 +29,7 @@ public class ServletFriendRequest extends HttpServlet {
             return;
         }
 
-        int senderId = service.getId();
+        int senderId = service.getUserId();
         int receiverId = Integer.parseInt(request.getParameter("userId"));
 
         try {
@@ -53,16 +53,16 @@ public class ServletFriendRequest extends HttpServlet {
 
     // get all friend request sent to user
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String token = request.getHeader("Authorization");
+//        String token = request.getHeader("Authorization");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        AuthenticationService service = manager.getService(token);
-        if(!service.isAuthenticated()){
-            response.setStatus(401);
-            return;
-        }
-
-        int id = service.getId();
-
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//
+//        int id = service.getUserId();
+        int id = 1;
         try {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
@@ -90,7 +90,7 @@ public class ServletFriendRequest extends HttpServlet {
         }
 
         FriendRequest friendRequest = new Gson().fromJson(request.getReader(), FriendRequest.class);
-        friendRequest.setReceiverId(service.getId());
+        friendRequest.setReceiverId(service.getUserId());
 
         try {
             if (areFriends(friendRequest.getSenderId(), friendRequest.getReceiverId(), manager)) {

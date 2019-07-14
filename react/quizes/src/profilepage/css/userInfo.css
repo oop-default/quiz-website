@@ -8,25 +8,42 @@
   border-radius: 50%;
 }
 
+.adminStatus {
+  color: grey;
+  font-size: 15px;
+}
+
 .profPic {
-  padding-top: 30%;
+  padding-top: 20%;
   padding-left: 18%;
 }
 
 .nameLastname {
   color: black;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .username {
   color: grey;
   text-decoration: underline;
-  font-size: 18px;
-  margin-top: 0;
+  font-size: 16px;
 }
 
-.username, .nameLastname {
+.username, .nameLastname, .adminStatus {
   padding-left: 18%;
+  margin-top: 5%;
+}
+
+button{
+  cursor: pointer;
+  background-color: rgba(155, 188, 219, 0.514)
+}
+
+
+
+textarea{
+  background-color: rgb(210, 224, 195);
 }

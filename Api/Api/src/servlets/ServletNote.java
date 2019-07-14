@@ -1,5 +1,7 @@
 package servlets;
 
+import com.google.gson.Gson;
+import models.Note;
 import parsers.ZvikisParser;
 import database.DatabaseManager;
 import parsers.AuthenticationService;
@@ -14,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.stream.Collectors;
 
-import static .ZvikisDatabaseCommunicator.getNotes;
+import static database.ZvikisDatabaseCommunicator.*;
 
 @WebServlet(name = "ServletNotes")
 public class ServletNote extends HttpServlet {
@@ -29,7 +31,7 @@ public class ServletNote extends HttpServlet {
         }
 
         Note note = new Gson().fromJson(request.getReader(), Note.class);
-        int senderId = service.getId();
+        int senderId = service.getUserId();
 
         try {
             sendNote(senderId, note.getReceiverId(), note.getText(), manager);
@@ -42,16 +44,16 @@ public class ServletNote extends HttpServlet {
 
     // get received notes (massages) only unseens
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String token = request.getHeader("Authorization");
+//        String token = request.getHeader("Authorization");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        AuthenticationService service = manager.getService(token);
-        if(!service.isAuthenticated()){
-            response.setStatus(401);
-            return;
-        }
-
-        int userId = service.getId();
-
+//        AuthenticationService service = manager.getService(token);
+//        if(!service.isAuthenticated()){
+//            response.setStatus(401);
+//            return;
+//        }
+//
+//        int userId = service.getUserId();
+        int userId = 1;
         try {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");

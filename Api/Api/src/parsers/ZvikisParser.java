@@ -1,5 +1,8 @@
 package parsers;
 import com.google.gson.Gson;
+import responseModels.ChallengeParse;
+import responseModels.FriendRequestParse;
+import responseModels.NoteParse;
 
 import java.io.IOException;
 import java.io.PrintWriter;

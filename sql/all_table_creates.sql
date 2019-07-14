@@ -9,7 +9,6 @@ status is active online user?
 ---        ---
 */
 
-
 USE QUIZ_DB;
 
 DROP TABLE IF EXISTS accounts;

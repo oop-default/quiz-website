@@ -18,7 +18,7 @@ class CreatedQuiz extends Component {
     componentDidMount() {
       var token = cookie.load("jwt");
       var bearer = "Bearer " + token;
-      fetch('http://localhost:8080/ServletCreatedQuizzes', {
+      fetch('http://localhost:8080/ServletCreatedQuizzes?id=1', {
         headers: {
           'Authorization': bearer
         }

@@ -1,13 +1,12 @@
-package VikasServlets;
+package servlets;
 
-import VikasModels.AuthenticationService;
-import VikasModels.UserInfo;
-import VikasModels.VikaParser;
+
 import VikasModels.VikasDatabaseCommunicator;
 import com.google.gson.Gson;
-import com.google.gson.stream.JsonWriter;
 import database.DatabaseManager;
-import models.ZvikisDatabaseCommunicator;
+import database.ZvikisDatabaseCommunicator;
+import models.UserInfo;
+import parsers.AuthenticationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import static parsers.VikaParser.parseUserInfo;
 
 
 @WebServlet(name = "ServletAccountInfo")
@@ -49,20 +49,20 @@ public class ServletAccountInfo extends HttpServlet {
                 response.setStatus(404);
                 return;
             }
-            if (idOthers == service.getId())
+            if (idOthers == service.getUserId())
                 status = "me";
-            else if (ZvikisDatabaseCommunicator.areFriends(idOthers, service.getId(), manager))
+            else if (ZvikisDatabaseCommunicator.areFriends(idOthers, service.getUserId(), manager))
                 status = "myFriend";
-            else if (ZvikisDatabaseCommunicator.mySentRequestExists(service.getId(), idOthers, manager)) //iRequested
+            else if (manager.haveSentRequest(service.getUserId(), idOthers)) //iRequested
                 status = "iRequested";
-            else if (ZvikisDatabaseCommunicator.mySentRequestExists(idOthers, service.getId(), manager)) //requestedMe
+            else if (manager.haveSentRequest(idOthers, service.getUserId())) //requestedMe
                 status = "requestedMe";
             else
                 status = "other";
 
 
             final ResultSet rs = VikasDatabaseCommunicator.getUserInfo(idOthers, manager);
-            UserInfo userInfo = VikaParser.parseUserInfo(rs);
+            UserInfo userInfo = parseUserInfo(rs);
             userInfo.setStatus(status);
 
             System.out.println(userInfo.toString());

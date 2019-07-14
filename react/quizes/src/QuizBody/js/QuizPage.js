@@ -43,7 +43,7 @@ fetchQuizData(quizId) {
     var token = cookie.load('jwt');
     var bearer = 'Bearer ' + token;
     console.log(bearer);
-    var url = "http://localhost:8030/ServletQuiz?id=" + quizId;
+    var url = "http://localhost:8080/ServletQuiz?id=" + quizId;
     console.log(url);
     fetch(url, {
         headers: {
