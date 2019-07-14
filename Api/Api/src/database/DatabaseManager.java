@@ -3,16 +3,12 @@ package database;
 
 import com.mysql.jdbc.ResultSetMetaData;
 import models.*;
-import parsers.AchievementsParser;
-import parsers.AuthenticationService;
-import parsers.ScoreParser;
+import parsers.*;
 import responseModels.FriendAchievements;
 import responseModels.NotPersonalScoreResponse;
 import responseModels.friendsQuizzesResponse;
 import responseModels.quizzesResponse;
-import parsers.AccountParser;
 import parsers.AuthenticationService;
-import parsers.QuizParser;
 import responseModels.*;
 import models.SubmittedQuiz;
 

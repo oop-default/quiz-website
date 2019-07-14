@@ -7,114 +7,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2654ed59-2f35-4923-8073-a1cb1e25d791" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/quiz-website-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/CategoriesResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/statisticsResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCategories.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest$boolClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletPopularQuizzes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletRecentQuizzes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletStatistics.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/CategoriesResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletRecentQuizzes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/VikasDatabaseCommunicator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Challenge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ChallengeAnswer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/FriendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Note.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/VikaParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/ZvikisParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/CategoriesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/ChallengeParse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/FriendRequestParse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/NoteParse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/boolClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/responseModels/statisticsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletCategories.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletChallenge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletFriends.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletIHaveSentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletNote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletPopularQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletRecentQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlets/ServletStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestCategories.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestFriendsTakenQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestPopulars.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/TestSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testCreatedQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testIHaveSentRequests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testRecQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/servlets/testTakenQuizzes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../react/quizes/src/homepage/js/Notifications.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/statisticsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/responseModels/statisticsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCategories.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCategories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCreatedQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletCreatedQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletFriendsQuizActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletFriendsQuizActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest$boolClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletIHaveSentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletPopularQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletPopularQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletQuiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletQuiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletRecentQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletRecentQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletTakenQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/classes/servlets/ServletTakenQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletCreatedQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletCreatedQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsQuizActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsQuizActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletQuiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletQuiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/Jwt/JwtManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/Jwt/SecurityConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/VikasModels/VikasDatabaseCommunicator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/cracker/PasswordGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/database/DatabaseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/database/MyDBInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/database/ZvikisDatabaseCommunicator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/listener/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Answer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Challenge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/ChallengeAnswer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/FriendRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/Score.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/SubmittedQuiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/models/SubmittedQuiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/models/UserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AccountParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AchievementsParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AnswerParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AnswerParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/parsers/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AuthenticationServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AuthorizationParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/AuthorizationParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/QuestionParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/QuestionParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/QuizParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/QuizParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/ScoreParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/VikaParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/parsers/ZvikisParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/parsers/ZvikisParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/CategoriesResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/ChallengeParse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/FriendAchievements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/FriendRequestParse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/LoginRegisterResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/NotPersonalScoreResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/NoteParse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/SearchResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/boolClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/responseModels/boolClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/friendsQuizzesResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/quizzesResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/responseModels/statisticsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletAccountInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletAchievements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletCategories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletChallenge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletCreatedQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendTopScores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriends.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsAchievements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletFriendsQuizActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletGlobalTopScores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletIHaveSentRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletNote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletPersonalTopScores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletPopularQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletQuiz.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletRecentQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletRecentQuizzes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletTakenQuizzes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Api/servlets/ServletTakenQuizzes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletRegister.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletSaveNewQuiz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletSaveQuizResults.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletStatistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/servlets/ServletTakenQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Api/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/META-INF/Api.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/parsers/AnswerParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/parsers/AuthenticationServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/parsers/AuthorizationParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/parsers/QuestionParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/parsers/QuizParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/FriendAchievementsTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/FriendAchievementsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/FriendTopScoresTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/FriendTopScoresTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/GlobalTopScoresTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/GlobalTopScoresTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/PersonalTopScoresTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/PersonalTopScoresTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/SaveNewQuizTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/SaveNewQuizTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestCategories$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestCategories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestFriendsTakenQuizzes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestFriendsTakenQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestPopulars$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestPopulars.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestSearch$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/TestSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testCreatedQuizzes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testCreatedQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testIHaveSentRequests$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testIHaveSentRequests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testRecQuizzes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testRecQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testStatistics$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testStatistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testTakenQuizzes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testTakenQuizzes$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/servlets/testTakenQuizzes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Api/test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/MyDBInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/MyDBInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ZvikisDatabaseCommunicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/VikaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/VikaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/ZvikisParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/ZvikisParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletAchievements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletAchievements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletChallenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletChallenge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletCreatedQuizzes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletCreatedQuizzes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletFriendRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletFriends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletFriends.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlets/ServletTakenQuizzes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletTakenQuizzes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/QuizPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/SideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/QuizBody/js/SideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/css/userInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/css/userInfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/CreatedQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/CreatedQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/TakenQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/TakenQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react/quizes/src/profilepage/js/UserInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sql/all_table_creates.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../sql/all_table_creates.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Question.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="../../../../quiz-website/Api/.idea/" />
@@ -149,22 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-801">
-              <caret line="331" column="77" selection-start-line="331" selection-start-column="77" selection-end-line="331" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#14829#14830#0" expanded="true" />
-                <element signature="e#14878#14879#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/ServletAchievements.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="803">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+            <state relative-caret-position="141">
+              <caret line="211" column="32" selection-start-line="211" selection-start-column="24" selection-end-line="211" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,10 +161,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parsers/AchievementsParser.java">
+        <entry file="file://$PROJECT_DIR$/src/servlets/ServletLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="-20">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Jwt/JwtManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -184,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state relative-caret-position="300">
+              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -193,7 +190,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ServletNote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="720">
               <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -202,10 +199,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/Note.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="40">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
@@ -214,8 +211,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state relative-caret-position="240">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -223,8 +220,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="300">
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -232,7 +229,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/ServletAccountInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="260">
               <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
             </state>
           </provider>
@@ -241,7 +238,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/UserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="100">
               <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
@@ -271,8 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/tests/parsers/AuthenticationServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/parsers/AuthenticationService.java" />
         <option value="$PROJECT_DIR$/src/tests/parsers/QuizParserTest.java" />
         <option value="$PROJECT_DIR$/src/tests/test.java" />
         <option value="$PROJECT_DIR$/src/parsers/AccountParser.java" />
@@ -321,8 +316,9 @@
         <option value="$PROJECT_DIR$/src/servlets/ServletFriends.java" />
         <option value="$PROJECT_DIR$/src/parsers/ScoreParser.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletAccountInfo.java" />
-        <option value="$PROJECT_DIR$/src/database/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/servlets/ServletAchievements.java" />
+        <option value="$PROJECT_DIR$/src/database/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/models/Question.java" />
       </list>
     </option>
   </component>
@@ -339,7 +335,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -389,18 +385,13 @@
             <path>
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Jwt" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -412,31 +403,7 @@
               <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="parsers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="servlets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Api" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="WEB-INF" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -688,6 +655,7 @@
       <workItem from="1562835860238" duration="18225000" />
       <workItem from="1562918333835" duration="11490000" />
       <workItem from="1563003574339" duration="43115000" />
+      <workItem from="1563130416943" duration="318000" />
     </task>
     <servers />
   </component>
@@ -724,7 +692,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167492000" />
+    <option name="totallyTimeSpent" value="167810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -736,20 +704,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8251928" visible="true" weight="0.21860817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8223844" visible="true" weight="0.22163388" />
       <window_info id="Structure" order="1" sideWeight="0.396072" side_tool="true" weight="0.26096824" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.17480719" side_tool="true" visible="true" weight="0.21860817" />
+      <window_info id="Web" order="7" sideWeight="0.17761557" side_tool="true" visible="true" weight="0.22163388" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37359098" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37359098" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38647342" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -758,11 +726,10 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32733223" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.48184568" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -812,23 +779,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/responseModels/statisticsResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletStatistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/responseModels/boolClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -943,13 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1166,46 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletAccountInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-801">
-          <caret line="331" column="77" selection-start-line="331" selection-start-column="77" selection-end-line="331" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#14829#14830#0" expanded="true" />
-            <element signature="e#14878#14879#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../react/quizes/src/homepage/js/Notifications.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -1215,7 +1118,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/ServletAchievements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
+        <state relative-caret-position="740">
           <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1225,21 +1128,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parsers/AchievementsParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
+        <state relative-caret-position="80">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsAchievements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        <state relative-caret-position="300">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/ServletNote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="720">
           <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1247,10 +1150,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendTopScores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletFriendsQuizActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletAccountInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Note.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="40">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1249#1250#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="211" column="32" selection-start-line="211" selection-start-column="24" selection-end-line="211" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/ServletLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Jwt/JwtManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1265,6 +1233,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1295,7 +1264,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8 (2)</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1312,6 +1281,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

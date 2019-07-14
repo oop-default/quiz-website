@@ -1,19 +1,18 @@
 package Jwt;
-
-
-
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 
 import java.security.Key;
 
 public class JwtManager {
-    public static String createJWS(String username){
+    public static String createJWS(String username,int id,Boolean isAdmin){
 
         byte [] keyBytes = SecurityConstants.JWT_SECRET.getBytes();
         Key key = Keys.hmacShaKeyFor(keyBytes);
         String jws = Jwts.builder() // (1)
-                .setSubject(username)      // (2)
+                .setSubject(username)
+                .claim("userId",id)
+                .claim("isAdmin",isAdmin)// (2)
                 .signWith(key,SignatureAlgorithm.HS256)          // (3)
                 .compact();
         return jws;

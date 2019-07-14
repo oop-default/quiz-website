@@ -1,17 +1,18 @@
 package models;
 
 import java.awt.*;
+import java.io.StringWriter;
 import java.util.ArrayList;
 
 public class Question {
     private String type;
     private String question;
     private double num_point;
-    private Image image;
+    private String image;
     private ArrayList<Answer> answers;
     
 
-    public Question(String type, String question,double num_point,Image image,ArrayList<Answer> answers){
+    public Question(String type, String question, double num_point, String image, ArrayList<Answer> answers){
         this.type=type;
         this.question=question;
         this.num_point=num_point;
@@ -46,15 +47,17 @@ public class Question {
         this.num_point = num_point;
     }
 
-    public Image getImage() {
-        return image;
-    }
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
 
     public ArrayList<Answer> getAnswers() {
         return answers;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
