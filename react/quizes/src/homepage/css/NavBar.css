@@ -43,3 +43,19 @@
     color: darkgreen;
     margin-top: 15px;
 }
+
+.createNewQuiz {
+    position: absolute;
+    background-color: forestgreen;
+    color: white;
+    padding: 5px 8px;
+    margin-top: 10px;
+    margin-left: 20vw;
+    border-radius: 10%;
+    cursor: pointer;
+    height: 40px;
+}
+
+.createNewQuiz:hover {
+    background-color:rgb(8, 119, 13);
+}
