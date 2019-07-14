@@ -1,0 +1,206 @@
+.newQuiz{
+  margin-top: 60px;
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.addTitle, .addDescription{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 2px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the addQuestion button */
+.addQuestion {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 5%;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+
+.removeQuestion {
+  background-color: #f44336;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 5%;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+
+.addQuestion:hover {
+  opacity: 2;
+}
+
+.addAnswer:hover{
+  opacity: 2;
+}
+
+.numPointsInput:hover {
+  opacity: 2;
+}
+
+.removeQuestion:hover {
+  opacity: 2;
+}
+
+.removeLastAnswer:hover {
+  opacity: 2;
+}
+
+.selectQuizCategory {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: block;
+  border: none;
+}
+
+.selectQuestionCategory {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 10px 22px 10px;
+  display: inline;
+  border: none;
+}
+
+b, .answerLabel {
+  display: block;
+  margin: 5px 0 20px 0;
+}
+
+.questionInput {
+  width: 50%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.addAnswer, .removeLastAnswer {
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  display: inline;
+}
+
+.addAnswer {
+    background-color: #4CAF50;
+    margin-right: 5%;
+}
+
+.removeLastAnswer {
+  background-color: #f44336;
+  margin-left:5%;
+
+}
+
+.answerInp {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 10px 22px 10px;
+  display: inline;
+  border: none;
+  background: #f1f1f1;
+}
+
+.numPointsInput {
+  width: 10%;
+  padding: 15px;
+  margin: 5px 10px 22px 10px;
+  display: inline;
+  border: none;
+  background: #f1f1f1;
+}
+
+#questions > * {
+  margin: 50px 100px;
+}
+
+.answersDiv > * {
+  margin: 0px 200px;
+}
+
+.denoteBlankSpace {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: bolder;
+}
+
+.imgLinkInp {
+  width: 37%;
+  padding: 10px;
+  margin: 5px 10px 22px 10px;
+  border: none;
+  background: #f1f1f1;
+}
+
+.checkBoxLabel {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline;
+  font-weight: 400;
+}
+
+.doneQuiz {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#warning {
+  font-size:25px;
+  color:red;
+  font-weight: bolder;
+}
+
+#success {
+  font-size:25px;
+  color: Green;
+  font-weight: bolder;
+}
+.answDiv {
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+  opacity: 0.9;
+}
