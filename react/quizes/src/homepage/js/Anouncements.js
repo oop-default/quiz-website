@@ -48,8 +48,8 @@ const anouncements = [
                             this.state.isAdmin ? 
                                 <tr>
                                     <td style={{display:""}}>
-                                        <textarea style={{width:"90%", height:"50%"}}></textarea>
-                                        <button>POST</button>
+                                        <textarea className="postArea"></textarea>
+                                        <button style={{cursor:"pointer"}}>POST</button>
                                     </td>
                                 </tr>
                                 :

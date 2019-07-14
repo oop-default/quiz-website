@@ -11,7 +11,7 @@ class Middle extends Component {
     constructor() {
         super();
         this.state= {
-            isAdmin: false
+            isAdmin: true
         }
     }
 

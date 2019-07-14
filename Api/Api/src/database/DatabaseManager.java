@@ -2,13 +2,11 @@ package database;
 
 
 import com.mysql.jdbc.ResultSetMetaData;
-import responseModels.CategoriesResponse;
+import parsers.AccountParser;
+import parsers.AuthenticationService;
+import parsers.QuizParser;
+import responseModels.*;
 import models.SubmittedQuiz;
-import responseModels.FriendAchievements;
-import responseModels.NotPersonalScoreResponse;
-import responseModels.friendsQuizzesResponse;
-import responseModels.quizzesResponse;
-import responseModels.statisticsResponse;
 
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
@@ -388,6 +386,14 @@ public class DatabaseManager {
 
     public Connection getConnection(){
         return con;
+    }
+
+    public SearchResponse getSearchResponse(String query) {
+        return new SearchResponse(AccountParser.getAccountsByPatrialMatchName(query,this), QuizParser.findQuizByTitle(query,this));
+    }
+
+    public AuthenticationService getService(String token) {
+        return new AuthenticationService(token);
     }
 
 }

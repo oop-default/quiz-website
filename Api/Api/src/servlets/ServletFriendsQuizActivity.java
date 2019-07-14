@@ -14,28 +14,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "ServletFriendsQuizActivity")
 public class ServletFriendsQuizActivity extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getHeader("Authorization");
         System.out.println(token);
-        AuthenticationService service = new AuthenticationService(token);
+        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+        AuthenticationService service = manager.getService(token);
         if(!service.isAuthenticated()){
             response.setStatus(401);
+            return;
         }
         int id = service.getUserId();
-        DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
+
         List<friendsQuizzesResponse> friendsTakenQuizzes = manager.getFriendsQuizActivity(id);
-        ServletOutputStream out = response.getOutputStream();
+        PrintWriter writer = response.getWriter();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String output = gson.toJson(friendsTakenQuizzes);
-        out.print(output);
+        writer.print(output);
     }
 }

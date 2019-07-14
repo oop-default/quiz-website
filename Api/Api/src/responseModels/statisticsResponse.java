@@ -10,19 +10,6 @@ public class statisticsResponse {
     private int writtenQuizzesInOneYear;
     private int totalWrittenQuizzes;
 
-//    public statisticsResponse(int registeredInOneDay, int registeredInOneMonth, int registeredInOneYear, int totalUsers,
-//                              int writtenQuizzesInOneDay, int writtenQuizzesInOneMonth, int writtenQuizzesInOneYear, int totalWrittenQuizzes) {
-//
-//        this.registeredInOneDay = registeredInOneDay;
-//        this.registeredInOneMonth = registeredInOneMonth;
-//        this.registeredInOneYear = registeredInOneYear;
-//        this.totalUsers = totalUsers;
-//        this.writtenQuizzesInOneDay = writtenQuizzesInOneDay;
-//        this.writtenQuizzesInOneMonth = writtenQuizzesInOneMonth;
-//        this.writtenQuizzesInOneYear = writtenQuizzesInOneYear;
-//        this.totalWrittenQuizzes = totalWrittenQuizzes;
-//    }
-
     public void setRegisteredInOneDay(int registeredInOneDay) {
         this.registeredInOneDay = registeredInOneDay;
     }

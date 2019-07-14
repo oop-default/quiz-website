@@ -12,21 +12,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "ServletRecentQuizzes")
 public class ServletRecentQuizzes extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
         List<quizzesResponse> quizzes = manager.getRecQuizzes();
-        ServletOutputStream out = response.getOutputStream();
+        PrintWriter writer = response.getWriter();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String output = gson.toJson(quizzes);
-        out.print(output);
+        writer.print(output);
     }
 }

@@ -24,36 +24,23 @@ const myAchieves = [
     {id: 18, achievement: "ragaca"},
 ];
 
-const friendsAchieves = [
-    {id: 1, friendId: 1, friend: "vigaca", achievement: "ragaca"},
-    {id: 2, friendId: 2, friend: "vigaca", achievement: "ragaca"},
-    {id: 3, friendId: 3, friend: "vigaca", achievement: "ragaca"},
-    {id: 4, friendId: 4, friend: "vigaca", achievement: "ragaca"},
-    {id: 5, friendId: 5, friend: "vigaca", achievement: "ragaca"},
-    {id: 6, friendId: 6, friend: "vigaca", achievement: "ragaca"},
-    {id: 7, friendId: 7, friend: "vigaca", achievement: "ragaca"},
-    {id: 8, friendId: 8, friend: "vigaca", achievement: "ragaca"},
-    {id: 9, friendId: 9, friend: "vigaca", achievement: "ragaca"},
-    {id: 0, friendId: 0, friend: "vigaca", achievement: "ragaca"},
-    {id: 10, friendId: 11, friend: "vigaca", achievement: "ragaca"},
-    {id: 11, friendId: 12, friend: "vigaca", achievement: "ragaca"},
-    {id: 12, friendId: 13, friend: "vigaca", achievement: "ragaca"},
-    {id: 13, friendId: 14, friend: "vigaca", achievement: "ragaca"},
-    {id: 14, friendId: 15, friend: "vigaca", achievement: "ragaca"},
-    {id: 15, friendId: 16, friend: "vigaca", achievement: "ragaca"},
-    {id: 16, friendId: 17, friend: "vigaca", achievement: "ragaca"},
-    {id: 17, friendId: 18, friend: "vigaca", achievement: "ragaca"},
-    {id: 18, friendId: 19, friend: "vigaca", achievement: "ragaca"},
-];
-
 class Achievements extends Component{
     constructor() {
         super();
         this.state = {
             nOfTable: 0,
             myAchieves: myAchieves,
-            friendsAchieves: friendsAchieves
+            friendsAchieves: []
         }
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:8080/ServletFriendsAchievements?id=1')
+            .then((response) => {
+                response.json().then((data) => {
+                    this.setState({friendsAchieves: data});
+                })
+            });
     }
 
     render() {
@@ -80,7 +67,7 @@ class Achievements extends Component{
                         :
                             (this.state.friendsAchieves.map((achievement, i) => {
                                 return <tr key={i}>
-                                    <td><a href={'/profile/' + achievement.friendId}>{achievement.friend}</a></td>
+                                    <td><a href={'/profile/' + achievement.id}>{achievement.user}</a></td>
                                     <td>{achievement.achievement}</td>
                                 </tr>
                             }))

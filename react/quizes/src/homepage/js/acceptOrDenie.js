@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import '../css/acceptOrDenie.css';
+import '../css/AcceptOrDenie.css';
 
 class AcceptOrDenie extends Component{
 

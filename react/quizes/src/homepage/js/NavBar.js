@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import '../css/NavBar.css';
-import Notifications from './notifications';
+import Notifications from './Notifications';
 
 
 class NavBar extends Component{

@@ -17,9 +17,7 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "ServletSearch")
 public class ServletSearch extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String query = request.getParameter("query");
@@ -27,7 +25,7 @@ public class ServletSearch extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-        SearchResponse response1 = new SearchResponse(AccountParser.getAccountsByPatrialMatchName(query,manager),QuizParser.findQuizByTitle(query,manager));
+        SearchResponse response1 = manager.getSearchResponse(query);
         Gson gson = new Gson();
         String jsonString = gson.toJson(response1,SearchResponse.class);
         writer.print(jsonString);

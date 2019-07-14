@@ -3,6 +3,13 @@
   min-width: 240px;
 }
 
+.postArea{
+  position: initial;
+  width: 90%;
+  height: 50%;
+  resize: vertical
+}
+
 .anoncTable{
   margin-bottom: 5%;
   margin-top: 5%;
