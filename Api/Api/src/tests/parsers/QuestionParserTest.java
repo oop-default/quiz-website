@@ -4,6 +4,7 @@ import database.DatabaseManager;
 import models.Question;
 import org.junit.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -11,7 +12,7 @@ import static org.junit.Assert.*;
 public class QuestionParserTest {
 
     @Test
-    public void getQuestions() {
+    public void getQuestions() throws SQLException {
         DatabaseManager manager = new DatabaseManager();
         ArrayList<Question> questions=QuestionParser.getQuestions(3,manager);
         assertEquals(3,questions.size());

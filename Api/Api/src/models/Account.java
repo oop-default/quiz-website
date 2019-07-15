@@ -6,6 +6,7 @@ public class Account {
     private String firstname;
     private String secondname;
     private String gender;
+    private int id;
 
 
     public Account(String username,String password,String firstname,String secondname,String gender){
@@ -74,5 +75,13 @@ public class Account {
             return true;
         }
         return false;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

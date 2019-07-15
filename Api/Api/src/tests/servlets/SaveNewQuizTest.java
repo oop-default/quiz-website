@@ -47,7 +47,7 @@ public class SaveNewQuizTest {
         ArrayList<Answer> answers = new ArrayList<>();
         answers.add(new Answer("ias",true));
         questions.add(new Question("QR","ra",5,null,answers));
-        Quiz nq = new Quiz(10,"iasnaj","iasias","blabla","vaxushti",1000,questions,"balala");
+        Quiz nq = new Quiz(10,"iasnaj","iasias","blabla","vaxushti", questions, 1000,"balala");
 
         Gson gson = new Gson();
         String output = gson.toJson(nq,Quiz.class);

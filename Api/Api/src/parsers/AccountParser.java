@@ -22,6 +22,7 @@ public class AccountParser {
                 String secondname = rs.getString("last_name");
                 String gender = rs.getString("gender");
                 Account account = new Account(username,"",firstname,secondname,gender);
+                account.setId(id);
                 accounts.add(account);
             }
             return accounts;

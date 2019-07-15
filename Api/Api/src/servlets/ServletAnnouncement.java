@@ -41,12 +41,13 @@ public class ServletAnnouncement extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getHeader("Authorization");
         AuthenticationService service = new AuthenticationService(token);
-        if(isValid(service,request,response)){
+        if(service.isAuthenticated()){
             DatabaseManager manager =(DatabaseManager)request.getServletContext().getAttribute("database");
             try {
                 ArrayList<Announcement> announcements = manager.getAllAnnouncement();
                 Gson gson = new Gson();
-                String toString = gson.toJson(announcements,ArrayList.class);
+                String toString = gson.toJson(announcements);
+                System.out.println(toString);
                 PrintWriter writer = response.getWriter();
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");

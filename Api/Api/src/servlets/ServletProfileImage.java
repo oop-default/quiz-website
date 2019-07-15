@@ -1,6 +1,7 @@
 package servlets;
 
 import Jwt.JwtManager;
+import database.DatabaseManager;
 import parsers.AuthenticationService;
 
 import javax.imageio.ImageIO;
@@ -21,15 +22,18 @@ import java.net.URLDecoder;
 @WebServlet(name = "ServletProfileImage")
 public class ServletProfileImage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("here");
         String token = request.getHeader("Authorization");
         AuthenticationService service = new AuthenticationService(token);
         if(!service.isAuthenticated()){
             response.setStatus(401);
             return;
         }
+
         String username = service.getUserName();
         String fileName=username+".jpg";
+        DatabaseManager manager = (DatabaseManager)request.getServletContext().getAttribute("database");
+        manager.updateImage(fileName,service.getUserId());
         ServletInputStream in = request.getInputStream();
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -47,12 +51,13 @@ public class ServletProfileImage extends HttpServlet {
 
         BufferedImage bImage2 = ImageIO.read(bis);
         System.out.println("4");
-
+        System.out.println(fileName);
         ImageIO.write(bImage2, "jpg",
-                new File("C:\\Users\\Giorgi\\Desktop\\quiz-website\\quiz-website" +
-                        "\\Api\\Api\\web\\Images\\Profile\\"+fileName));
+                new File("C:\\Users\\Giorgi\\Desktop\\website\\quiz-website\\Api\\Api\\web\\Images\\Profile\\"+fileName));
         System.out.println("5");
         System.out.println("image created");
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

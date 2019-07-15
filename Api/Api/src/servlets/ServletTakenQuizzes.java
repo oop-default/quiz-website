@@ -20,19 +20,9 @@ public class ServletTakenQuizzes extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("asdas");
-//        String token = request.getHeader("Authorization");
-//        System.out.println(token);
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//        int id = service.getUserId();
-        int id = 1;
+        int id = Integer.parseInt(request.getParameter("id"));
         List<quizzesResponse> takenQuizzes = manager.getTakenQuizzes(id);
-
         PrintWriter writer = response.getWriter();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();

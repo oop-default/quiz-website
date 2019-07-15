@@ -35,6 +35,129 @@
         <servlet-name>ServletSearch</servlet-name>
         <url-pattern>/ServletSearch</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletProfileImage</servlet-name>
+        <servlet-class>servlets.ServletProfileImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletProfileImage</servlet-name>
+        <url-pattern>/ServletProfileImage/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletFriendTopScores</servlet-name>
+        <servlet-class>servlets.ServletFriendTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendTopScores</servlet-name>
+        <url-pattern>/ServletFriendTopScores/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletGlobalTopScores</servlet-name>
+        <servlet-class>servlets.ServletGlobalTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletGlobalTopScores</servlet-name>
+        <url-pattern>/ServletGlobalTopScores/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletPersonalTopScores</servlet-name>
+        <servlet-class>servlets.ServletPersonalTopScores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPersonalTopScores</servlet-name>
+        <url-pattern>/ServletPersonalTopScores/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletRemoveAccount</servlet-name>
+        <servlet-class>servlets.ServletRemoveAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRemoveAccount</servlet-name>
+        <url-pattern>/ServletRemoveAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletRemoveQuiz</servlet-name>
+        <servlet-class>servlets.ServletRemoveQuiz</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRemoveQuiz</servlet-name>
+        <url-pattern>/ServletRemoveQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletFriendsCreatedQuizes</servlet-name>
+        <servlet-class>servlets.ServletFriendsCreatedQuizes</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendsCreatedQuizes</servlet-name>
+        <url-pattern>/ServletFriendsCreatedQuizes</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletClearQuizHistory</servlet-name>
+        <servlet-class>servlets.ServletClearQuizHistory</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletClearQuizHistory</servlet-name>
+        <url-pattern>/ServletClearQuizHistory</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletQuizCategories</servlet-name>
+        <servlet-class>servlets.ServletQuizCategories</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletQuizCategories</servlet-name>
+        <url-pattern>/ServletQuizCategories</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletAnnouncement</servlet-name>
+        <servlet-class>servlets.ServletAnnouncement</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletAnnouncement</servlet-name>
+        <url-pattern>/ServletAnnouncement</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletFriends</servlet-name>
+        <servlet-class>servlets.ServletFriends</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriends</servlet-name>
+        <url-pattern>/ServletFriends</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletFriendRequests</servlet-name>
+        <servlet-class>servlets.ServletFriendRequests</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFriendRequests</servlet-name>
+        <url-pattern>/ServletFriendRequests</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletAchievements</servlet-name>
+        <servlet-class>servlets.ServletAchievements</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletAchievements</servlet-name>
+        <url-pattern>/ServletAchievements</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletAccountInfo</servlet-name>
+        <servlet-class>servlets.ServletAccountInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletAccountInfo</servlet-name>
+        <url-pattern>/ServletAccountInfo</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
 
 
 
@@ -120,32 +243,8 @@
     </servlet-mapping>
 
 
-    <servlet>
-        <servlet-name>ServletPersonalTopScores</servlet-name>
-        <servlet-class>servlets.ServletPersonalTopScores</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletPersonalTopScores</servlet-name>
-        <url-pattern>/ServletPersonalTopScores</url-pattern>
-    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>ServletGlobalTopScores</servlet-name>
-        <servlet-class>servlets.ServletGlobalTopScores</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletGlobalTopScores</servlet-name>
-        <url-pattern>/ServletGlobalTopScores</url-pattern>
-    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>ServletFriendTopScores</servlet-name>
-        <servlet-class>servlets.ServletFriendTopScores</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletFriendTopScores</servlet-name>
-        <url-pattern>/ServletFriendTopScores</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>ServletSaveQuizResults</servlet-name>
@@ -188,8 +287,6 @@
         <servlet-name>ServletNote</servlet-name>
         <url-pattern>/ServletNote</url-pattern>
     </servlet-mapping>
-
-
 
     <filter>
         <filter-name>CorsFilter</filter-name>

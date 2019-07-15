@@ -88,6 +88,7 @@ public class ZvikisDatabaseCommunicator {
         String query = "insert into notes (note, sender_id, receiver_id, date_sent, is_seen) " +
                 "values " +
                 "(\'" + text + "\'," + senderId + ", " + recieverId + ", sysdate(), false);";
+        System.out.println("sn>" + query);
         manager.executeUpdateQuery(query);
     }
 
@@ -102,6 +103,7 @@ public class ZvikisDatabaseCommunicator {
         String query = "update notes " +
                 "set is_seen = true " +
                 "where receiver_id = " + senderId + " and sender_id = " + recieverId + ";";
+        System.out.println("mnas>" + query);
         manager.executeUpdateQuery(query);
     }
 

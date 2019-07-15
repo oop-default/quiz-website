@@ -32,7 +32,7 @@ public class QuizParser {
 
 
     public  static ArrayList<Quiz> findQuizByTitle(String title,DatabaseManager manager){
-        String query = "select * from quizzes where tittle like '%"+title+"%'";
+        String query = "select * from quizzes where title like '%"+title+"%'";
         System.out.println(query);
         ArrayList<Quiz> list= new ArrayList<>();
         ResultSet rs = manager.executeQuery(query);
@@ -51,7 +51,11 @@ public class QuizParser {
 
     public static void removeQuiz(int quizId, DatabaseManager manager){
         String query = "delete from quizzes where id='"+quizId+"'";
-        manager.executeUpdateQuery(query);
+        try {
+            manager.executeUpdateQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static ArrayList<Quiz> friendRecentCreatedQuizes(int userId,DatabaseManager manager) throws SQLException {
@@ -101,16 +105,17 @@ public class QuizParser {
         quiz.setDateCreated(rs.getDate("date_created").toString());
         quiz.setDescription(rs.getString("description"));
         quiz.setNum_points(rs.getInt("num_points"));
-        quiz.setTitle(rs.getString("tittle"));
+        quiz.setTitle(rs.getString("title"));
         int categoryId = rs.getInt("category_id");
         int author_id = rs.getInt("author_id");
         String category = getQuizCategory(categoryId,manager);
         String username = getUsername(author_id,manager);
+        quiz.setAuthorId(author_id);
         quiz.setType(category);
         quiz.setAuthor(username);
     }
 
-    private static String getQuizCategory(int categorycId,DatabaseManager manager){
+    public static String getQuizCategory(int categorycId,DatabaseManager manager){
         String query = "select * from categories where id = "+categorycId;
         return find("category",manager,query);
     }

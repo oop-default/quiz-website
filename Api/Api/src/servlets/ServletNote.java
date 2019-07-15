@@ -39,21 +39,21 @@ public class ServletNote extends HttpServlet {
             response.setStatus(200); // ok
         } catch (SQLException e) {
             response.setStatus(500); // wrong with MYSQL server
+            e.printStackTrace();
         }
     }
 
     // get received notes (massages) only unseens
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String token = request.getHeader("Authorization");
+        String token = request.getHeader("Authorization");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//
-//        int userId = service.getUserId();
-        int userId = 1;
+        AuthenticationService service = manager.getService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+            return;
+        }
+
+        int userId = service.getUserId();
         try {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");

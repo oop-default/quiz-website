@@ -3,7 +3,6 @@ package servlets;
 import com.google.gson.Gson;
 import database.DatabaseManager;
 import models.Quiz;
-import models.SubmittedQuiz;
 import parsers.AuthenticationService;
 
 import javax.servlet.ServletException;
@@ -19,14 +18,13 @@ public class ServletSaveNewQuiz extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
 
-//        String token = request.getHeader("Authorization");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//        String author = service.getUserName();
-        String author = "vaxushti";
+        String token = request.getHeader("Authorization");
+        AuthenticationService service = manager.getService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+            return;
+        }
+        String author = service.getUserName();
         BufferedReader reader = request.getReader();
         Gson gson = new Gson();
         Quiz nq = gson.fromJson(reader, Quiz.class);

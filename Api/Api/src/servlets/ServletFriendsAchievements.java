@@ -24,15 +24,13 @@ public class ServletFriendsAchievements extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
 
-//        String token = request.getHeader("Authorization");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//        int userID = service.getUserId();
-
-        int userID = 1;
+        String token = request.getHeader("Authorization");
+        AuthenticationService service = manager.getService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+            return;
+        }
+        int userID = service.getUserId();
         ArrayList<FriendAchievements> res = manager.getAchievementsFor(userID);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

@@ -70,7 +70,8 @@ public class VikaParser {
         String lastName = rs.getString("last_name");
         String image = rs.getString("image");
         boolean isAdmin = rs.getBoolean("is_admin");
-        UserInfo userInfo = new UserInfo(firstName, lastName, userName, image, null, isAdmin);
+        int id = rs.getInt("id");
+        UserInfo userInfo = new UserInfo(id, firstName, lastName, userName, image, null, isAdmin);
         return userInfo;
     }
 }

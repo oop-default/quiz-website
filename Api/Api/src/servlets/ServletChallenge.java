@@ -49,16 +49,15 @@ public class ServletChallenge extends HttpServlet {
 
     // get challenges sent to user
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String token = request.getHeader("Authorization");
+        String token = request.getHeader("Authorization");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//
-//        int id = service.getUserId();
-        int id = 1;
+        AuthenticationService service = manager.getService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+            return;
+        }
+
+        int id = service.getUserId();
         try {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
@@ -76,16 +75,15 @@ public class ServletChallenge extends HttpServlet {
 
     // accept or deny challenge
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String token = request.getHeader("Authorization");
+        String token = request.getHeader("Authorization");
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
+        AuthenticationService service = manager.getService(token);
+        if(!service.isAuthenticated()){
+            response.setStatus(401);
+            return;
+        }
 
-//        int id = service.getUserId();
-        int id = 1;
+        int id = service.getUserId();
         ChallengeAnswer challenge = new Gson().fromJson(request.getReader(), ChallengeAnswer.class);
 
         try {

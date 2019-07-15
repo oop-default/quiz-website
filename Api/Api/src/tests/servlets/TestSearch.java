@@ -38,7 +38,7 @@ public class TestSearch extends Mockito {
         accs.add(new Account("vigac", "is", "isa", "imishvili", "male"));
         ArrayList<Quiz> quizzes = new ArrayList<>();
         ArrayList<Question> questions = new ArrayList<>();
-        Quiz quiz = new Quiz(1, "is", "iseti", "vigacam ragaca", "vigaca", 50, questions, "maSin");
+        Quiz quiz = new Quiz(1, "is", "iseti", "vigacam ragaca", "vigaca", questions, 50, "maSin");
         SearchResponse search = new SearchResponse(accs, quizzes);
         when(manager.getSearchResponse("is")).thenReturn(search);
 

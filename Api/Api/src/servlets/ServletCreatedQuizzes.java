@@ -20,15 +20,7 @@ public class ServletCreatedQuizzes extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String token = request.getHeader("Authorization");
-//        System.out.println(token);
         DatabaseManager manager = (DatabaseManager)getServletContext().getAttribute("database");
-//        AuthenticationService service = manager.getService(token);
-//        if(!service.isAuthenticated()){
-//            response.setStatus(401);
-//            return;
-//        }
-//        int id = service.getUserId();
         String userId = request.getParameter("id");
         int id = Integer.parseInt(userId);
         List<quizzesResponse> createdQuizzes = manager.getCreatedQuizzes(id);

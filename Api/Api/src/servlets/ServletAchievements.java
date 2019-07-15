@@ -1,10 +1,10 @@
 package servlets;
 
-import VikasModels.VikasDatabaseCommunicator;
 import com.google.gson.stream.JsonWriter;
 import database.DatabaseManager;
+import database.VikasDatabaseCommunicator;
 import parsers.AuthenticationService;
-
+import parsers.VikaParser;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static parsers.VikaParser.resultSetToJsonArray;
 
 @WebServlet(name = "ServletAchievements")
 public class ServletAchievements extends HttpServlet {
@@ -30,8 +28,9 @@ public class ServletAchievements extends HttpServlet {
 
         DatabaseManager manager = (DatabaseManager) getServletContext().getAttribute("database");
 
-        String username = request.getParameter("username");
+        Integer userId = Integer.parseInt(request.getParameter("id"));
 
+        /*
         int idOthers = 0;
         try {
             idOthers = VikasDatabaseCommunicator.getId(username, manager);
@@ -39,25 +38,26 @@ public class ServletAchievements extends HttpServlet {
             e.printStackTrace();
             response.setStatus(404);
         }
-
         if (idOthers == 0) {
             response.setStatus(404);
             return;
         }
+        */
 
-        if (username != null) {
+        if (VikasDatabaseCommunicator.accountExistsWithId(userId, manager)) {
             try {
-                final ResultSet achievements = VikasDatabaseCommunicator.getAchievements(idOthers, manager);
+                final ResultSet achievements = VikasDatabaseCommunicator.getAchievements(userId, manager);
                 JsonWriter jw = new JsonWriter(response.getWriter());
-                resultSetToJsonArray(jw, achievements);
+                VikaParser.resultSetToJsonArray(jw, achievements);
                 response.setStatus(200);
             } catch (SQLException e) {
                 e.printStackTrace();
                 response.setStatus(500);
             }
-
+        } else {
+            response.setStatus(404);
+            return;
         }
-
 
 
     }

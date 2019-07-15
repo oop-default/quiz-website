@@ -1,6 +1,7 @@
 package models;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class SubmittedQuiz {
     private int personID;
@@ -36,5 +37,25 @@ public class SubmittedQuiz {
     public long getDateSubmittedMillis(){
 
         return dateSubmittedMillis/1000;
+    }
+    public void setPersonID(int personID){
+        this.personID = personID;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SubmittedQuiz that = (SubmittedQuiz) o;
+        return personID == that.personID &&
+                quizID == that.quizID &&
+                points == that.points &&
+                timeSpent == that.timeSpent &&
+                dateSubmittedMillis == that.dateSubmittedMillis;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(personID, quizID, points, timeSpent, dateSubmittedMillis);
     }
 }

@@ -1,8 +1,4 @@
-package VikasModels;
-
-import database.DatabaseManager;
-import models.Account;
-
+package database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -16,12 +12,25 @@ public class VikasDatabaseCommunicator {
             return res.getObject("id", Integer.class);
     }
 
+    public static boolean accountExistsWithId(int userId, DatabaseManager manager){
+        String query = "select * from accounts where id= "+ userId + ";";
+        try {
+            ResultSet rs = manager.executeGetQuery(query);
+            if(rs.next()){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     // gets ResultSet of accounts of friends
-    public static ResultSet getFriends(String username, DatabaseManager manager) throws SQLException {
+    public static ResultSet getFriends(int idUser, DatabaseManager manager) throws SQLException {
         String query = "select * from accounts a where a.id in (select f.first_id from friends f " +
-                "where f.second_id in (select id from accounts b where b.username = '" + username + "')" +
+                "where f.second_id in (select id from accounts b where b.id = " + idUser + ")" +
                 " union select f.second_id from friends f where f.first_id in (select id from accounts b " +
-                "where b.username = '" + username + "'));";
+                "where b.id = " + idUser+ "));";
         return manager.executeGetQuery(query);
     }
 
@@ -34,14 +43,14 @@ public class VikasDatabaseCommunicator {
 
     // returns achievements
     public static ResultSet getAchievements(int userId, DatabaseManager manager) throws SQLException {
-        String query = "select * from achievements ach, achievings a, accounts ac " +
-                        "where ac.id = " + userId + " and ac.id = a.account_id and ach.id = a.achievment_id;";
+        String query = "select a.image, a.name from achievements a, achievings b, accounts c where" +
+                " c.id = b.account_id and b.achievement_id = a.id and c.id = " + userId + ";";
         return manager.executeGetQuery(query);
     }
 
     // select * from accounts;
     public static ResultSet getUserInfo(int id, DatabaseManager manager) throws SQLException {
-        String query = "select a.username, a.first_name, a.last_name, a.image, a.is_admin from accounts a where a.id = " + id + ";";
+        String query = "select a.id, a.username, a.first_name, a.last_name, a.image, a.is_admin from accounts a where a.id = " + id + ";";
         return manager.executeGetQuery(query);
     }
 

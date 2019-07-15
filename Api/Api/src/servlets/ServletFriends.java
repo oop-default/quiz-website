@@ -1,9 +1,10 @@
 package servlets;
 
-import VikasModels.VikasDatabaseCommunicator;
+import parsers.AuthenticationService;
+import parsers.VikaParser;
 import com.google.gson.stream.JsonWriter;
 import database.DatabaseManager;
-import parsers.AuthenticationService;
+import database.VikasDatabaseCommunicator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,10 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static parsers.VikaParser.resultSetToJsonArray;
-
-//import static VikasModels.VikasDatabaseCommunicator.*;
 
 @WebServlet(name = "ServletFriends")
 public class ServletFriends extends HttpServlet {
@@ -31,26 +28,20 @@ public class ServletFriends extends HttpServlet {
         }
         DatabaseManager manager = (DatabaseManager) getServletContext().getAttribute("database");
 
-        String username = request.getParameter("username");
+        Integer idOth = Integer.parseInt(request.getParameter("id"));
+        int idOthers = idOth.intValue();
 
-        int otherId = 0;
-        try {
-            otherId = VikasDatabaseCommunicator.getId(username, manager);
-        } catch (SQLException e) {
-            response.setStatus(404); // user not found
-            e.printStackTrace();
-        }
-
-        if (username != null) {
+        if (VikasDatabaseCommunicator.accountExistsWithId(idOthers, manager)) {
             try {
-                System.out.println(otherId + " " + service.getUserId());
-                VikasDatabaseCommunicator.deleteFriend(service.getUserId(), otherId, manager);
+                System.out.println(idOthers + " " + service.getUserId());
+                VikasDatabaseCommunicator.deleteFriend(service.getUserId(), idOthers, manager);
                 response.setStatus(200);
             } catch (SQLException e) {
                 response.setStatus(500);
             }
+        } else {
+            response.setStatus(404);
         }
-
     }
 
     // DISPLAY FRIENDS, Takes username from account
@@ -62,27 +53,25 @@ public class ServletFriends extends HttpServlet {
             return;
         }
 
-        //Account user = new Gson().fromJson(request.getReader(), Account.class);
         DatabaseManager manager = (DatabaseManager) getServletContext().getAttribute("database");
-        String username = request.getParameter("username");
 
-        if (username != null) {
+        Integer idOth = Integer.parseInt(request.getParameter("id"));
+        int idOthers = idOth.intValue();
+        if (VikasDatabaseCommunicator.accountExistsWithId(idOthers, manager)) {
             try {
-                final ResultSet friendsList = VikasDatabaseCommunicator.getFriends(username, manager);
+                final ResultSet friendsList = VikasDatabaseCommunicator.getFriends(idOthers, manager);
 
                 JsonWriter jw = new JsonWriter(response.getWriter());
-                resultSetToJsonArray(jw, friendsList);
+                VikaParser.resultSetToJsonArray(jw, friendsList);
                 response.setStatus(200);
             } catch (SQLException e) {
                 e.printStackTrace();
                 response.setStatus(404);
             }
-
-        }
+        } else
+            response.setStatus(404);
     }
 
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
     }
 }

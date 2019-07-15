@@ -1,6 +1,7 @@
 package models;
 
 public class UserInfo {
+    private int id;
     private String first_name;
     private String last_name;
     private String username;
@@ -8,13 +9,18 @@ public class UserInfo {
     private String status;
     private boolean is_admin;
 
-    public UserInfo(String first_name, String last_name, String username, String image, String status, boolean is_admin) {
+    public UserInfo(int id, String first_name, String last_name, String username, String image, String status, boolean is_admin) {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.image = image;
         this.is_admin = is_admin;
         this.username = username;
         this.status = status;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirst_name() {
@@ -68,6 +74,7 @@ public class UserInfo {
     @Override
     public String toString() {
         return "UserInfo{" +
+                "id='" + getId() +
                 "first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", username='" + username + '\'' +
